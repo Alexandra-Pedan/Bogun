@@ -1,0 +1,80 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Паркiнг
+    .news-page
+      .news-container-title
+        h3.news-title Паркiнг
+    .philosophy-container 
+        .parking-container-text
+          h4.concept-functionality-advertising-title Щасливий
+            span.italic &nbsp; власник
+            | &nbsp; нерухомості в комплексі BOGUN -
+            span.color &nbsp;  це людина, яка живе та пересувається
+            span.italic.color &nbsp; комфортно.
+
+        .parking-section-container.parking-reverse
+          .parking-section-container-text
+            p.advertising Ми створюємо найкращі умови для обслуговування та зберігання ваших транспортних засобів:
+          .parking-section-container-img
+
+        .parking-section-container
+          .parking-section-container-text
+            p підземні та наземні паркомісця
+          .parking-section-container-img
+            img(src="/src/assets/images/parking1.jpg", alt="") 
+        
+        .parking-section-container.parking-reverse
+          .parking-section-container-text
+            p автомийка
+          .parking-section-container-img
+            img(src="/src/assets/images/parking2.jpg", alt="") 
+            +svg('ornament-concept2').parking-ornament
+        .parking-section-container
+          .parking-section-container-text
+            p велопарковка
+          .parking-section-container-img
+            img(src="/src/assets/images/parking3.jpg", alt="")
+            +svg('ornament-architecture').parking-ornament
+        .parking-section-container.parking-reverse
+          .parking-section-container-text
+            p зарядні станції для електромобілів
+            .liberty-btn
+              .concept-functionality-advertising-btn
+                .concept-btn 
+                  a(href="hall.html") Дивитися хол
+ 
+          .parking-section-container-img
+            img(src="/src/assets/images/parking4.jpg", alt="")
+            +svg('ornament-philosophy').parking-ornament
+  //- <iframe data-panorama allowfullscreen="" style="border-style:none;" src="./static/panorama/pannellum.htm#panorama=../../assets/images/panorama/panorama-day.jpg&amp;autoLoad=true&amp;preview=https://boston-house.kiev.ua/wp-content/themes/boston/assets/images/panorama/preiew.jpg"></iframe>
+
+ 
+ 
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

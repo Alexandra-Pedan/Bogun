@@ -1,0 +1,60 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Оплата
+    .news-page
+      .news-container-title
+        h3.news-title Оплата
+    .philosophy-container 
+      .payment-container
+        h4.concept-functionality-advertising-title Оплата здійснюється
+          span.italic &nbsp; клієнтом
+          | &nbsp; на рахунок  банку,
+          span.color &nbsp; у терміни та у обсязі, що вказані у 
+          span.italic.color &nbsp; договорі. 
+      .payment-container-description 
+        .payment-container-description-text 
+          p Оплата здійснюється клієнтом на рахунок банку, у терміни та у обсязі, що вказані у договорі. Фіксовано у доларі (прив'язка до курса долара міжбанку/продаж*, але не нижче курсу на день підписання).
+          .text-note *Підвищення ціни згідно з графіком росту цін
+        .payment-container-description-dollar 
+          p Поточний курс долара можна переглянути за посиланням
+          .dollar-exchange 
+            a(href="#") Переглянути курс долара
+              svg( width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg")
+                path( d="M0 4.94382V10L10 4.94382L0 0V4.94382Z")
+      .payment-container-price
+        .payment-container-price-section 
+          p.title Ціна зростає з кожним поверхом вище: 
+          p видові — на $25
+          p не видові — на $20
+        .payment-container-price-section 
+          p.title Ціна зростає з заливкою кожного наступного поверху
+          p Ціна зростаняя $25
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

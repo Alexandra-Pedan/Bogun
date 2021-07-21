@@ -1,0 +1,45 @@
+.architecture-container-text {
+  padding: 0 46px;
+}
+.architecture-ornament-main {
+  position: absolute;
+  bottom: -75px;
+  left: calc(25% - 150px);
+  z-index: -1;
+}
+.architecture-container-section {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+  &-text {
+    width: 50%;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: -0.05em;
+    color: #818181;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & p {
+      width: 55%;
+    }
+  }
+  &-img {
+    width: 45%;
+    position: relative;
+    & .architecture-ornament {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      bottom: -75px;
+      right: calc(50% - 75px);
+      z-index: -1;
+    }
+  }
+}
+.architecture-container-section-reverse {
+  flex-direction: row-reverse;
+}
+.architecture-btn {
+  padding-top: 50px;
+}

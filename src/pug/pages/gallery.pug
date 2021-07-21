@@ -1,0 +1,66 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/gallery.js')
+block content 
+  .content-developer.gallery-breadcrumbs
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Галерея
+    .news-page
+      .news-container-title
+        h3.gallery-title Галерея
+ 
+  .gallery-swiper 
+    .swiper-container.swiperGallery2(style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff")
+      .swiper-wrapper
+        .swiper-slide
+          img(src="/src/assets/images/1.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/2.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/3.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/4.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/5.jpg", alt="")
+
+  .gallery-swiper-bottom
+    .swiper-container.swiperGallery(thumbsSlider="")
+      .swiper-wrapper
+        .swiper-slide
+          img(src="/src/assets/images/1.jpg", alt="") 
+        .swiper-slide
+          img(src="/src/assets/images/2.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/3.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/4.jpg", alt="")
+        .swiper-slide
+          img(src="/src/assets/images/5.jpg", alt="")
+
+  btn.btn-gallery
+    +svg('hand')
+ 
+block header
+  include ../includes/header.pug
+
+//- block footer
+//-   include ../includes/footer.pug
+
+

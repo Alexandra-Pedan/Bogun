@@ -1,0 +1,63 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Хол
+    .news-page
+      .news-container-title
+        h3.news-title Хол
+    .philosophy-container 
+        .architecture-container-text
+          h4.concept-functionality-advertising-title 
+            span.color Відчуйте
+            span.italic.color &nbsp; велич
+            span.color &nbsp; та
+            span.italic.color &nbsp; піднесення 
+            br
+            | &nbsp; з перших кроків.
+
+         
+        .philosophy-container-img     
+          +svg('ornament-architecture').architecture-ornament-main
+          img(src="/src/assets/images/hall1.jpg", alt="")
+        .architecture-container-section
+          .architecture-container-section-text
+            p Наш хол просторий та стильний. Саме він формує перше враження від комплексу та налаштовує гостей на гарний лад.
+          .architecture-container-section-img  
+            img(src="/src/assets/images/hall2.jpg", alt="")
+            +svg('ornament-concept1').architecture-ornament
+        .architecture-container-section.architecture-container-section-reverse
+          .architecture-container-section-text
+            p Тут на вас завжди чекає адміністратор, котрий завжди готовий організувати ваше дозвілля чи надати допомогу. 
+          .architecture-container-section-img  
+            img(src="/src/assets/images/hall3.jpg", alt="")
+            +svg('ornament-concept2').architecture-ornament
+        .architecture-btn
+          .concept-functionality-advertising-btn
+            .concept-btn 
+              a(href="liberty.html") Дивитися дозвілля
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug

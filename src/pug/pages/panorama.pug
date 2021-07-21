@@ -1,0 +1,37 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer.panorama-content
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Панорама
+    .news-page.panorama-page
+      .news-container-title
+        h3.gallery-title Панорама
+
+  <iframe data-panorama allowfullscreen="" style="border-style:none;" src="./static/panorama/pannellum.htm#panorama=../../assets/images/panorama/panorama-day.jpg&amp;autoLoad=true&amp;preview=https://boston-house.kiev.ua/wp-content/themes/boston/assets/images/panorama/preiew.jpg"></iframe>
+
+ 
+ 
+block header
+  include ../includes/header.pug
+
+
+

@@ -1,0 +1,82 @@
+
+extends ../layout/main
+block variable
+  -
+    //- var title_page = 'home'
+    //- var id_page = 'flat-page'
+    //- var class_page = 'home'
+    //- var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+    //- var slider = [{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті2',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті3',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- }]
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-news
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link Новини 
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Графік роботи відділу продажу на новорічні свята
+    .news-more-page
+      .news-more-page-date
+        .news-more-page-date-title 19
+        .news-more-page-date-month грудня
+        hr.date-line
+        .news-more-page-date-year 2020
+      .news-more-page-info
+        h3.news-more-page-info-title Графік роботи відділу продажу на новорічні свята
+        .news-more-page-info-text Шановні клієнти, вітаємо вас з прийдешнім Новим роком і Різдвом!  Якщо на свята ви плануєте завітати до відділу продажу RYBALSKY, зверніть увагу на змінений графік роботи. 6 січня чекаємо на вас з 9.00 до 16.00, 8 січня — з 10.00 до 18.00. Наша адреса: вул. Набережно-Рибальська дорога, 3, 9.
+        img(src="/src/assets/images/news-more1.jpg", alt="")
+        .news-more-page-info-content 
+          h5.news-more-page-info-content-title Шановні клієнти, вітаємо вас з прийдешнім Новим роком і Різдвом! 
+          .news-more-page-info-text Шановні клієнти, вітаємо вас з прийдешнім Новим роком і Різдвом!  Якщо на свята ви плануєте завітати до відділу продажу RYBALSKY, зверніть увагу на змінений графік роботи. 6 січня чекаємо на вас з 9.00 до 16.00, 8 січня — з 10.00 до 18.00. Наша адреса: вул. Набережно-Рибальська дорога, 3, 9.
+
+        .news-more-page-info-back
+          .news-more-back-link 
+            a(href="news.html") 
+              +svg('more').back-link 
+              div До новин
+          .news-more-link 
+            a(href="#") Обрати квартиру
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

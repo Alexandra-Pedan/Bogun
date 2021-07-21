@@ -1,0 +1,70 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Локацiя
+    .news-page
+      .news-container-title
+        h3.news-title Локацiя
+    .philosophy-container 
+        .architecture-container-text
+          h4.concept-functionality-advertising-title 
+            span.color Якщо ви мріяли просинатися з
+            span.italic.color &nbsp; видом
+            span.color &nbsp; на річку, однак хочете залишатися у вирі подій -
+            span &nbsp;  локація комплексу
+            span.italic &nbsp; припаде
+            span &nbsp; вам до душі.
+        .architecture-container-section
+          .architecture-container-section-img  
+            img(src="/src/assets/images/location1.jpg", alt="")
+            +svg('ornament-philosophy').architecture-ornament
+          .architecture-container-section-text
+            p Тепер у містян з’явиться можливість жити та працювати у самому серці Вінниці, на перетині основних транспортних артерій просто на березі річки Південний Буг. 
+        .architecture-container-section.architecture-container-section-reverse
+          .architecture-container-section-img  
+            img(src="/src/assets/images/location2.jpg", alt="")
+            +svg('ornament-architecture').architecture-ornament
+          .location-container-section-text
+            .location-container-section-text-description
+              h4.location-container-section-text-description-title Усього кілька кроків - і ви гуляєте набережною!  
+              p А центральна вулиця міста починається одразу за мостом.
+        .location-advertising-title 
+          h4.concept-functionality-advertising-title Більше
+            span.italic &nbsp; не треба
+            span &nbsp; перейматися про те, як дістатися до дому чи роботи.
+            span.color &nbsp; Зручнішого доступу до міського транспорту та основних транспортних вузлів міста
+            span.italic &nbsp; годі й уявляти. 
+
+        img(src="/src/assets/images/location3.jpg", alt="")
+        .architecture-btn
+          .concept-functionality-advertising-btn
+            .concept-btn 
+              a(href="terraces.html") Дивитися тераси
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

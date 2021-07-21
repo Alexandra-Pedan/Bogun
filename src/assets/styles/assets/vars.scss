@@ -1,0 +1,55 @@
+$default-font: 'Mont-Regular', sans-serif;
+$default-font2: 'montser', sans-serif;
+
+$mc2: #ff554c;
+$mc3: #e5df06;
+$mc4: #4f90b6;
+$gray: rgb(135, 135, 151);
+$text: #22223e;
+$wc: #fff;
+$bc: #000;
+$bc2: #000;
+
+$mc: #1a2941;
+$bg: #fafafa;
+$light: #fcfcfc;
+$dark: #1a2941;
+$gold: #cfa46e;
+
+$pink: #f65275;
+$white: #ffffff;
+$main-text: #555568;
+$light-text: #dae1ef;
+$scroll-text: #27272c;
+$contact-text: #66686f;
+$bgr-footer: #f7f7f7;
+
+:root {
+  --in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+  --header-h: 120px;
+  --logo-w: 160px;
+  --sliceFigure: 239px;
+  --sliceFigure-big: 541px;
+}
+
+@media screen and (max-width: 1440px) {
+  :root {
+    --header-h: 130px;
+    --logo-w: 230px;
+    --sliceFigure-big: 362px;
+  }
+}
+@media screen and (max-width: 992px) {
+  :root {
+    --header-h: 110px;
+    --logo-w: 90px;
+    --sliceFigure-big: 44px;
+  }
+}
+@media screen and (max-width: 576px) {
+  :root {
+    --header-h: 70px;
+    --sliceFigure: 100px;
+    --sliceFigure-big: 100px;
+  }
+}

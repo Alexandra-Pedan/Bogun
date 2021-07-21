@@ -1,0 +1,58 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Для дітей
+    .news-page
+      .news-container-title
+        h3.news-title Для дітей
+    .philosophy-container 
+        .children-section-container
+          .children-section-container-img
+            +svg('ornament-architecture').children-ornament1
+            img(src="/src/assets/images/child1.jpg", alt="")
+          .children-section-container-text
+            p Нам так важливо, щоб ваші малюки були щасливими, і ми готові розділити з вами найприємніші моменти їхнього розвитку! 
+     
+     
+        .architecture-container-text
+          h4.concept-functionality-advertising-title Обирайте дитячий гурток за
+            span.italic &nbsp;  інтересами
+            | &nbsp; або розважальний заклад
+            span.color &nbsp; для
+            span.italic.color &nbsp;  наймолодших
+            span.color &nbsp; бешкетунів. 
+
+        .sport-section-container
+          .sport-section-container-text
+            p А щоб батьки мали змогу відпочити та присвятити час собі, адміністрація комплексу організує для вас няня-сервіс: разово або навіть на постійній основі. 
+            .liberty-btn
+              .concept-functionality-advertising-btn
+                .concept-btn 
+                  a(href="#") Обрати квартиру
+          .sport-section-container-img
+            img(src="/src/assets/images/child2.jpg", alt="")
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug

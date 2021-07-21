@@ -1,0 +1,65 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Для спорту
+    .news-page
+      .news-container-title
+        h3.news-title Для спорту
+    .philosophy-container 
+        .architecture-container-text
+          h4.concept-functionality-advertising-title “Залишатися
+            span.italic &nbsp; здоровим
+            | &nbsp; та щодня ставати
+            br
+            span.italic &nbsp; кращим!”
+            span.color &nbsp;  - ось девіз мешканців BOGUN.
+        .sport-section-container
+          .sport-section-container-text
+            p Робити це дуже просто, якщо на одному з поверхів комплексу розташований величезний спортзал.
+          .sport-section-container-img
+            img(src="/src/assets/images/sport1.jpg", alt="")
+        .architecture-container-text
+          h4.concept-functionality-advertising-title Топові тренери,
+            span.italic &nbsp;  найсучасніше
+            | &nbsp; обладнання та дивовижний вид з вікна
+            span.color &nbsp; щодня
+            span.italic.color &nbsp; надихатимуть
+            span.color &nbsp; вінничан.
+        .sport-section-container
+          .sport-section-container-img
+            img(src="/src/assets/images/sport2.jpg", alt="")
+          .sport-section-container-text
+            p А знижка для мешканців та працівників комплексу змусить вас відчувати себе “своїм” у цьому царстві здоров’я та краси. 
+            .liberty-btn
+              .concept-functionality-advertising-btn
+                .concept-btn 
+                  a(href="children.html") Дивитися зони для дітей
+ 
+ 
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

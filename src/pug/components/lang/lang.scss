@@ -1,0 +1,43 @@
+.lang-block-container {
+  top: 90vh;
+  // left: 0;
+  width: 100%;
+  position: fixed;
+  margin: 0 auto;
+  z-index: 100;
+}
+.lang-block-list {
+  width: 1326px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+.lang-block {
+  width: 46px;
+  padding: 18px 16px;
+  height: 46px;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  background: #ffffff;
+  border-radius: 23px;
+  transition: all 0.5s ease-in;
+
+  & a {
+    text-decoration: none;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #555568;
+    margin-right: 16px;
+    transition: all 0.5s ease-in;
+    &:hover {
+      color: $pink;
+    }
+  }
+  &:hover {
+    width: 105px;
+  }
+}

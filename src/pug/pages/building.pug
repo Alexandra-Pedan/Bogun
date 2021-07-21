@@ -1,0 +1,208 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/gallery.js')
+  script(defer src='./assets/scripts/script.js')
+  script(defer src='./assets/scripts/build-progress.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Хід будівництва
+
+    .building-page
+      .news-container-title
+        h3.news-title Хід будівництва
+      .building-webcam
+        a(href="webcam.html")
+          +svg('webcam').webcam-img
+          span веб-камера
+    .building-container 
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building4.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 19
+              hr.building-progress-line
+              .month грудня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building3.jpg)") 
+            .building-progress-item-text 
+              .date 23
+              hr.building-progress-line
+              .month Березня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building2.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building3.jpg)") 
+            .building-progress-item-text 
+              .date 14
+              hr.building-progress-line
+              .month квітня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building3.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 29
+              hr.building-progress-line
+              .month травня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building4.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 19
+              hr.building-progress-line
+              .month грудня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building3.jpg)") 
+            .building-progress-item-text 
+              .date 23
+              hr.building-progress-line
+              .month Березня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building2.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building3.jpg)") 
+            .building-progress-item-text 
+              .date 14
+              hr.building-progress-line
+              .month квітня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building3.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 29
+              hr.building-progress-line
+              .month травня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building4.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 19
+              hr.building-progress-line
+              .month грудня
+              .year 2021
+      a(href="#").building-progress-item-wrap
+        .building-progress-item 
+            .building-progress-img.img-active(style= "background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%), url(/src/assets/images/building4.jpg)") 
+            .building-progress-img.img-2(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(/src/assets/images/building1.jpg)") 
+            .building-progress-img.img-3(style= "background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(/src/assets/images/building2.jpg)") 
+            .building-progress-item-text 
+              .date 19
+              hr.building-progress-line
+              .month грудня
+              .year 2021
+      
+    .building-btn 
+      .concept-functionality-advertising-btn
+        .concept-btn 
+          a(href="#") завантажити БІЛЬШЕ
+
+  section.building-popup
+    .building-popup-container
+      .breadcrumbs-building
+        .content-developer
+          ul.breadcrumbs
+            li.breadcrumbs-item
+              a(href="index.html").breadcrumbs-link головна
+            li.breadcrumbs-item
+              a(href="menu-contacts.html").breadcrumbs-link-active Хід будівництва
+        .news-page
+          .news-container-title
+            h3.building-title Хід будівництва
+      .gallery-swiper.building-swiper 
+        .swiper-container.swiperGallery2(style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff")
+          .swiper-wrapper
+            .swiper-slide
+              img(src="/src/assets/images/1.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/2.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/3.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/4.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/5.jpg", alt="")
+
+      .gallery-swiper-bottom
+        .swiper-container.swiperGallery(thumbsSlider="")
+          .swiper-wrapper
+            .swiper-slide
+              img(src="/src/assets/images/1.jpg", alt="") 
+            .swiper-slide
+              img(src="/src/assets/images/2.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/3.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/4.jpg", alt="")
+            .swiper-slide
+              img(src="/src/assets/images/5.jpg", alt="")
+
+      btn.btn-gallery
+        +svg('hand')
+    
+      .building-progress-item-pupop
+        .date-pupop 19
+        .month-pupop грудня
+        hr.building-progress-line
+        .year-pupop 2021
+
+      .building-scale 
+        .building-scale-container
+          btn.btn-building-close закрити
+            svg(width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg").close-img 
+              circle(cx="23" cy="23" r="23")
+              path(d="M28 28L18 18M18 28L28 18L18 28Z")
+            //- +svg('close').close-img
+          btn.btn-building-right 
+            +svg('more')
+          btn.btn-building-left
+            +svg('more')
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

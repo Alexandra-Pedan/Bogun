@@ -1,0 +1,53 @@
+.liberty-section-container + .liberty-section-container {
+  padding-top: 50px;
+}
+.liberty-section-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+  &-img-main {
+    width: 50%;
+    position: relative;
+  }
+  &-img {
+    width: 45%;
+    position: relative;
+  }
+  &-text {
+    width: 45%;
+    font-size: 24px;
+    line-height: 1.7;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-right: 20px;
+  }
+}
+.liberty-ornament1 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -75px;
+  right: calc(50% - 75px);
+  z-index: -1;
+}
+.liberty-ornament2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  bottom: -75px;
+  right: calc(50% - 75px);
+  z-index: -1;
+}
+.liberty-ornament3 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: calc(50% - 45px);
+  right: calc(50% - 75px);
+  z-index: -1;
+}

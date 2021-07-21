@@ -1,0 +1,52 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Тераси
+    .news-page
+      .news-container-title
+        h3.news-title Тераси
+    .terraces-container
+      .terraces-container-section
+        .terraces-container-section-img  
+          img(src="/src/assets/images/terraces1.jpg", alt="")
+        .terraces-container-section-text
+          h4.concept-functionality-advertising-title.title-terraces Розважальні заклади та найкращі ресторани міста
+            span.italic.color &nbsp; затишно
+            span.color &nbsp; розташувались на
+            span.italic.color &nbsp; просторій
+            span.color &nbsp; терасі комплексу. 
+      .terraces-container-section-picture
+        img(src="/src/assets/images/terraces2.jpg", alt="")
+        +svg('ornament-concept1').terraces-ornament  
+      .terraces-btn
+        .concept-functionality-advertising-btn
+          .concept-btn 
+            a(href="terraces.html") Дивитися Паркінг
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+
