@@ -1,0 +1,107 @@
+
+extends ../layout/main
+block variable
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  //- script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  //- script(defer src='./assets/scripts/header.js')
+  //- script(defer src='./assets/scripts/home.js')
+  //- script(defer src='./assets/scripts/scroll.js')
+  script(defer src='./assets/scripts/script.js')
+block content
+  
+  section.main
+    .container
+      .main-content 
+        h1.main-content-title Нерухомість що працює на вас
+        .main-content-text 
+          +svg('line')
+          h2 перший у Вінниці мультифункціональний житловий комплекс
+      +svg('B')(data-scroll-to='location')
+
+
+  section.location(data-container='location')
+    .container
+      .location-content 
+        h1.location-content-title Локація комплексу
+        hr.line
+        p.location-text Розташування об’єкта поблизу головній артерії міста дозволить легко та швидко дістатись до будь якого іншого мікорайону. 
+        a(href='#').location-link Дізнатися більше
+          +svg('more')
+      +svg('O')(data-scroll-to='services')
+     
+  section.services(data-container='services')
+    .container
+      .location-content 
+        h1.location-content-title Набір сервісів
+        hr.line
+        p.location-text Широкий набір сервісів дозволить вам дійсно розслабитися після важкого дня, та відпочити у колі сім'ї.
+        a(href='#').location-link Більше про сервіси
+          +svg('more')
+      +svg('G')(data-scroll-to='architecture')
+
+  section.architecture(data-container='architecture')
+    .container
+      .location-content 
+        h1.location-content-title Архітектурне рішення
+        hr.line
+        p.location-text Надзвичайне для Вінниці та України дизайнерське рішення створене архітектурною майстернею Олександра Коротких.
+        a(href='#').location-link Більше про архітектуру
+          +svg('more')
+      +svg('U')(data-scroll-to='live-in-bogun')
+
+  section.live-in-bogun(data-container='live-in-bogun')
+    .container
+      .location-content 
+        h1.location-content-title Життя в Bogun City
+        hr.line
+        p.location-text У BOGUN є все, що потрібно для зручності, комфорту і задоволення: cвій ТРЦ із зоною преміальних бутиків, супермаркет, ресторани, фонтани. 
+        a(href='#').location-link Обрати квартиру
+          +svg('more')
+      +svg('N')(data-scroll-to='contacts')
+ 
+  section.contacts(data-container='contacts')
+      h3.contacts-title Контакти
+      .contact-info-container
+        .contacts-info 
+          .contacts-info-text Розташування:
+          .contacts-info-description м. Вінниця вул. Пушкіна 4
+          .contacts-info-link 
+            a(href="#") показати на google maps
+        hr.contacts-info-line
+        .contacts-info-schedule
+          .contacts-info-text.schedule-text Відділ продажів:
+          .contacts-info-tel 
+            a(href="#") +38 (096) 995-63-64
+            div пн-пт: 10:00-18:00
+            div сб-вс: 10:00-17:00
+          
+          button.contacts-info-btn передзвоніть мені
+        hr.contacts-info-line
+        .contacts-info 
+          .contacts-info-text Соціальні мережі:
+          .contacts-info-description
+            a(href="#") instagram
+            a(href="#") facebook
+        hr.contacts-info-line
+      +svg('ornament')
+
+
+
+
+
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

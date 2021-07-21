@@ -1,0 +1,83 @@
+.installments-container {
+  margin: 0 auto;
+  width: 1326px;
+  padding: 0 110px 150px 110px;
+  display: flex;
+  flex-direction: column;
+
+  &-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 70px 147px;
+    border-bottom: 2px solid #f7f7f7;
+    &-item {
+      width: 44%;
+      font-size: 36px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $main-text;
+      & .dollar-exchange {
+        padding-top: 0;
+        & a {
+          font-size: 13px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $pink;
+          text-decoration: none;
+          & svg {
+            margin-left: 20px;
+            fill: $pink;
+          }
+        }
+      }
+      &-title {
+        font-size: 24px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: $main-text;
+        & div {
+          font-size: 12px;
+          line-height: 1.7;
+          letter-spacing: -0.05em;
+          text-transform: none;
+          color: #818181;
+          padding-top: 20px;
+        }
+        & ul {
+          padding-left: 20px;
+        }
+        & li {
+          font-size: 16px;
+          line-height: 1.7;
+          letter-spacing: -0.05em;
+          color: #818181;
+          text-transform: none;
+          position: relative;
+          // list-style: disc;
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            // vertical-align: middle;
+            background: $main-text;
+            position: absolute;
+            top: 10px;
+            left: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+.installments-container-section-item-title.dollar {
+  padding-right: 60px;
+}
+
+.installments-container-section:last-child {
+  border: none;
+  padding-bottom: 0;
+}

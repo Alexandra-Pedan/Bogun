@@ -1,0 +1,18 @@
+iframe {
+  border-style: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.content-developer.panorama-content {
+  // position: fixed;
+  z-index: 2;
+  width: 1326px;
+  padding: 0 15px;
+  margin: 0 auto;
+  top: 0;
+  // left: 0;
+  position: relative;
+}

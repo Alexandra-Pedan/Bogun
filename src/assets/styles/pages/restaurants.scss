@@ -1,0 +1,28 @@
+.restaurants-ornament-main {
+  position: absolute;
+  bottom: -75px;
+  right: calc(25% - 150px);
+  z-index: -1;
+}
+
+.restaurants-container-section {
+  padding: 100px 80px 0 80px;
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40px;
+    & li {
+      margin-right: 50px;
+      font-size: 24px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+
+      & a {
+        text-decoration: none;
+        color: $main-text;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.terraces-container {
+  margin: 0 auto;
+  width: 1326px;
+  padding: 75px 110px 150px 110px;
+  &-section {
+    display: flex;
+    justify-content: space-between;
+    &-img {
+      width: 50%;
+    }
+    &-text {
+      width: 41%;
+    }
+    &-picture {
+      position: relative;
+      padding-top: 100px;
+    }
+  }
+}
+.concept-functionality-advertising-title.title-terraces {
+  text-align: left;
+}
+
+.terraces-ornament {
+  position: absolute;
+  top: 25px;
+  right: calc(25% - 150px);
+  z-index: -1;
+}
+.terraces-btn {
+  padding-top: 20px;
+}

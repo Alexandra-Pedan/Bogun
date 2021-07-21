@@ -1,0 +1,41 @@
+footer.footer
+  .footer-content
+    .form
+      form(data-home-contact autocomplete="off").footer-container-form
+        h4.form-title Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:
+        .footer-form
+          .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive" )
+            //- input(type='text' name="phone" placeholder="+ (38) ___ - ___ - __").form-field__input.footer-form-field__input
+            .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+              input(type='text' name="phone" placeholder="+38 (___) ___ __ __").form-field__input
+              //- .form-field-message Ваш телефон
+              .mask-absolute.js-mask-absolute
+              .input-message(data-input-message)
+          button( type="submit" data-btn-submit).home-content__link.link.footer-btn 
+            span(data-btn-submit-text).link__text.usn Надіслати
+            span.link-ico.link-ico--margin
+              span.link-ico__stic.bgc--wc
+      .footer-contact 
+        h5.footer-contact-title відділ продажу
+        p м. Вінниця вул. Пушкіна 4
+        .footer-contact-tel +38 (096) 995-63-64
+        p пн-пт: 10:00-18:00
+        p сб-вс: 10:00-17:00
+      div.js-btn-up
+        +svg('up')
+    hr.footer-line
+    .footer-rights-reserved
+      .footer-rights  © Усі права захищено. Bogun City 
+      .ooter-rights-offer Не є публічною офертою. Візуалізації та планування об’єкту є орієнтовними. Забудовник має право вносити зміни згідно з діючим законодавством.
+      .footer-dev By
+        a(href="https://smarto.agency/" rel="nofollow" target="_blank").footer-dev__link Smart Orange
+
+
+//- <form class="home-contact--width" data-home-footer="" autocomplete="off">
+//-           <h5 class="form-label3 home-contact--width">Якщо у вас виникли запитання, залиште свій номер і ми передзвонимо вам:</h5>
+//-           <div class="form-field disabled form-field-input" data-field-input="" data-field-phone="" data-status="field--inactive" data-animation="none">
+//-             <input class="form-field__input input-tel-footer" type="tel" name="phone" placeholder="+ (38) ___ - ___ - __ - __" inputmode="tel"><span class="place-holder-footer" style="display: none;">+ (38) <span class="place-holder-footer-light">___ - ___ - __ - __</span></span>
+//-             <div class="mask-absolute js-mask-absolute"></div>
+//-           </div>
+//-           
+//-         </form>

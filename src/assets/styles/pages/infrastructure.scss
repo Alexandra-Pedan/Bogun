@@ -1,0 +1,120 @@
+.infrastructure-page {
+  margin: 0 auto;
+  width: 1326px;
+  padding: 0 50px 0 106px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  align-items: center;
+  .infrastructure-title {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    color: $main-text;
+  }
+  &-adress {
+    display: flex;
+    align-items: center;
+    width: 310px;
+    justify-content: flex-end;
+    svg {
+      width: 46px;
+      height: 46px;
+      margin-right: 20px;
+    }
+    p {
+      font-size: 14px;
+      letter-spacing: -0.05em;
+      color: $main-text;
+    }
+  }
+}
+
+.map-wrap {
+  width: 100vw;
+  height: 65vh;
+  position: relative;
+  overflow: hidden;
+  .map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  .map-wrap__legend {
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+.infrastructure-map-list {
+  // opacity: 0;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 1146px;
+  height: 124px;
+  padding: 27px 64px;
+  background: #ffffff;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.infrastructure-map-item {
+  display: flex;
+  align-items: center;
+  p {
+    font-size: 10px;
+    line-height: 1.4;
+    color: $main-text;
+    margin-left: 20px;
+  }
+  &:nth-child(2n + 1) {
+    padding-bottom: 10px;
+  }
+  cursor: pointer;
+  transform-origin: center;
+  transition: 0.3s ease-in-out;
+}
+.infrastructure-map-item.active {
+  font-weight: bold;
+  transform: scale(1.2);
+}
+.map-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 190px;
+  height: 36px;
+  background: $main-text;
+  font-size: 10px;
+  text-align: center;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: $white;
+  svg {
+    margin-left: 10px;
+    transform: rotate(90deg);
+    fill: $white;
+    width: 4px;
+    height: 4px;
+    transition: all 0.5s ease;
+  }
+  &:hover {
+    cursor: pointer;
+    svg {
+      transform: rotate(270deg);
+    }
+    .infrastructure-map-list {
+      opacity: 1;
+    }
+  }
+  &:hover + .infrastructure-map-list {
+    opacity: 1;
+  }
+}

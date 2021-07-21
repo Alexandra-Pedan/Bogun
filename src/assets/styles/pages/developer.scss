@@ -1,0 +1,147 @@
+// .content-developer {
+//   background: #e5e5e5;
+// }
+.developer-content {
+  &-logo {
+    width: 26%;
+  }
+  &-info {
+    display: flex;
+    width: 1326px;
+    margin: 0 auto;
+    padding: 70px 60px 100px 256px;
+  }
+  &-description {
+    width: 74%;
+    &-title {
+      font-size: 36px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $main-text;
+      & span {
+        font-style: italic;
+      }
+    }
+    &-text {
+      padding-top: 50px;
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      color: #818181;
+      width: 38%;
+    }
+  }
+}
+.developer-content-project {
+  display: flex;
+  flex-direction: column;
+  width: 1050px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.icon--SAGA {
+  width: 150px;
+  height: 150px;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0 150px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#icon-swipe-left,
+#icon-swipe-right {
+  fill: none;
+  width: 50px;
+  height: 50px;
+}
+.icon--garden {
+  width: 92px;
+  height: 98px;
+}
+.icon--kandinsky {
+  width: 127px;
+  height: 40px;
+}
+.icon--5kv {
+  width: 149px;
+  height: 84px;
+}
+.icon--woods {
+  width: 137px;
+  height: 89px;
+}
+.icon--lebed {
+  width: 86px;
+  height: 97px;
+}
+.swiper-button-next {
+  width: 50px;
+  height: 50px;
+}
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
+}
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+  transform: translate3d(0px, 0, 0);
+  display: flex;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: '';
+  background-image: url('/src/assets/svg-sprite/swipe-right.svg');
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: '';
+  background-image: url('/src/assets/svg-sprite/swipe-left.svg');
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 0px;
+  left: auto;
+}
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: 0px;
+  right: auto;
+}
+.swiper-container.mySwiper {
+  width: 810px;
+}

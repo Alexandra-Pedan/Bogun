@@ -1,0 +1,92 @@
+.concept-functionality {
+  margin: 0 auto;
+  width: 1326px;
+  padding: 0px 110px 110px 106px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  &-description {
+    display: flex;
+    flex-direction: column;
+    width: 41%;
+    justify-content: center;
+    &-title {
+      font-size: 24px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: $main-text;
+    }
+    &-text {
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      color: #818181;
+      padding: 50px 0 0 150px;
+    }
+  }
+  &-img {
+    width: 50%;
+    padding-top: 40px;
+    position: relative;
+  }
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.description-reverse {
+  flex-direction: column-reverse;
+  &-text {
+    padding: 0px 0 50px 150px;
+  }
+}
+.concept-ornament {
+  position: absolute;
+  top: -35px;
+  right: calc(50% - 150px);
+  z-index: -1;
+}
+
+.concept-functionality-advertising {
+  width: 1106px;
+  margin: 0 auto;
+  padding: 0 120px 150px 120px;
+  &-title {
+    font-size: 36px;
+    line-height: 1.7;
+    text-align: center;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: $main-text;
+    text-align: center;
+    & .color {
+      color: #818181;
+    }
+    & .italic {
+      font-style: italic;
+    }
+  }
+  &-btn {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    & .concept-btn:not(:last-child) {
+      margin-right: 30px;
+    }
+    & .concept-btn {
+      width: 380px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $pink;
+
+      font-size: 14px;
+      text-transform: uppercase;
+      & a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}

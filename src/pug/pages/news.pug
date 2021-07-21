@@ -1,0 +1,132 @@
+
+extends ../layout/main
+block variable
+  -
+    //- var title_page = 'home'
+    //- var id_page = 'flat-page'
+    //- var class_page = 'home'
+    //- var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+    //- var slider = [{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті2',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті3',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- }]
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-news
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Новини 
+    .news-page
+      .news-container-title
+        h3.news-title Новини
+      .news-container
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="news-more.html") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу під час додаткових вихідних у травні
+          .news-container-date 28 квітня 2021
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Встигніть скористатися акційними умовами розстрочки
+          .news-container-date 20 травня 2021
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу під час додаткових вихідних у травні
+          .news-container-date 28 квітня 2021
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Встигніть скористатися акційними умовами розстрочки
+          .news-container-date 20 травня 2021
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text Графік роботи відділу продажу на новорічні свята
+          .news-container-date 19 грудня 2020
+          .news-container-link 
+            a(href="#") Читати
+        hr.news-container-line
+        //- .news-container-info 
+        //-   .news-container-text Графік роботи відділу продажу на новорічні свята
+        //-   .news-container-date 19 грудня 2020
+        //-   .news-container-link 
+        //-     a(href="#") Читати
+        //- hr.news-container-line
+        .news-info-link 
+          a(href="#") БІЛЬШЕ НОВИН
+      +svg('ornament').news-ornament
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

@@ -1,0 +1,105 @@
+
+extends ../layout/main
+block variable
+  -
+    //- var title_page = 'home'
+    //- var id_page = 'flat-page'
+    //- var class_page = 'home'
+    //- var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+    //- var slider = [{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті2',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті3',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- }]
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-news
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Документи
+    .news-page
+      .news-container-title
+        h3.news-title Документи
+      .news-container
+        .news-container-info 
+          .news-container-text 
+            img(src="/src/assets/images/doc1.jpg", alt="")
+            p Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту ДАБI )
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .news-container-link 
+            a(href="news-more.html") Завантажити
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text 
+            img(src="/src/assets/images/doc2.jpg", alt="")
+            p Экспертиза проекта
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .news-container-link 
+            a(href="#") Завантажити
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text 
+            img(src="/src/assets/images/doc3.jpg", alt="")
+            p Договір оренди земельної ділянки від 12.06.2020р
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .news-container-link 
+            a(href="#") Завантажити
+        hr.news-container-line
+        .news-container-info 
+          .news-container-text 
+            img(src="/src/assets/images/doc4.jpg", alt="")
+            p 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .news-container-link 
+            a(href="#") Завантажити
+        hr.news-container-line
+
+      +svg('ornament-doc').news-ornament
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

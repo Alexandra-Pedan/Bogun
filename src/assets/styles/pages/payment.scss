@@ -1,0 +1,75 @@
+.payment-container {
+  padding: 0 100px;
+  &-description {
+    padding: 100px 100px 70px 100px;
+    display: flex;
+    justify-content: space-between;
+    // padding-top: 100px;
+    border-bottom: 2px solid #f7f7f7;
+    &-text {
+      width: 44%;
+      & p {
+        font-size: 16px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        color: #818181;
+      }
+      & .text-note {
+        padding-top: 20px;
+        font-size: 12px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        color: #818181;
+      }
+    }
+    &-dollar {
+      width: 44%;
+      // padding: 0 50px 0 60px;
+      padding-right: 60px;
+
+      & p {
+        font-size: 24px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: $main-text;
+      }
+      & .dollar-exchange {
+        padding-top: 30px;
+        & a {
+          font-size: 13px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $pink;
+          text-decoration: none;
+          & svg {
+            margin-left: 20px;
+            fill: $pink;
+          }
+        }
+      }
+    }
+  }
+  &-price {
+    padding: 70px 100px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    &-section {
+      width: 44%;
+      & p {
+        font-size: 36px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: $main-text;
+      }
+      & .title {
+        font-size: 24px;
+        line-height: 1.7;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        color: $main-text;
+      }
+    }
+  }
+}

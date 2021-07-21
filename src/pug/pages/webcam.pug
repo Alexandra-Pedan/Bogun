@@ -1,0 +1,74 @@
+
+extends ../layout/main
+block variable
+  -
+    //- var title_page = 'home'
+    //- var id_page = 'flat-page'
+    //- var class_page = 'home'
+    //- var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+    //- var slider = [{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті2',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті3',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- }]
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-web
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Веб-камера
+    .news-page
+      .news-container-title
+        h3.news-title Веб-камера
+    .webcam-container
+      .webcam-container-video
+        video( width="810"  height="450" controls="" playsinline="" autoplay="true" muted="muted" id="video" src="https://www.w3schools.com/html/mov_bbb.mp4" style="z-index: 2;").webcam-video
+        +svg('ornament-web1')
+        +svg('ornament-web2')
+
+      h5.webcam-container-title Назва веб камери
+  
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+
+
+
+
+

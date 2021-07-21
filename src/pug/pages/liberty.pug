@@ -1,0 +1,64 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Дозвілля
+    .news-page
+      .news-container-title
+        h3.news-title Дозвілля
+    .philosophy-container 
+        .architecture-container-text
+          h4.concept-functionality-advertising-title Шопінг ще ніколи не був таким
+            span.italic &nbsp; зручним,
+            span.color &nbsp; як для
+            span.italic.color &nbsp;  мешканців
+            span.color &nbsp; мультифункціонального комплексу BOGUN.
+
+        .liberty-section-container
+          .liberty-section-container-img-main
+            +svg('ornament-philosophy').liberty-ornament1    
+            +svg('ornament-concept2').liberty-ornament2
+            img(src="/src/assets/images/liberty1.jpg", alt="")
+          .liberty-section-container-img
+            +svg('ornament-architecture').liberty-ornament3
+            img(src="/src/assets/images/liberty2.jpg", alt="")
+        
+        .liberty-section-container
+          .liberty-section-container-text
+            p  Перші два поверхи комплексу - це зона магазинів та Бутікова зона плавно переходить у зону розваг.   
+            .liberty-btn
+              .concept-functionality-advertising-btn
+                .concept-btn 
+                  a(href="restaurants.html") Дивитися ресторани
+ 
+          .liberty-section-container-img-main
+            img(src="/src/assets/images/liberty3.jpg", alt="")
+
+
+        
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+

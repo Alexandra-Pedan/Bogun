@@ -1,0 +1,72 @@
+
+extends ../layout/main
+block variable
+ 
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Розстрочка
+    .news-page
+      .news-container-title
+        h3.news-title Розстрочка
+    .installments-container 
+      .installments-container-section 
+        .installments-container-section-item  Варіанти розтермінування
+        .installments-container-section-item
+          .installments-container-section-item-title Варіант №1	
+            ul 
+              li 100% оплата — додаткова знижка — 6%
+      .installments-container-section 
+        .installments-container-section-item 
+          .installments-container-section-item-title Варіант №2	
+            ul 
+              li 70% — перший внесок 
+              li 30% — рівними частинами щомісячно або щоквартально до визначеного терміну.
+              li Фіксовано у доларі (прив'язка до курса долара міжбанку/продаж*, але не нижче курсу на день підписання)
+            div *Підвищення ціни згідно з графіком росту цін
+        .installments-container-section-item
+          .installments-container-section-item-title Варіант №3
+            ul 
+              li 50% — перший внесок 
+              li 50% — рівними частинами щомісячно або щоквартально до визначеного терміну.
+              li Фіксовано у доларі (прив'язка до курса долара міжбанку/продаж*, але не нижче курсу на день підписання)
+            div *Підвищення ціни згідно з графіком росту цін
+      .installments-container-section 
+        .installments-container-section-item 
+          .installments-container-section-item-title Варіант №4	
+            ul 
+              li 30% — перший внесок 
+              li 70% — рівними частинами щомісячно або щоквартально до визначеного терміну.
+              li Фіксовано у доларі (прив'язка до курса долара міжбанку/продаж*, але не нижче курсу на день підписання)
+            div *Підвищення ціни згідно з графіком росту цін
+        .installments-container-section-item
+          .installments-container-section-item-title.dollar Поточний курс долара можна переглянути за посиланням
+          .dollar-exchange 
+            a(href="#") Переглянути курс долара
+              svg( width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg")
+                path( d="M0 4.94382V10L10 4.94382L0 0V4.94382Z")
+              
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+

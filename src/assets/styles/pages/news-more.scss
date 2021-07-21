@@ -1,0 +1,116 @@
+.news-more-page {
+  display: flex;
+  margin: 0 auto;
+  width: 1326px;
+  padding: 40px 50px 100px 170px;
+  &-date {
+    width: 15.5%;
+    padding-top: 70px;
+    text-align: center;
+    background-image: url('/src/assets/svg-sprite/date.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &-title {
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: $main-text;
+    }
+    &-month {
+      font-size: 12px;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      color: #66686f;
+      padding-bottom: 20px;
+    }
+    &-year {
+      font-size: 18px;
+      letter-spacing: -0.05em;
+      color: $main-text;
+    }
+  }
+  &-info {
+    width: 84.5%;
+    background: $white;
+    padding: 70px 100px;
+    &-title {
+      font-size: 30px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: $main-text;
+      padding-bottom: 30px;
+      width: 630px;
+    }
+    &-text {
+      font-size: 16px;
+      line-height: 1.7;
+      letter-spacing: -0.05em;
+      color: #818181;
+      width: 450px;
+      padding-bottom: 30px;
+      margin: 0 auto;
+    }
+    &-content {
+      margin: 30px auto 20px auto;
+      width: 450px;
+      &-title {
+        font-size: 18px;
+        line-height: 1.4;
+        letter-spacing: -0.05em;
+        color: $main-text;
+        padding-bottom: 30px;
+      }
+    }
+    &-back {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.date-line {
+  width: 20px;
+  border: 1px solid #d3d3d3;
+  margin: 0px auto 10px auto;
+}
+.news-more-link {
+  width: 210px;
+  height: 46px;
+  background: #f65275;
+  font-size: 10px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & a {
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+#icon-more path {
+  fill: $main-text;
+}
+.news-more-back-link {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    & div {
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      color: $main-text;
+    }
+  }
+}
+.back-link {
+  margin: 0 20px 0 0;
+  transform: rotate(180deg);
+}

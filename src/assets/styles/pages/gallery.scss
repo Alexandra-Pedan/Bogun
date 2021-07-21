@@ -1,0 +1,105 @@
+.content-developer.gallery-breadcrumbs {
+  position: absolute;
+  z-index: 2;
+}
+.gallery-title {
+  color: $white;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+}
+.gallery-swiper-bottom {
+  width: 335px;
+  // height: 80px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  & .swiper-container.swiperGallery {
+    padding: 0;
+  }
+  .swiper-wrapper {
+    height: 70px;
+  }
+  & img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // opacity: 0.8;
+  }
+
+  .swiper-slide {
+    width: 80px;
+    height: 40px;
+    // opacity: 0.4;
+  }
+  .swiper-slide::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    background: rgba(39, 39, 44, 0.5);
+  }
+  .swiper-slide-thumb-active {
+    position: relative;
+  }
+  .swiper-slide-thumb-active::after {
+    background: none;
+    content: '';
+    display: inline-block;
+    background-image: url('/src/assets/svg-sprite/swipe-logo.svg');
+    // width: 30px;
+    // height: 48px;
+    // transform: rotate(270deg);
+    background-repeat: no-repeat;
+    background-color: inherit;
+    position: absolute;
+    bottom: -42px;
+    left: calc(50% - 5px);
+
+    // transform: translateY(-20px);
+  }
+  .swiper-slide-thumb-active {
+    transform: translateY(-20px);
+  }
+}
+.gallery-swiper {
+  position: relative;
+  padding: 0;
+  & .swiper-container.swiperGallery2 {
+    padding: 0;
+  }
+  & img {
+    height: 100vh;
+  }
+  .swiper-slide-active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    background: linear-gradient(180deg, rgba(39, 39, 44, 0) 0%, #27272c 100%);
+  }
+}
+.btn-gallery {
+  position: absolute;
+  // transition: 0.3s ease-in-out;
+  &.left-side svg {
+    transform: rotate(-180deg);
+  }
+
+  svg {
+    fill: $pink;
+    width: 70px;
+    height: 70px;
+    transition: 0.3s ease-in-out;
+  }
+}

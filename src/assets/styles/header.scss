@@ -1,0 +1,90 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(54, 59, 77, 0.5) 0%, rgba(54, 59, 77, 0) 100%);
+  width: 100%;
+  pointer-events: none;
+  z-index: 100;
+  &-content {
+    width: 1326px;
+    padding: 0 50px;
+    margin: 0 auto;
+    height: var(--header-h);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    .logo-link {
+      // margin-left: 45px;
+      pointer-events: painted;
+    }
+  }
+  &-left {
+    display: flex;
+    align-items: center;
+    width: 369px;
+    &-link {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      color: $white;
+      pointer-events: painted;
+      & .header-icon {
+        margin-right: 20px;
+      }
+    }
+    &-flat {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: $white;
+      pointer-events: painted;
+    }
+  }
+  &-right {
+    display: flex;
+    width: 369px;
+    justify-content: flex-end;
+    &-call {
+      border: none;
+      background: inherit;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: $white;
+      text-decoration: underline;
+      margin-right: 50px;
+      pointer-events: painted;
+    }
+  }
+  &-menu {
+    display: flex;
+    align-items: center;
+    pointer-events: painted;
+
+    & span {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: $white;
+      margin-right: 20px;
+    }
+  }
+}
+.header-icon {
+  width: 46px;
+  height: 46px;
+  fill: $pink;
+  cursor: pointer;
+}
+#icon-phone path {
+  stroke: $white;
+}
+#icon-menu path {
+  fill: $white;
+}
+
+.icon--Logo {
+  width: 230px;
+  height: 30px;
+}

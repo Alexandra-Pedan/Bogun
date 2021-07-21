@@ -1,0 +1,89 @@
+
+extends ../layout/main
+block variable
+  -
+    //- var title_page = 'home'
+    //- var id_page = 'flat-page'
+    //- var class_page = 'home'
+    //- var breadcrumbsBtn = 'filter'
+    //- var breadcrumbsSubitem = [
+    //-   {
+    //-     label: 'About',
+    //-     link: pagesLink[0].about
+    //-   }
+    //- ]
+    //- var slider = [{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті2',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- },{
+    //-   img: 'slider/1.jpg',
+    //-   title: 'Власна резиденція у місті3',
+    //-   url: 'about',
+    //-   linkText: 'Обрати квартиру',
+    //- }]
+
+block meta
+  title= 'Главная'
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+  script(defer src='./assets/scripts/index.js')
+  script(defer src='./assets/scripts/libs.js')
+  script(defer src='./assets/scripts/header.js')
+  script(defer src='./assets/scripts/home.js')
+  script(defer src='./assets/scripts/script.js')
+block content 
+  .content-developer
+    ul.breadcrumbs
+      li.breadcrumbs-item
+        a(href="index.html").breadcrumbs-link головна
+      li.breadcrumbs-item
+        a(href="menu-contacts.html").breadcrumbs-link-active Концепцiя
+    .news-page
+      .news-container-title
+        h3.news-title Концепцiя
+    .concept-functionality 
+      .concept-functionality-description
+        h3.concept-functionality-description-title Попит на елітне житло та зручне ведення бізнесу породжує якісно інший вид нерухомості. 
+        p.concept-functionality-description-text Ідея створення ультифункціонального комплексу BOGUN народилася з бажання дати вінничанам та гостям міста можливість розвиватися, працювати та насолоджуватися комфортним життям з високим рівнем сервісу.
+      .concept-functionality-img
+        +svg('ornament-concept1').concept-ornament
+        img(src="/src/assets/images/concept1.jpg", alt="")
+    .concept-functionality.reverse 
+      .concept-functionality-description.description-reverse
+        h3.concept-functionality-description-title Ми пропонуємо обрати апартаменти з видом на річку або забронювати офіс у найвищій з башт.
+        p.concept-functionality-description-text.description-reverse-text Це можливість оточити себе візуально досконалими рішеннями в побуті та на роботі. З головою поринути в атмосферу, що підштовхує до успіху в усіх починаннях. 
+      .concept-functionality-img
+        +svg('ornament-concept2').concept-ornament
+        img(src="/src/assets/images/concept2.jpg", alt="")
+
+    .concept-functionality-advertising 
+      h4.concept-functionality-advertising-title Для бізнесу тут одна із найбільш
+        span.italic 	&nbsp; топових 
+        span локацій міста - 
+        span.color два поверхи торгових площ, місця під ресторани та розважальні заклади уже чекають на перших власників
+      .concept-functionality-advertising-btn
+        .concept-btn 
+          a(href="#") Дивитися комерційну нерухомість
+        .concept-btn
+          a(href="philosophy.html") Дивитися філософію
+
+
+
+block header
+  include ../includes/header.pug
+
+block footer
+  include ../includes/footer.pug
+
+
