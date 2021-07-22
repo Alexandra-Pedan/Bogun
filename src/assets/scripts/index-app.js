@@ -31,13 +31,14 @@ global.locoScroll = locoScroll;
  * form handlers start
  */
 const forms = [
-  '[data-home-contact]',
-  '[data-form-popup]',
-  '[data-form-footer]',
-  '[data-form-popup-consultation]',
+  // '[data-home-contact]',
+  // '[data-form-popup]',
+  // '[data-form-footer]',
+  // '[data-form-popup-consultation]',
 ];
 
-const formsTel = ['[data-home-contact]'];
+// const formsTel = ['[data-home-contact]', '[data-form-homepage]'];
+const formsTel = ['[data-form-homepage]'];
 
 formsTel.forEach(form => {
   const $form = document.querySelector(form);
@@ -53,6 +54,18 @@ formsTel.forEach(form => {
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
+          name: {
+            inputWrapper: new SexyInput({
+              animation: 'none',
+              $field: $form.querySelector('[data-field-name]'),
+              typeInput: 'text',
+            }),
+            rule: yup.string().required(i18next.t('required')),
+
+            defaultMessage: i18next.t('phone'),
+            valid: false,
+            error: [],
+          },
           phone: {
             inputWrapper: new SexyInput({
               animation: 'none',
@@ -81,7 +94,7 @@ formsTel.forEach(form => {
     );
   }
 });
-
+const formHomePage = ['[data-form-homepage]'];
 const formsWithRedirect = ['[data-popup-form]'];
 
 formsWithRedirect.forEach(form => {
