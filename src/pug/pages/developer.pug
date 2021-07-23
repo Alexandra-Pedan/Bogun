@@ -1,34 +1,6 @@
 
 extends ../layout/main
 block variable
-  -
-    //- var title_page = 'home'
-    //- var id_page = 'flat-page'
-    //- var class_page = 'home'
-    //- var breadcrumbsBtn = 'filter'
-    //- var breadcrumbsSubitem = [
-    //-   {
-    //-     label: 'About',
-    //-     link: pagesLink[0].about
-    //-   }
-    //- ]
-    //- var slider = [{
-    //-   img: 'slider/1.jpg',
-    //-   title: 'Власна резиденція у місті',
-    //-   url: 'about',
-    //-   linkText: 'Обрати квартиру',
-    //- },{
-    //-   img: 'slider/1.jpg',
-    //-   title: 'Власна резиденція у місті2',
-    //-   url: 'about',
-    //-   linkText: 'Обрати квартиру',
-    //- },{
-    //-   img: 'slider/1.jpg',
-    //-   title: 'Власна резиденція у місті3',
-    //-   url: 'about',
-    //-   linkText: 'Обрати квартиру',
-    //- }]
-
 block meta
   title= 'Главная'
   meta(name='description', content='')
@@ -37,10 +9,10 @@ block head
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/index.bundle.js')
-  script(defer src='./assets/scripts/index.js')
+  //- script(defer src='./assets/scripts/index.js')
   script(defer src='./assets/scripts/libs.js')
-  script(defer src='./assets/scripts/header.js')
-  script(defer src='./assets/scripts/home.js')
+  //- script(defer src='./assets/scripts/header.js')
+  //- script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/script.js')
 block content 
   .content-developer

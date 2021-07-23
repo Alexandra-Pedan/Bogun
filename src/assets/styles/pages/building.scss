@@ -7,6 +7,7 @@
   }
   &-item {
     position: relative;
+    z-index: 10;
     // width: 28%;
     width: 300px;
     height: auto;
@@ -25,30 +26,35 @@
     height: auto;
     align-items: center;
   }
-  // &-img {
-  //   & .img-active {
-  //     position: absolute;
-  //     z-index: 3;
-  //   }
-  //   & .img-2 {
-  //     position: absolute;
-  //     z-index: 2;
-  //   }
-  //   & .img-3 {
-  //     position: absolute;
-  //     z-index: 1;
-  //   }
-  // }
 }
+
 .building-progress-img.img-active {
   position: absolute;
   z-index: 3;
-  background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%),
-    url('/src/assets/images/building4.jpg');
+  // background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%);
   width: 300px;
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+}
+.img-active-container {
+  width: 100%;
+  height: 100%;
+  & img {
+    height: 100%;
+  }
+}
+.img-active-container::after {
+  background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%);
+  display: block;
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
 }
 .building-progress-img.img-2 {
   position: absolute;
@@ -112,11 +118,6 @@
 }
 
 .building-container {
-  // display: flex;
-  // flex-wrap: wrap;
-  // flex-direction: row;
-  // padding: 45px 170px 0 300px;
-
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -129,17 +130,20 @@
   }
   .building-progress-item {
     position: relative;
+
+    z-index: 10;
     width: auto;
     padding-bottom: 100%;
     transition: transform 0.25s ease-out;
+    // overflow: hidden;
     &:hover {
-      .img-active {
-        // transform: scale(1.08);
-        transform: scale(1.05) translateY(0px);
+      .img-active-container {
+        overflow: hidden;
+        transform: scale(1.08);
       }
       .img-2 {
-        right: -20px;
-        top: 20px;
+        right: -15px;
+        top: 15px;
       }
       .img-3 {
         right: -30px;
@@ -155,8 +159,21 @@
 .building-progress-item-wrap:nth-child(2n + 1) {
   margin-right: 100px;
 }
-.building-btn .concept-functionality-advertising-btn {
+.building-btn-container {
   padding: 10px 0 100px 0;
+}
+.building-btn {
+  color: $white;
+  border: none;
+  width: 240px;
+  height: 46px;
+  background: $pink;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 .webcam-img {
   fill: $pink;
@@ -176,21 +193,50 @@
 }
 
 .building-popup {
-  height: 100vh;
-  background: #27272c;
+  // height: 100vh;
+  // background: #27272c;
 
+  // &-container {
+  //   width: 1326px;
+  //   position: relative;
+  //   margin: 0 auto;
+  // }
+  // width: 1326px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  pointer-events: none;
+  background: #27272c;
+  &.build-popup-active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: painted;
+  }
   &-container {
     width: 1326px;
     position: relative;
     margin: 0 auto;
   }
-  // width: 1326px;
 }
 
 .gallery-swiper.building-swiper {
   height: 100vh;
   max-width: 890px;
   margin: 0 auto;
+  & img {
+    height: 100vh;
+    max-width: 890px;
+    object-fit: contain;
+  }
+}
+.swiper-container.building-swiper-container {
+  padding: 0;
 }
 .building-title {
   font-size: 36px;
@@ -235,7 +281,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 20%;
+  top: 20vh;
   right: 72px;
   z-index: 2;
   height: 70vh;

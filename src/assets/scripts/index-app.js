@@ -295,3 +295,8 @@ window.addEventListener('load', () => {
 //   initPopup();
 //   window.locoScroll.update();
 // });
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    window.locoScroll.update();
+  }, 1500);
+});

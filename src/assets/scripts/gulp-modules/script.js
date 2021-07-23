@@ -28,10 +28,12 @@ menuClose.addEventListener('click', () => {
 });
 
 const buttonUp = document.querySelector('.js-btn-up');
-
-buttonUp.addEventListener('click', () => {
-  window.locoScroll.scrollTo(0);
-});
+console.log(buttonUp);
+if (buttonUp) {
+  buttonUp.addEventListener('click', () => {
+    window.locoScroll.scrollTo(0);
+  });
+}
 
 const scrollButtons = document.querySelectorAll('[data-scroll-to]');
 scrollButtons.forEach(container => {
@@ -44,9 +46,13 @@ scrollButtons.forEach(container => {
 });
 
 const btnCall = document.querySelector('.js-call');
+const btnCallMenu = document.querySelector('.js-call-menu');
 const btnClose = document.querySelector('.js-close');
 const formCall = document.querySelector('.sideform');
 btnCall.addEventListener('click', () => {
+  formCall.classList.toggle('sideform-active');
+});
+btnCallMenu.addEventListener('click', () => {
   formCall.classList.toggle('sideform-active');
 });
 btnClose.addEventListener('click', () => {

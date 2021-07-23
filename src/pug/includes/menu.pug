@@ -1,3 +1,103 @@
+.content-menu.js-menu-container
+  .menu-header
+    +svg('Logo-menu')
+    .menu-close.js-menu-close
+      span закрити
+      +svg('close').header-icon
+  .menu-content
+      .menu 
+        .menu-list
+          h3.menu-title Меню
+          ul 
+            li.menu-item 
+              a(href="index.html").menu-link Головна
+            li.menu-item 
+              a(href="gallery.html").menu-link Галерея
+            li.menu-item 
+              a(href="#").menu-link Обрати квартиру
+            li.menu-item 
+              a(href="building.html").menu-link Хід Будівництва
+            li.menu-item 
+              a(href="news.html").menu-link Новини
+            li.menu-item 
+              a(href="menu-contacts.html").menu-link Контакти
+        .menu-contact 
+          a(href='tel:+380980805000').header-left-link 
+            +svg('phone').header-icon
+            div +38 (098) 080 5000
+          a(href='#').header-left-flat.js-call-menu  Замовити дзвінок
+      .menu-description 
+        .menu-description-project 
+          h3.menu-title Про проєкт
+            ul.menu-description-project-list 
+              li.menu-description-project-link 
+                a(href="#") Характеристики
+              li.menu-description-project-link 
+                a(href="document.html") Документи
+              li.menu-description-project-link 
+                a(href="panorama.html") Панорама
+              li.menu-description-project-link 
+                a(href="webcam.html") Веб-камера
+              li.menu-description-project-link 
+                a(href="infrastructure.html") Iнфраструктура
+              li.menu-description-project-link 
+                a(href="developer.html") Забудовник
+              li.menu-description-project-link 
+                a(href="parking.html") Паркінг
+        .menu-description-project 
+          h3.menu-title Особливості
+            ul.menu-description-project-list 
+              li.menu-description-project-link 
+                a(href="concept.html") Концепцiя
+              li.menu-description-project-link 
+                a(href="philosophy.html") Фiлософiя
+              li.menu-description-project-link 
+                a(href="architecture.html") Архiтектура
+              li.menu-description-project-link 
+                a(href="location.html") Локацiя
+              li.menu-description-project-link 
+                a(href="terraces.html") Тераси
+              li.menu-description-project-link 
+                a(href="parking.html") Паркiнг
+              li.menu-description-project-link 
+                a(href="hall.html") Хол
+              li.menu-description-project-link 
+                a(href="liberty.html") Дозвiлля
+              li.menu-description-project-link 
+                a(href="restaurants.html") Ресторани
+              li.menu-description-project-link 
+                a(href="sport.html") Для спорту
+              li.menu-description-project-link 
+                a(href="children.html") Для дiтей                               
+             
+        .menu-description-project 
+          h3.menu-title Квартири
+            ul.menu-description-project-list 
+              li.menu-description-project-link 
+                a(href="#") Вибiр на 3D Моделi
+              li.menu-description-project-link 
+                a(href="#") Фiльтрацiя по параметрам
+              li.menu-description-project-link 
+                a(href="#") 1-Кімнатні
+              li.menu-description-project-link 
+                a(href="#") 2-Кімнатні
+              li.menu-description-project-link 
+                a(href="#") 3-Кімнатні
+              li.menu-description-project-link 
+                a(href="#") 4-Кімнатні
+              li.menu-description-project-link 
+                a(href="#") Комерційна нерухомість
+        .menu-description-project 
+          h3.menu-title Умови
+            ul.menu-description-project-list 
+              li.menu-description-project-link 
+                a(href="payment.html") Оплата
+              li.menu-description-project-link 
+                a(href="installments.html") Розстрочка
+              li.menu-description-project-link 
+                a(href="#") Кредит
+
+
 //- -
 //-   var menu1 = [
 //-     ['Головна', 'index.html'],
@@ -78,102 +178,3 @@
 //-       a(href="https://www.facebook.com/" target="_blank") facebook
 //-       a(href="https://www.instagram.com/" target="_blank") instagram
 //-       a(href="https://www.youtube.com/" target="_blank") youtube
-
-.content-menu.js-menu-container
-  .menu-header
-    +svg('Logo-menu')
-    .menu-close.js-menu-close
-      span закрити
-      +svg('close').header-icon
-  .menu-content
-      .menu 
-        .menu-list
-          h3.menu-title Меню
-          ul 
-            li.menu-item 
-              a(href="index.html").menu-link Головна
-            li.menu-item 
-              a(href="gallery.html").menu-link Галерея
-            li.menu-item 
-              a(href="#").menu-link Обрати квартиру
-            li.menu-item 
-              a(href="building.html").menu-link Хід Будівництва
-            li.menu-item 
-              a(href="news.html").menu-link Новини
-            li.menu-item 
-              a(href="menu-contacts.html").menu-link Контакти
-        .menu-contact 
-          a(href='tel:+380980805000').header-left-link 
-            +svg('phone').header-icon
-            div +38 (098) 080 5000
-          a(href='#').header-left-flat  Замовити дзвінок
-      .menu-description 
-        .menu-description-project 
-          h3.menu-title Про проєкт
-            ul.menu-description-project-list 
-              li.menu-description-project-link 
-                a(href="#") Характеристики
-              li.menu-description-project-link 
-                a(href="document.html") Документи
-              li.menu-description-project-link 
-                a(href="panorama.html") Панорама
-              li.menu-description-project-link 
-                a(href="webcam.html") Веб-камера
-              li.menu-description-project-link 
-                a(href="infrastructure.html") Iнфраструктура
-              li.menu-description-project-link 
-                a(href="developer.html") Забудовник
-              li.menu-description-project-link 
-                a(href="parking.html") Паркінг
-        .menu-description-project 
-          h3.menu-title Особливості
-            ul.menu-description-project-list 
-              li.menu-description-project-link 
-                a(href="concept.html") Концепцiя
-              li.menu-description-project-link 
-                a(href="philosophy.html") Фiлософiя
-              li.menu-description-project-link 
-                a(href="architecture.html") Архiтектура
-              li.menu-description-project-link 
-                a(href="location.html") Локацiя
-              li.menu-description-project-link 
-                a(href="terraces.html") Тераси
-              li.menu-description-project-link 
-                a(href="parking.html") Паркiнг
-              li.menu-description-project-link 
-                a(href="hall.html") Хол
-              li.menu-description-project-link 
-                a(href="liberty.html") Дозвiлля
-              li.menu-description-project-link 
-                a(href="restaurants.html") Ресторани
-              li.menu-description-project-link 
-                a(href="sport.html") Для спорту
-              li.menu-description-project-link 
-                a(href="children.html") Для дiтей                               
-             
-        .menu-description-project 
-          h3.menu-title Квартири
-            ul.menu-description-project-list 
-              li.menu-description-project-link 
-                a(href="#") Вибiр на 3D Моделi
-              li.menu-description-project-link 
-                a(href="#") Фiльтрацiя по параметрам
-              li.menu-description-project-link 
-                a(href="#") 1-Кімнатні
-              li.menu-description-project-link 
-                a(href="#") 2-Кімнатні
-              li.menu-description-project-link 
-                a(href="#") 3-Кімнатні
-              li.menu-description-project-link 
-                a(href="#") 4-Кімнатні
-              li.menu-description-project-link 
-                a(href="#") Комерційна нерухомість
-        .menu-description-project 
-          h3.menu-title Умови
-            ul.menu-description-project-list 
-              li.menu-description-project-link 
-                a(href="payment.html") Оплата
-              li.menu-description-project-link 
-                a(href="installments.html") Розстрочка
-              li.menu-description-project-link 
-                a(href="#") Кредит

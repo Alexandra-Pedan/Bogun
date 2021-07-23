@@ -1,3 +1,14 @@
+.document-page {
+  margin: 0 auto;
+  width: 1326px;
+  padding: 30px 50px 0 106px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  align-items: flex-start;
+}
+
 .news-container-text {
   display: flex;
   & img {

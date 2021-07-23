@@ -2,7 +2,8 @@
   width: 50vw;
   height: 100vh;
   background: linear-gradient(135.43deg, #efefef 0%, #e9e2de 99.99%, #e9e2de 100%);
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   z-index: 200;
   top: 0;
   right: -50vw;
@@ -1038,7 +1039,7 @@ form {
   }
   .form-field:not(#t) .form-field-message-name {
     opacity: 1;
-    left: 25px;
+    // left: 25px;
     // top: 45%;
     top: 1.2em;
     // font-size: 18px;
@@ -1055,7 +1056,7 @@ form {
   .form-field:not(#t):focus-within .form-field-message-name,
   .form-field:not(#t)[data-status='field--success'] .form-field-message-name,
   .form-field:not(#t) textarea:not(:placeholder-shown) ~ .form-field-message-text {
-    left: 24px;
+    left: 0;
   }
 }
 
@@ -1168,7 +1169,7 @@ form {
   .form-field:not(#t) .form-field-message-name {
     opacity: 1;
     // transform: translateY(calc(0% - 5px));
-    left: 25px;
+    // left: 25px;
     top: 29px;
     font-size: 18px;
     transition: 0.3s ease-in-out;
@@ -1180,10 +1181,10 @@ form {
     top: 0;
     opacity: 1;
     transform: translateY(calc(0% - 5px));
-    left: 24px;
-    background: #fcfcfc;
-    padding: 0 7px;
-    color: #878787;
+    // left: 24px;
+    // background: #fcfcfc;
+    // padding: 0 7px;
+    // color: #878787;
     font-size: 14px;
   }
 
