@@ -114,6 +114,35 @@
     margin-left: 5px;
   }
 }
+.form-field:not(#t) .form-field__input.footer-field-input {
+  font-weight: 300;
+  font-size: 48px;
+  color: $main-text;
+  border: none;
+  position: relative;
+  padding-top: 18px;
+}
+
+.form-field:not(#t) .form-field-message.form-field-message-phone.footer-placeholder {
+  font-weight: 300;
+  font-size: 48px;
+  color: #b2b2b2;
+  position: absolute;
+  top: 27px;
+  left: 120px;
+  opacity: 1;
+}
+.form-field:not(#t) .form-field__input.footer-field-input {
+  width: 420px;
+}
+
+.form-field:not(#t)
+  .form-field__input.footer-field-input:focus
+  + .form-field-message
+  .form-field-message-phone.footer-placeholder {
+  opacity: 0;
+}
+
 // .form-field:not(#t) {
 //   position: relative;
 //   background: none;

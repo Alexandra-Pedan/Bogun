@@ -46,15 +46,17 @@ scrollButtons.forEach(container => {
 });
 
 const btnCall = document.querySelector('.js-call');
-const btnCallMenu = document.querySelector('.js-call-menu');
+const btnCallMenu = document.querySelectorAll('.js-call-menu');
 const btnClose = document.querySelector('.js-close');
 const formCall = document.querySelector('.sideform');
 btnCall.addEventListener('click', () => {
   formCall.classList.toggle('sideform-active');
 });
-btnCallMenu.addEventListener('click', () => {
-  formCall.classList.toggle('sideform-active');
-});
+btnCallMenu.forEach(el =>
+  el.addEventListener('click', () => {
+    formCall.classList.toggle('sideform-active');
+  }),
+);
 btnClose.addEventListener('click', () => {
   formCall.classList.remove('sideform-active');
 });

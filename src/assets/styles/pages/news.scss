@@ -1,9 +1,18 @@
 .content-news {
   background: #f6f6f6;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  height: auto;
 }
 .news-container {
   width: 64%;
   padding-top: 40px;
+  overflow-y: auto;
+  height: 700px;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   &-title {
     width: 36%;
 
@@ -22,6 +31,7 @@
     font-size: 18px;
     line-height: 1.4;
     color: $main-text;
+    transition: all 0.3s ease;
   }
   &-date {
     width: 25.7%;
@@ -94,8 +104,20 @@
 
 .news-ornament {
   position: absolute;
-  top: calc(100vh - 368px);
+  // top: calc(100vh - 368px);
+  bottom: 0;
   left: 0px;
   width: 188px;
   height: 188px;
+}
+.news-container-info {
+  text-decoration: none;
+}
+.news-container-info:hover {
+  .news-container-text {
+    color: $pink;
+  }
+  .document-download {
+    background-color: $pink;
+  }
 }

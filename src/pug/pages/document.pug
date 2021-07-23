@@ -15,57 +15,71 @@ block scripts
   //- script(defer src='./assets/scripts/home.js')
   script(defer src='./assets/scripts/script.js')
 block content 
-  .content-news
+  .content-news.content-document
     ul.breadcrumbs
       li.breadcrumbs-item
         a(href="index.html").breadcrumbs-link головна
       li.breadcrumbs-item
-        a(href="menu-contacts.html").breadcrumbs-link-active Документи
+        a(href="document.html").breadcrumbs-link-active Документи
     .document-page
       .news-container-title
         h3.news-title Документи
-      .news-container
-        .news-container-info 
+      .news-container.document-container(data-disable-page-scroll)
+        a(href="#").news-container-info.document-link 
           .news-container-text 
             img(src="/src/assets/images/doc1.jpg", alt="")
             p Лiцензiя Г. П. Командор ( повiдомлення, перелiк робiт, Витяг iз сайту ДАБI )
           .news-container-date 
             +svg('clock')
             p 10.12.2020
-          .news-container-link 
-            a(href="news-more.html") Завантажити
+          .document-download Завантажити
         hr.news-container-line
-        .news-container-info 
+        a(href="#").news-container-info.document-link 
           .news-container-text 
             img(src="/src/assets/images/doc2.jpg", alt="")
             p Экспертиза проекта
           .news-container-date 
             +svg('clock')
             p 10.12.2020
-          .news-container-link 
-            a(href="#") Завантажити
+          .document-download Завантажити
         hr.news-container-line
-        .news-container-info 
+        a(href="#").news-container-info.document-link 
           .news-container-text 
             img(src="/src/assets/images/doc3.jpg", alt="")
             p Договір оренди земельної ділянки від 12.06.2020р
           .news-container-date 
             +svg('clock')
             p 10.12.2020
-          .news-container-link 
-            a(href="#") Завантажити
+          .document-download Завантажити
         hr.news-container-line
-        .news-container-info 
+        a(href="#").news-container-info.document-link 
           .news-container-text 
             img(src="/src/assets/images/doc4.jpg", alt="")
             p 2020-11-26 ГП Цедика 14А Стадия П - КОРРЕКТ-2 ГП
           .news-container-date 
             +svg('clock')
             p 10.12.2020
-          .news-container-link 
-            a(href="#") Завантажити
+          .document-download Завантажити
         hr.news-container-line
-
+        a(href="#").news-container-info.document-link 
+          .news-container-text 
+            img(src="/src/assets/images/doc2.jpg", alt="")
+            p Экспертиза проекта
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .document-download Завантажити
+        hr.news-container-line
+        a(href="#").news-container-info.document-link 
+          .news-container-text 
+            img(src="/src/assets/images/doc3.jpg", alt="")
+            p Договір оренди земельної ділянки від 12.06.2020р
+          .news-container-date 
+            +svg('clock')
+            p 10.12.2020
+          .document-download Завантажити
+        hr.news-container-line
+      
       +svg('ornament-doc').news-ornament
 
 block header
