@@ -139,6 +139,19 @@ footerForm.forEach(form => {
   }
 });
 
+/**footer form fake placeholder */
+const footerPlaceholder = document.querySelector('.footer-placeholder');
+const footerPlaceholderInput = footerPlaceholder.previousElementSibling;
+console.log(footerPlaceholderInput);
+
+footerPlaceholderInput.addEventListener('input', () => {
+  console.log('LENGTH', footerPlaceholderInput.value.length);
+  const lengthMinusMask = footerPlaceholderInput.value.length - 5;
+  footerPlaceholder.style.clipPath = `polygon(${lengthMinusMask *
+    10}% 0, 100% 0, 100% 100%, ${lengthMinusMask * 10}% 100%)`;
+});
+/**footer form fake placeholder END */
+
 const formsWithRedirect = ['[data-popup-form]'];
 
 formsWithRedirect.forEach(form => {

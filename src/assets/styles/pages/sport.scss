@@ -2,12 +2,22 @@
   display: flex;
   justify-content: space-between;
   padding: 100px 0;
+  @include to(850px) {
+    padding: 50px 0 100px 0;
+  }
   &-text {
     width: 41%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    padding-right: 195px;
+    @include to(1360px) {
+      padding-right: 0;
+    }
+    @include to(850px) {
+      width: 45%;
+    }
     & p {
       font-size: 24px;
       line-height: 1.7;
@@ -22,4 +32,16 @@
 }
 .sport-section-container:last-child {
   padding-bottom: 0px;
+}
+
+.sport-container-text {
+  padding: 75px 0 50px 0;
+  @include to(1360px) {
+    padding: 0;
+  }
+}
+.architecture-container-text.sport-container-title {
+  @include to(850px) {
+    padding-bottom: 50px;
+  }
 }

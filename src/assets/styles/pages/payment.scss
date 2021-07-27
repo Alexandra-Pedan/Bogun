@@ -1,31 +1,56 @@
 .payment-container {
-  padding: 0 100px;
+  padding: 0 170px;
+  @include to(1360px) {
+    padding: 0 100px;
+  }
+  @include to(850px) {
+    padding: 0;
+  }
   &-description {
-    padding: 100px 100px 70px 100px;
+    padding: 100px 150px 70px 150px;
     display: flex;
     justify-content: space-between;
     // padding-top: 100px;
     border-bottom: 2px solid #f7f7f7;
+    @include to(1360px) {
+      padding: 100px 100px 70px 100px;
+    }
+    @include to(850px) {
+      padding: 50px 0;
+    }
     &-text {
       width: 44%;
       & p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.7;
         letter-spacing: -0.05em;
         color: #818181;
+        @include to(1360px) {
+          font-size: 16px;
+        }
       }
       & .text-note {
         padding-top: 20px;
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.7;
         letter-spacing: -0.05em;
         color: #818181;
+        @include to(1360px) {
+          font-size: 12px;
+        }
       }
     }
     &-dollar {
-      width: 44%;
+      // width: 44%;
       // padding: 0 50px 0 60px;
-      padding-right: 60px;
+      width: 42%;
+      padding-right: 120px;
+      @include to(1360px) {
+        padding-right: 60px;
+      }
+      @include to(850px) {
+        padding-right: 0;
+      }
 
       & p {
         font-size: 24px;
@@ -51,17 +76,26 @@
     }
   }
   &-price {
-    padding: 70px 100px 0 100px;
+    padding: 70px 150px 0 150px;
     display: flex;
     justify-content: space-between;
+    @include to(1360px) {
+      padding: 70px 100px 0 100px;
+    }
+    @include to(850px) {
+      padding: 50px 0 0 0;
+    }
     &-section {
-      width: 44%;
+      width: 42%;
       & p {
         font-size: 36px;
         line-height: 1.7;
         letter-spacing: -0.05em;
         text-transform: uppercase;
         color: $main-text;
+        @include to(850px) {
+          font-size: 24px;
+        }
       }
       & .title {
         font-size: 24px;
@@ -69,7 +103,14 @@
         letter-spacing: -0.05em;
         text-transform: uppercase;
         color: $main-text;
+        @include to(850px) {
+          font-size: 20px;
+        }
       }
     }
   }
+}
+
+.installments-italic {
+  font-style: italic;
 }

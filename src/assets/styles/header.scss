@@ -7,14 +7,30 @@
   pointer-events: none;
   z-index: 100;
   &-content {
-    width: 1326px;
-    padding: 0 50px;
+    // width: 1920px;
+    max-width: 1920px;
+    padding: 0 72px;
+    height: 140px;
     margin: 0 auto;
-    height: var(--header-h);
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: space-between;
+    @include to(1360px) {
+      // width: 1326px;
+      max-width: 1326px;
+      padding: 0 50px;
+      height: var(--header-h);
+    }
+    @include to(850px) {
+      // width: 1326px;
+      max-width: 768px;
+      padding: 0 35px;
+      height: 130px;
+      .desktop {
+        display: none;
+      }
+    }
     .logo-link {
       // margin-left: 45px;
       pointer-events: painted;
@@ -23,39 +39,64 @@
   &-left {
     display: flex;
     align-items: center;
-    width: 369px;
+    width: 443px;
+    @include to(1360px) {
+      width: 369px;
+    }
     &-link {
       display: flex;
       align-items: center;
       margin-right: 50px;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 20px;
+      letter-spacing: -0.05em;
       color: $white;
       pointer-events: painted;
+      @include to(1360px) {
+        letter-spacing: -0.05em;
+        font-size: 18px;
+      }
+
       & .header-icon {
-        margin-right: 20px;
+        margin-right: 50px;
+        @include to(1360px) {
+          margin-right: 20px;
+        }
       }
     }
     &-flat {
-      font-size: 10px;
+      font-size: 14px;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
       pointer-events: painted;
+      @include to(1360px) {
+        font-size: 10px;
+        letter-spacing: -0.05em;
+      }
     }
   }
   &-right {
     display: flex;
-    width: 369px;
+    width: 443px;
+    @include to(1360px) {
+      width: 369px;
+    }
     justify-content: flex-end;
     &-call {
       border: none;
       background: inherit;
-      font-size: 10px;
+      font-size: 14px;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
       text-decoration: underline;
       margin-right: 50px;
       pointer-events: painted;
+      @include to(1360px) {
+        font-size: 10px;
+        letter-spacing: -0.05em;
+      }
     }
   }
   &-menu {
@@ -64,18 +105,40 @@
     pointer-events: painted;
 
     & span {
-      font-size: 10px;
+      font-size: 14px;
+      letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
       margin-right: 20px;
+      @include to(1360px) {
+        font-size: 10px;
+        letter-spacing: -0.05em;
+      }
     }
   }
 }
+.header-container-dark {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+.header-dark {
+  color: $main-text;
+}
+.header-menu.header-dark span {
+  color: $main-text;
+}
 .header-icon {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   fill: $pink;
   cursor: pointer;
+  @include to(1360px) {
+    width: 46px;
+    height: 46px;
+  }
+  @include to(850px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 #icon-phone path {
   stroke: $white;
@@ -85,6 +148,20 @@
 }
 
 .icon--Logo {
-  width: 230px;
-  height: 30px;
+  width: 285px;
+  height: 38px;
+  &-white {
+    fill: $white;
+  }
+  & .dark {
+    fill: $main-text;
+  }
+  @include to(1360px) {
+    width: 230px;
+    height: 30px;
+  }
+  @include to(850px) {
+    width: 205px;
+    height: 27px;
+  }
 }

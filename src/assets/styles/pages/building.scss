@@ -32,11 +32,15 @@
   position: absolute;
   z-index: 3;
   // background: linear-gradient(180deg, rgba(59, 65, 78, 0.9) 0%, rgba(59, 65, 78, 0) 100%);
-  width: 300px;
-  height: 300px;
+  width: 434px;
+  height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  @include to(1360px) {
+    width: 300px;
+    height: 300px;
+  }
 }
 .img-active-container {
   width: 100%;
@@ -59,62 +63,90 @@
 .building-progress-img.img-2 {
   position: absolute;
   z-index: 2;
-  right: -10px;
-  top: 10px;
+  right: -15px;
+  top: 15px;
   // background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)),
   //   url('/src/assets/images/building1.jpg');
-  width: 300px;
-  height: 300px;
+  width: 434px;
+  height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
+  @include to(1360px) {
+    width: 300px;
+    height: 300px;
+    right: -10px;
+    top: 10px;
+  }
 }
 .building-progress-img.img-3 {
   position: absolute;
   z-index: 1;
-  right: -20px;
-  top: 20px;
+  right: -30px;
+  top: 30px;
   // background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)),
   //   url('/src/assets/images/building2.jpg');
-  width: 300px;
-  height: 300px;
+  width: 434px;
+  height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
+  @include to(1360px) {
+    width: 300px;
+    height: 300px;
+    right: -20px;
+    top: 20px;
+  }
 }
 .building-progress-item-text {
   position: absolute;
   z-index: 10;
-  width: 300px;
-  height: 300px;
+  width: 434px;
+  height: 434px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @include to(1360px) {
+    width: 300px;
+    height: 300px;
+  }
 
   & .date {
     font-weight: 300;
-    font-size: 96px;
+    font-size: 130px;
     line-height: 0.8;
     letter-spacing: -0.02em;
     color: #ffffff;
     padding-top: 50px;
+    @include to(1360px) {
+      font-size: 96px;
+    }
   }
   & .month {
-    font-size: 18px;
+    font-size: 30px;
     text-transform: uppercase;
     color: #ffffff;
+    @include to(1360px) {
+      font-size: 18px;
+    }
   }
   & .year {
-    font-size: 12px;
+    font-size: 24px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: #ffffff;
     padding-top: 50px;
+    @include to(1360px) {
+      font-size: 12px;
+    }
   }
 }
 .building-progress-line {
   width: 20px;
   border: 0.5px solid #ffffff;
-  margin: 15px 0;
+  margin: 25px 0;
+  @include to(1360px) {
+    margin: 15px 0;
+  }
 }
 
 .building-container {
@@ -123,14 +155,20 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 700px;
-  padding-top: 45px;
+  max-width: 1042px;
+  padding-top: 70px;
+  @include to(1360px) {
+    max-width: 700px;
+    padding-top: 45px;
+  }
   .building-progress-item-wrap {
-    width: 300px;
+    width: 434px;
+    @include to(1360px) {
+      width: 300px;
+    }
   }
   .building-progress-item {
     position: relative;
-
     z-index: 10;
     width: auto;
     padding-bottom: 100%;
@@ -142,19 +180,30 @@
         transform: scale(1.08);
       }
       .img-2 {
-        right: -15px;
-        top: 15px;
+        right: -20px;
+        top: 20px;
+        @include to(1360px) {
+          right: -15px;
+          top: 15px;
+        }
       }
       .img-3 {
-        right: -30px;
-        top: 30px;
+        right: -35px;
+        top: 35px;
+        @include to(1360px) {
+          right: -30px;
+          top: 30px;
+        }
       }
     }
   }
 }
 
 .building-progress-item-wrap {
-  padding-bottom: 60px;
+  padding-bottom: 100px;
+  @include to(1360px) {
+    padding-bottom: 60px;
+  }
 }
 .building-progress-item-wrap:nth-child(2n + 1) {
   margin-right: 100px;
@@ -165,21 +214,41 @@
 .building-btn {
   color: $white;
   border: none;
-  width: 240px;
-  height: 46px;
+  width: 300px;
+  height: 60px;
   background: $pink;
-  font-size: 10px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  @include to(1360px) {
+    width: 240px;
+    height: 46px;
+    font-size: 10px;
+  }
+  @include to(850px) {
+    width: 300px;
+    height: 70px;
+    font-size: 14px;
+  }
+}
+.building-webcam.desktop {
+  @include to(850px) {
+    display: none;
+  }
 }
 .webcam-img {
   fill: $pink;
-  width: 65px;
-  height: 65px;
+  width: 85px;
+  height: 85px;
   padding-right: 20px;
+  @include to(1360px) {
+    width: 65px;
+    height: 65px;
+    padding-right: 20px;
+  }
 }
 .building-webcam a {
   display: flex;
@@ -187,9 +256,12 @@
   text-decoration: none;
 }
 .building-webcam span {
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: -0.05em;
   color: $main-text;
+  @include to(1360px) {
+    font-size: 14px;
+  }
 }
 
 .building-popup {
@@ -219,61 +291,106 @@
     pointer-events: painted;
   }
   &-container {
-    width: 1326px;
+    max-width: 1920px;
     position: relative;
     margin: 0 auto;
+    @include to(1360px) {
+      max-width: 1326px;
+    }
+    @include to(850px) {
+      max-width: 768px;
+      padding: 0 35px;
+    }
   }
 }
 
 .gallery-swiper.building-swiper {
   height: 100vh;
-  max-width: 890px;
+  max-width: 1260px;
   margin: 0 auto;
+  @include to(1360px) {
+    max-width: 890px;
+  }
+  @include to(850px) {
+    width: 100%;
+  }
   & img {
     height: 100vh;
-    max-width: 890px;
+    max-width: 1260px;
     object-fit: contain;
+    @include to(1360px) {
+      max-width: 890px;
+    }
+    @include to(850px) {
+      width: 100%;
+    }
   }
 }
 .swiper-container.building-swiper-container {
   padding: 0;
 }
 .building-title {
-  font-size: 36px;
+  font-size: 64px;
   letter-spacing: -0.02em;
   color: $white;
+  @include to(1360px) {
+    font-size: 36px;
+  }
 }
 .breadcrumbs-building {
   position: absolute;
   z-index: 2;
+  @include to(850px) {
+    left: 0;
+  }
 }
 .building-progress-item-pupop {
   position: absolute;
   top: 40%;
+  z-index: 20;
   // left: 40px;
-  width: 170px;
-  height: 155px;
+  width: 245px;
+  height: 255px;
   background-color: $pink;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 50px;
+  padding-left: 70px;
+  @include to(1360px) {
+    width: 170px;
+    height: 155px;
+    padding-left: 50px;
+  }
+  @include to(850px) {
+    width: 150px;
+    height: 180px;
+    padding-left: 30px;
+  }
   .date-pupop {
-    font-size: 36px;
+    font-size: 48px;
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: #f7f7f7;
+    @include to(1360px) {
+      font-size: 36px;
+    }
   }
   .month-pupop {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: #f7f7f7;
+    @include to(1360px) {
+      font-size: 12px;
+    }
   }
   .year-pupop {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: -0.05em;
     color: #f7f7f7;
+    @include to(1360px) {
+      font-size: 18px;
+    }
   }
 }
 
@@ -282,17 +399,29 @@
   display: flex;
   flex-direction: column;
   top: 20vh;
-  right: 72px;
+  right: 99px;
   z-index: 2;
   height: 70vh;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
+  @include to(1360px) {
+    right: 99px;
+  }
+  @include to(850px) {
+    right: 60px;
+  }
   &-container {
     position: relative;
     height: 100%;
-    left: -23px;
+    left: -29px;
+    @include to(1360px) {
+      left: -23px;
+    }
+    @include to(850px) {
+      left: -30px;
+    }
   }
   .btn-building-close {
-    font-size: 10px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     text-align: right;
@@ -301,27 +430,70 @@
     color: $white;
     position: absolute;
     top: -7px;
-    left: -63px;
+    left: -88px;
+    @include to(1360px) {
+      font-size: 10px;
+      left: -63px;
+    }
+    @include to(850px) {
+      font-size: 0;
+      left: -20px;
+    }
     .close-img {
-      margin-left: 20px;
+      margin-left: 26px;
       fill: $white;
       stroke: #555568;
+      width: 60px;
+      height: 60px;
+      @include to(1360px) {
+        width: 46px;
+        height: 46px;
+        margin-left: 20px;
+      }
+      @include to(850px) {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+      }
     }
+  }
+}
+.building-btn-more {
+  width: 14px;
+  height: 14px;
+  @include to(1360px) {
+    width: 10px;
+    height: 10px;
   }
 }
 .btn-building-right,
 .btn-building-left {
-  width: 46px;
-  height: 46px;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: absolute;
+  @include to(1360px) {
+    width: 46px;
+    height: 46px;
+  }
+  @include to(850px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 .btn-building-right {
   transform: rotate(180deg);
-  bottom: 66px;
+  bottom: 80px;
+  @include to(1360px) {
+    bottom: 66px;
+  }
+  @include to(850px) {
+    bottom: 80px;
+  }
 }
 .btn-building-left {
   bottom: 0;

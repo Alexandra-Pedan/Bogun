@@ -26,21 +26,18 @@ block content
       .news-container-title
         h3.news-title Ресторани
     .philosophy-container 
-        .architecture-container-text
+        .architecture-container-text.restaurants-container-text
           h4.concept-functionality-advertising-title 
             span.color Жителі та гості Вінниці
             span.italic &nbsp; обожнюють
-            | &nbsp; її за 
-            br 
-            | гастро-культуру.
+            | &nbsp; її за гастро-культуру.
            
         .philosophy-container-img     
           +svg('ornament-concept1').restaurants-ornament-main
-          img(src="/src/assets/images/restaurants1.jpg", alt="")
-        .architecture-container-section
-          
+          img(src="./assets/images/restaurants1.jpg", alt="")
+        .architecture-container-section.restaurants-container
           .architecture-container-section-img  
-            img(src="/src/assets/images/restaurants2.jpg", alt="")
+            img(src="./assets/images/restaurants2.jpg", alt="")
             //- +svg('ornament-concept1').architecture-ornament
           .architecture-container-section-text
             p Залучивши до співпраці найкращих рестораторів, ми створили простір, де смачно, затишно та красиво. І куди хочеться повертатися щодня. 
@@ -65,7 +62,7 @@ block content
               a(href="#") “МАМА МАНАНА”
             li 
               a(href="#") “Whisky Corner”
-        .architecture-btn
+        .architecture-btn.restaurants-btn
           .concept-functionality-advertising-btn
             .concept-btn 
               a(href="sport.html") Дивитися зони для спорту

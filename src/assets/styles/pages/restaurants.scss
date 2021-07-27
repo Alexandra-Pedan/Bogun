@@ -1,28 +1,68 @@
 .restaurants-ornament-main {
   position: absolute;
-  bottom: -75px;
-  right: calc(25% - 150px);
+  width: 218px;
+  height: 218px;
+  bottom: -109px;
+  right: calc(25% - 109px);
   z-index: -1;
+  @include to(1360px) {
+    width: 150px;
+    height: 150px;
+    bottom: -75px;
+    right: calc(25% - 75px);
+  }
+  @include to(850px) {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    right: calc(25% - 50px);
+  }
 }
-
+.architecture-container-section.restaurants-container {
+  @include to(850px) {
+    padding-top: 100px;
+  }
+}
+.architecture-btn.restaurants-btn {
+  @include to(850px) {
+    padding-top: 50px;
+  }
+}
 .restaurants-container-section {
   padding: 100px 80px 0 80px;
+  @include to(850px) {
+    padding: 100px 0 0 0;
+  }
   &-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 40px;
+    padding: 40px 130px 0 130px;
+    @include to(1360px) {
+      padding: 40px 0 0 0;
+    }
     & li {
       margin-right: 50px;
       font-size: 24px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
-
+      @include to(850px) {
+        margin-right: 30px;
+      }
       & a {
         text-decoration: none;
         color: $main-text;
       }
     }
+  }
+}
+.architecture-container-text.restaurants-container-text {
+  padding: 0 200px;
+  @include to(1360px) {
+    padding: 0 180px;
+  }
+  @include to(850px) {
+    padding: 0;
   }
 }

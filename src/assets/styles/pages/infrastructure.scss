@@ -1,16 +1,39 @@
 .infrastructure-page {
   margin: 0 auto;
-  width: 1326px;
-  padding: 0 50px 0 106px;
+  max-width: 1920px;
+  padding: 0 150px 0 190px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 150px;
+  height: 190px;
   align-items: center;
+  @include to(1360px) {
+    max-width: 1326px;
+    padding: 0 50px 0 106px;
+    height: 150px;
+  }
+  @include to(850px) {
+    max-width: 768px;
+    padding: 50px 35px 0 35px;
+    height: 200px;
+    align-items: flex-start;
+  }
+  & a {
+    margin-right: 245px;
+    @include to(1360px) {
+      margin-right: 0;
+    }
+  }
   .infrastructure-title {
-    font-size: 36px;
+    font-size: 64px;
     letter-spacing: -0.02em;
     color: $main-text;
+    @include to(1360px) {
+      font-size: 36px;
+    }
+    @include to(850px) {
+      padding-top: 13px;
+    }
   }
   &-adress {
     display: flex;
@@ -18,18 +41,37 @@
     width: 310px;
     justify-content: flex-end;
     svg {
-      width: 46px;
-      height: 46px;
+      width: 60px;
+      height: 60px;
       margin-right: 20px;
+      @include to(1360px) {
+        width: 46px;
+        height: 46px;
+      }
     }
     p {
-      font-size: 14px;
+      font-size: 16px;
       letter-spacing: -0.05em;
       color: $main-text;
+      @include to(1360px) {
+        font-size: 14px;
+      }
     }
   }
 }
-
+.icon--environment {
+  width: 380px;
+  height: 190px;
+  @include to(1360px) {
+    width: 260px;
+    height: 130px;
+  }
+  @include to(850px) {
+    position: absolute;
+    left: calc(50% - 130px);
+    bottom: 0;
+  }
+}
 .map-wrap {
   width: 100vw;
   height: 65vh;
@@ -48,6 +90,10 @@
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 0);
+    @include to(850px) {
+      width: 100%;
+      // bottom: -365px;
+    }
   }
 }
 
@@ -58,23 +104,36 @@
   flex-direction: column;
   flex-wrap: wrap;
   width: 1146px;
-  height: 124px;
+  height: 126px;
   padding: 27px 64px;
   background: #ffffff;
   margin: 0 auto;
   overflow: hidden;
+  @include to(850px) {
+    height: 305px;
+    width: 100%;
+  }
 }
 .infrastructure-map-item {
   display: flex;
   align-items: center;
   p {
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.4;
     color: $main-text;
     margin-left: 20px;
+    @include to(1360px) {
+      font-size: 10px;
+    }
   }
   &:nth-child(2n + 1) {
     padding-bottom: 10px;
+    @include to(850px) {
+      padding-bottom: 20px;
+    }
+  }
+  @include to(850px) {
+    padding-bottom: 20px;
   }
   cursor: pointer;
   transform-origin: center;
@@ -89,21 +148,35 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  width: 190px;
-  height: 36px;
+  width: 240px;
+  height: 45px;
   background: $main-text;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: $white;
+  @include to(1360px) {
+    width: 190px;
+    height: 36px;
+    font-size: 10px;
+  }
+  @include to(850px) {
+    width: 220px;
+    height: 45px;
+    font-size: 14px;
+  }
   svg {
     margin-left: 10px;
     transform: rotate(90deg);
     fill: $white;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     transition: all 0.5s ease;
+    @include to(1360px) {
+      width: 4px;
+      height: 4px;
+    }
   }
   &:hover {
     cursor: pointer;

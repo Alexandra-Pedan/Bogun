@@ -1,22 +1,42 @@
 .installments-container {
   margin: 0 auto;
-  width: 1326px;
-  padding: 0 110px 150px 110px;
+  width: 1920px;
+  padding: 0 150px 150px 260px;
   display: flex;
   flex-direction: column;
-
+  @include to(1360px) {
+    width: 1326px;
+    padding: 0 110px 150px 110px;
+  }
+  @include to(850px) {
+    width: 798px;
+    padding: 50px 50px 100px 50px;
+  }
   &-section {
     display: flex;
     justify-content: space-between;
-    padding: 70px 0 70px 147px;
+    padding: 90px 100px 70px 147px;
     border-bottom: 2px solid #f7f7f7;
+    @include to(1360px) {
+      padding: 70px 0 70px 147px;
+    }
+    @include to(850px) {
+      padding: 50px 0;
+    }
     &-item {
       width: 44%;
-      font-size: 36px;
+      font-size: 48px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
+      @include to(1360px) {
+        font-size: 36px;
+      }
+      @include to(850px) {
+        font-size: 24px;
+        width: 46%;
+      }
       & .dollar-exchange {
         padding-top: 0;
         & a {
@@ -37,24 +57,35 @@
         letter-spacing: -0.05em;
         text-transform: uppercase;
         color: $main-text;
+        @include to(850px) {
+          font-size: 20px;
+        }
         & div {
-          font-size: 12px;
+          font-size: 14px;
           line-height: 1.7;
           letter-spacing: -0.05em;
           text-transform: none;
           color: #818181;
           padding-top: 20px;
+          @include to(1360px) {
+            font-size: 12px;
+          }
         }
         & ul {
-          padding-left: 20px;
+          // padding-left: 20px;
+          // padding-top: 20px;
+          padding: 20px 0 0 20px;
         }
         & li {
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.7;
           letter-spacing: -0.05em;
           color: #818181;
           text-transform: none;
           position: relative;
+          @include to(1360px) {
+            font-size: 16px;
+          }
           // list-style: disc;
           &::before {
             content: '';

@@ -1,27 +1,56 @@
 .content-web {
   background: #ffffff;
+  width: 100%;
+  height: 100vh;
 }
 .webcam-container {
-  padding-top: 70px;
+  padding-top: 100px;
 
   display: flex;
   align-items: center;
   flex-direction: column;
+  @include to(1360px) {
+    padding-top: 70px;
+  }
+  @include to(850px) {
+    padding-top: 50px;
+  }
   &-title {
     font-size: 24px;
     line-height: 1.7;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $main-text;
-    padding: 20px 0 110px 0;
+    padding: 30px 0 150px 0;
+    @include to(1360px) {
+      padding: 20px 0 110px 0;
+    }
   }
   &-video {
-    width: 957px;
+    width: 1130px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     position: relative;
+    @include to(1360px) {
+      width: 957px;
+    }
+    @include to(850px) {
+      width: 710px;
+    }
+  }
+}
+video {
+  width: 957px;
+  height: 530px;
+  @include to(1360px) {
+    height: 450px;
+    width: 810px;
+  }
+  @include to(850px) {
+    height: 395px;
+    width: 700px;
   }
 }
 .icon--ornament-web1 {
@@ -30,6 +59,10 @@
   position: absolute;
   left: 0;
   top: calc(50% - 75px);
+  @include to(850px) {
+    height: 0;
+    width: 0;
+  }
 }
 .icon--ornament-web2 {
   position: absolute;
@@ -38,4 +71,8 @@
   position: absolute;
   right: 0;
   top: calc(50% - 75px);
+  @include to(850px) {
+    height: 0;
+    width: 0;
+  }
 }

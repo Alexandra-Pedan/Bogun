@@ -1,27 +1,61 @@
 .architecture-container-text {
-  padding: 0 46px;
+  padding: 0 130px;
+  @include to(1360px) {
+    padding: 0 46px;
+  }
+  @include to(850px) {
+    padding: 0;
+  }
 }
 .architecture-ornament-main {
   position: absolute;
-  bottom: -75px;
+  bottom: -109px;
   left: calc(25% - 150px);
   z-index: -1;
+  width: 218px;
+  height: 218px;
+  @include to(1360px) {
+    bottom: -75px;
+    left: calc(25% - 75px);
+    width: 150px;
+    height: 150px;
+  }
+  @include to(850px) {
+    bottom: -50px;
+    left: calc(25% - 50px);
+    width: 100px;
+    height: 100px;
+  }
+}
+.architecture-container-section.mobile-container {
+  @include to(850px) {
+    padding-top: 100px;
+  }
 }
 .architecture-container-section {
   display: flex;
   justify-content: space-between;
   padding-top: 100px;
+  @include to(850px) {
+    padding-top: 50px;
+  }
   &-text {
     width: 50%;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.7;
     letter-spacing: -0.05em;
     color: #818181;
     display: flex;
     align-items: center;
     justify-content: center;
+    @include to(1360px) {
+      font-size: 16px;
+    }
     & p {
       width: 55%;
+      @include to(850px) {
+        width: 87%;
+      }
     }
   }
   &-img {
@@ -29,12 +63,33 @@
     position: relative;
     & .architecture-ornament {
       position: absolute;
-      width: 150px;
-      height: 150px;
-      bottom: -75px;
-      right: calc(50% - 75px);
+      width: 218px;
+      height: 218px;
+      bottom: -109px;
+      right: calc(50% - 109px);
       z-index: -1;
+      @include to(1360px) {
+        width: 150px;
+        height: 150px;
+        bottom: -75px;
+        right: calc(50% - 75px);
+      }
+      @include to(850px) {
+        width: 100px;
+        height: 100px;
+        bottom: -50px;
+        right: calc(50% - 50px);
+      }
     }
+  }
+}
+.architecture-container-text.hall-container-text {
+  padding: 0 400px;
+  @include to(1360px) {
+    padding: 0 250px;
+  }
+  @include to(850px) {
+    padding: 0;
   }
 }
 .architecture-container-section-reverse {
@@ -42,4 +97,7 @@
 }
 .architecture-btn {
   padding-top: 50px;
+  @include to(850px) {
+    padding-top: 100px;
+  }
 }

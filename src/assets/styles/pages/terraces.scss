@@ -1,7 +1,15 @@
 .terraces-container {
   margin: 0 auto;
-  width: 1326px;
-  padding: 75px 110px 150px 110px;
+  width: 1920px;
+  padding: 75px 150px 150px 190px;
+  @include to(1360px) {
+    width: 1326px;
+    padding: 75px 110px 150px 110px;
+  }
+  @include to(850px) {
+    width: 798px;
+    padding: 50px 50px 100px 50px;
+  }
   &-section {
     display: flex;
     justify-content: space-between;
@@ -10,6 +18,13 @@
     }
     &-text {
       width: 41%;
+      padding-right: 37px;
+      @include to(1360px) {
+        padding-right: 0;
+      }
+      @include to(850px) {
+        width: 45%;
+      }
     }
     &-picture {
       position: relative;
@@ -23,10 +38,28 @@
 
 .terraces-ornament {
   position: absolute;
-  top: 25px;
-  right: calc(25% - 150px);
+  width: 218px;
+  height: 218px;
+  top: -9px;
+  right: calc(25% - 109px);
   z-index: -1;
+  @include to(1360px) {
+    width: 150px;
+    height: 150px;
+    top: 25px;
+    right: calc(25% - 75px);
+    z-index: -1;
+  }
+  @include to(850px) {
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    right: calc(25% - 75px);
+  }
 }
 .terraces-btn {
   padding-top: 20px;
+  @include to(850px) {
+    padding-top: 50px;
+  }
 }

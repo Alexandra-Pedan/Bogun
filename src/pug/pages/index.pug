@@ -33,18 +33,22 @@ block content
         h1.location-content-title Локація комплексу
         hr.line
         p.location-text Розташування об’єкта поблизу головній артерії міста дозволить легко та швидко дістатись до будь якого іншого мікорайону. 
-        a(href='#').location-link Дізнатися більше
-          +svg('more')
+        a(href='#' target="_blank").location-link Дізнатися більше
+          <svg fill="#ffffff" class="icon--more" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4.94382V10L10 4.94382L0 0V4.94382Z"/>
+          </svg>
       +svg('O')(data-scroll-to='services')
-     
+    
   section.services(data-container='services')
     .container
       .location-content 
         h1.location-content-title Набір сервісів
         hr.line
         p.location-text Широкий набір сервісів дозволить вам дійсно розслабитися після важкого дня, та відпочити у колі сім'ї.
-        a(href='#').location-link Більше про сервіси
-          +svg('more')
+        a(href='#' target="_blank").location-link Більше про сервіси
+          <svg fill="#ffffff" class="icon--more" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4.94382V10L10 4.94382L0 0V4.94382Z"/>
+          </svg>
       +svg('G')(data-scroll-to='architecture')
 
   section.architecture(data-container='architecture')
@@ -53,8 +57,10 @@ block content
         h1.location-content-title Архітектурне рішення
         hr.line
         p.location-text Надзвичайне для Вінниці та України дизайнерське рішення створене архітектурною майстернею Олександра Коротких.
-        a(href='#').location-link Більше про архітектуру
-          +svg('more')
+        a(href='#' target="_blank").location-link Більше про архітектуру
+          <svg fill="#ffffff" class="icon--more" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4.94382V10L10 4.94382L0 0V4.94382Z"/>
+          </svg>
       +svg('U')(data-scroll-to='live-in-bogun')
 
   section.live-in-bogun(data-container='live-in-bogun')
@@ -63,33 +69,37 @@ block content
         h1.location-content-title Життя в Bogun City
         hr.line
         p.location-text У BOGUN є все, що потрібно для зручності, комфорту і задоволення: cвій ТРЦ із зоною преміальних бутиків, супермаркет, ресторани, фонтани. 
-        a(href='#').location-link Обрати квартиру
-          +svg('more')
+        a(href='#' target="_blank").location-link Обрати квартиру
+          <svg fill="#ffffff" class="icon--more" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 4.94382V10L10 4.94382L0 0V4.94382Z"/>
+          </svg>
       +svg('N')(data-scroll-to='contacts')
  
   section.contacts(data-container='contacts')
       h3.contacts-title Контакти
       .contact-info-container
-        .contacts-info 
-          .contacts-info-text Розташування:
-          .contacts-info-description м. Вінниця вул. Пушкіна 4
+        .contacts-info
+          .contacts-info-mobile
+            .contacts-info-text Розташування:
+            .contacts-info-description м. Вінниця вул. Пушкіна 4
           .contacts-info-link 
-            a(href="#") показати на google maps
+            a(href="#" target="_blank") показати на google maps
         hr.contacts-info-line
         .contacts-info-schedule
-          .contacts-info-text.schedule-text Відділ продажів:
-          .contacts-info-tel 
-            a(href="#") +38 (096) 995-63-64
-            div пн-пт: 10:00-18:00
-            div сб-вс: 10:00-17:00
-          
-          button.contacts-info-btn передзвоніть мені
+          .contacts-info-mobile
+            .contacts-info-text.schedule-text Відділ продажів:
+            .contacts-info-tel 
+              a(href="tel:+380969956364") +38 (096) 995-63-64
+              div пн-пт: 10:00-18:00
+              div сб-вс: 10:00-17:00
+          button.contacts-info-btn.js-call-menu передзвоніть мені
         hr.contacts-info-line
         .contacts-info 
-          .contacts-info-text Соціальні мережі:
-          .contacts-info-description
-            a(href="#") instagram
-            a(href="#") facebook
+          .contacts-info-mobile
+            .contacts-info-text Соціальні мережі:
+            .contacts-info-description
+              a(href="#" target="_blank") instagram
+              a(href="#" target="_blank") facebook
         hr.contacts-info-line
       +svg('ornament')
 

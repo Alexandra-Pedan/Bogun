@@ -9,10 +9,17 @@ iframe {
 .content-developer.panorama-content {
   // position: fixed;
   z-index: 2;
-  width: 1326px;
-  padding: 0 15px;
+  max-width: 1920px;
+  // padding: 0 15px;
   margin: 0 auto;
   top: 0;
-  // left: 0;
   position: relative;
+  @include to(1360px) {
+    max-width: 1326px;
+    padding: 0 15px;
+  }
+  @include to(850px) {
+    max-width: 768px;
+    padding: 0 15px;
+  }
 }

@@ -4,24 +4,54 @@
   padding: 0 0 100px 0;
   &-text {
     width: 41%;
+    @include to(850px) {
+      width: 50%;
+    }
     & p {
       font-size: 24px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
+      padding-right: 195px;
+      @include to(1360px) {
+        padding-right: 0;
+      }
     }
   }
   &-img {
     width: 41%;
     position: relative;
+    @include to(850px) {
+      width: 46%;
+    }
+  }
+}
+.sport-section-container-text.children-container-text {
+  @include to(850px) {
+    width: 50%;
+  }
+}
+.sport-section-container-img.children-container-img {
+  @include to(850px) {
+    width: 46%;
   }
 }
 .children-ornament1 {
   position: absolute;
-  width: 150px;
-  height: 150px;
-  right: -75px;
-  top: calc(50% - 75px);
+  width: 218px;
+  height: 218px;
+  right: -109px;
+  top: calc(50% - 109px);
   z-index: -1;
+  @include to(1360px) {
+    width: 150px;
+    height: 150px;
+    right: -75px;
+    top: calc(50% - 75px);
+  }
+  @include to(850px) {
+    width: 0;
+    height: 0;
+  }
 }

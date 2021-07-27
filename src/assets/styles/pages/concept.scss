@@ -1,28 +1,49 @@
 .concept-functionality {
   margin: 0 auto;
-  width: 1326px;
-  padding: 0px 110px 110px 106px;
+  width: 1920px;
+  padding: 0px 140px 110px 190px;
   display: flex;
   justify-content: space-between;
   height: auto;
+  @include to(1360px) {
+    width: 1326px;
+    padding: 0px 110px 110px 106px;
+  }
+  @include to(850px) {
+    width: 798px;
+    padding: 50px 50px 50px 50px;
+  }
   &-description {
     display: flex;
     flex-direction: column;
     width: 41%;
     justify-content: center;
+    @include to(850px) {
+      width: 45%;
+      padding-top: 40px;
+    }
     &-title {
-      font-size: 24px;
+      font-size: 36px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
+      @include to(1360px) {
+        font-size: 24px;
+      }
     }
     &-text {
-      font-size: 16px;
+      font-size: 24px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       color: #818181;
       padding: 50px 0 0 150px;
+      @include to(1360px) {
+        font-size: 16px;
+      }
+      @include to(850px) {
+        padding: 30px 0 0 0;
+      }
     }
   }
   &-img {
@@ -37,28 +58,70 @@
 .description-reverse {
   flex-direction: column-reverse;
   &-text {
-    padding: 0px 0 50px 150px;
+    padding: 0px 0 50px 170px;
+    @include to(1360px) {
+      padding: 0px 0 50px 150px;
+    }
+    @include to(850px) {
+      padding: 0px 0 30px 0;
+    }
   }
 }
 .concept-ornament {
   position: absolute;
-  top: -35px;
-  right: calc(50% - 150px);
+  width: 218px;
+  height: 218px;
+  top: -70px;
+  right: calc(50% - 109px);
   z-index: -1;
+  @include to(1360px) {
+    top: -35px;
+    right: calc(50% - 75px);
+    width: 150px;
+    height: 150px;
+  }
+  @include to(850px) {
+    top: -10px;
+    right: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+  }
 }
-
+.concept-functionality-advertising-btn.advertising-btn-mobile {
+  @include to(850px) {
+    padding-top: 50px;
+    .concept-btn {
+      width: 335px;
+      height: 70px;
+    }
+  }
+}
 .concept-functionality-advertising {
-  width: 1106px;
+  width: 1160px;
   margin: 0 auto;
-  padding: 0 120px 150px 120px;
+  padding: 0 0 150px 0;
+  @include to(1360px) {
+    width: 1106px;
+    padding: 0 120px 150px 120px;
+  }
+  @include to(850px) {
+    width: 100%;
+    padding: 0 56px 100px 56px;
+  }
   &-title {
-    font-size: 36px;
+    font-size: 48px;
     line-height: 1.7;
     text-align: center;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $main-text;
     text-align: center;
+    @include to(1360px) {
+      font-size: 36px;
+    }
+    @include to(850px) {
+      font-size: 24px;
+    }
     & .color {
       color: #818181;
     }
@@ -70,6 +133,9 @@
     padding-top: 50px;
     display: flex;
     justify-content: center;
+    @include to(850px) {
+      padding-top: 0;
+    }
     & .concept-btn:not(:last-child) {
       margin-right: 30px;
     }
@@ -80,9 +146,13 @@
       justify-content: center;
       align-items: center;
       background: $pink;
-
       font-size: 14px;
       text-transform: uppercase;
+      @include to(850px) {
+        width: 300px;
+        height: 70px;
+        font-size: 14px;
+      }
       & a {
         text-decoration: none;
         color: $white;

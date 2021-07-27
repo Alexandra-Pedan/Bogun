@@ -1,13 +1,21 @@
 .news-more-page {
   display: flex;
   margin: 0 auto;
-  width: 1326px;
-  padding: 40px 50px 100px 170px;
+  width: 1920px;
+  padding: 60px 240px 100px 260px;
+  @include to(1360px) {
+    width: 1326px;
+    padding: 40px 50px 100px 170px;
+  }
+  @include to(850px) {
+    width: 768px;
+    padding: 50px 50px 100px 35px;
+  }
   &-date {
     width: 15.5%;
     padding-top: 70px;
     text-align: center;
-    background-image: url('/src/assets/svg-sprite/date.svg');
+    background-image: url('../images/date.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -33,38 +41,72 @@
   &-info {
     width: 84.5%;
     background: $white;
-    padding: 70px 100px;
+    padding: 70px 145px;
+    @include to(1360px) {
+      padding: 70px 100px;
+    }
+    @include to(850px) {
+      padding: 70px 35px 100px 40px;
+    }
     &-title {
-      font-size: 30px;
+      font-size: 36px;
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: $main-text;
-      padding-bottom: 30px;
+      padding-bottom: 50px;
       width: 630px;
+      @include to(1360px) {
+        font-size: 30px;
+        padding-bottom: 30px;
+      }
+      @include to(850px) {
+        font-size: 24px;
+        width: 100%;
+      }
     }
     &-text {
-      font-size: 16px;
+      font-size: 18px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       color: #818181;
-      width: 450px;
-      padding-bottom: 30px;
+      width: 652px;
+      padding-bottom: 50px;
       margin: 0 auto;
+      @include to(1360px) {
+        font-size: 16px;
+        width: 450px;
+        padding-bottom: 30px;
+      }
+      @include to(850px) {
+        font-size: 16px;
+        width: 100%;
+        padding-bottom: 30px;
+        letter-spacing: -0.05em;
+      }
     }
     &-content {
-      margin: 30px auto 20px auto;
-      width: 450px;
+      margin: 50px auto 40px auto;
+      width: 652px;
+      @include to(1360px) {
+        margin: 30px auto 20px auto;
+        width: 450px;
+      }
       &-title {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 1.4;
         letter-spacing: -0.05em;
         color: $main-text;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
+        @include to(1360px) {
+          font-size: 18px;
+          padding-bottom: 30px;
+        }
       }
     }
     &-back {
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
   }
 }
@@ -74,14 +116,24 @@
   margin: 0px auto 10px auto;
 }
 .news-more-link {
-  width: 210px;
-  height: 46px;
+  width: 300px;
+  height: 60px;
   background: #f65275;
-  font-size: 10px;
+  font-size: 14px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(1360px) {
+    width: 210px;
+    height: 46px;
+    font-size: 10px;
+  }
+  @include to(850px) {
+    width: 300px;
+    height: 70px;
+    font-size: 14px;
+  }
   & a {
     text-decoration: none;
     color: $white;
@@ -102,11 +154,14 @@
     text-decoration: none;
     & div {
       font-weight: 600;
-      font-size: 13px;
+      font-size: 16px;
       display: flex;
       align-items: center;
       text-transform: uppercase;
       color: $main-text;
+      @include to(1360px) {
+        font-size: 13px;
+      }
     }
   }
 }

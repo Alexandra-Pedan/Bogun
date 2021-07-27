@@ -56,7 +56,7 @@ function createBuildCard(build) {
       <div class="building-progress-img img-active">
         <div class="img-active-container"><img src="${build.slider[0]}"></div></div>
       <div class="building-progress-img img-2" style="background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)), url(${build.slider[1]})"></div>
-      <div class="building-progress-img img-3" style="background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)), url(${build.slider[2]})"></div>
+      <div class="building-progress-img img-3" style="background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.9)), url(${build.slider[2]})"></div>
       <div class="building-progress-item-text">
         <div class="date">${build.date.d}</div>
         <hr class="building-progress-line">

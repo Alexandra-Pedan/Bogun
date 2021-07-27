@@ -1,5 +1,6 @@
 // .content-developer {
-//   background: #e5e5e5;
+//   width: 100%;
+//   height: 100vh;
 // }
 .developer-content {
   &-logo {
@@ -7,18 +8,39 @@
   }
   &-info {
     display: flex;
-    width: 1326px;
+    width: 1920px;
     margin: 0 auto;
-    padding: 70px 60px 100px 256px;
+    padding: 70px 147px 100px 420px;
+    @include to(1360px) {
+      width: 1326px;
+      padding: 70px 60px 100px 256px;
+    }
+    @include to(850px) {
+      width: 798px;
+      padding: 50px 50px 0 35px;
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &-description {
     width: 74%;
+    @include to(850px) {
+      width: 100%;
+      padding: 0 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
     &-title {
       font-size: 36px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
+      @include to(850px) {
+        font-size: 24px;
+        padding-top: 50px;
+      }
       & span {
         font-style: italic;
       }
@@ -29,22 +51,38 @@
       line-height: 1.7;
       letter-spacing: -0.05em;
       color: #818181;
-      width: 38%;
+      width: 50%;
+      @include to(1360px) {
+        width: 38%;
+      }
+      @include to(850px) {
+        width: 50%;
+      }
     }
   }
 }
 .developer-content-project {
   display: flex;
   flex-direction: column;
-  width: 1050px;
+  width: 1466px;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
   position: relative;
+  @include to(1360px) {
+    width: 1050px;
+  }
+  @include to(850px) {
+    width: 740px;
+  }
 }
 .icon--SAGA {
-  width: 150px;
-  height: 150px;
+  width: 215px;
+  height: 215px;
+  @include to(1360px) {
+    width: 150px;
+    height: 150px;
+  }
 }
 .swiper-container {
   width: 100%;
@@ -61,36 +99,68 @@
 #icon-swipe-left,
 #icon-swipe-right {
   fill: none;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .icon--garden {
-  width: 92px;
-  height: 98px;
+  width: 128px;
+  height: 137px;
+  @include to(1360px) {
+    width: 92px;
+    height: 98px;
+  }
 }
 .icon--kandinsky {
-  width: 127px;
-  height: 40px;
+  width: 178px;
+  height: 56px;
+  @include to(1360px) {
+    width: 127px;
+    height: 40px;
+  }
 }
 .icon--5kv {
-  width: 149px;
-  height: 84px;
+  width: 208px;
+  height: 118px;
+  @include to(1360px) {
+    width: 149px;
+    height: 84px;
+  }
 }
 .icon--woods {
-  width: 137px;
-  height: 89px;
+  width: 190px;
+  height: 124px;
+  @include to(1360px) {
+    width: 137px;
+    height: 89px;
+  }
 }
 .icon--lebed {
-  width: 86px;
-  height: 97px;
+  width: 120px;
+  height: 136px;
+  @include to(1360px) {
+    width: 86px;
+    height: 97px;
+  }
 }
 .swiper-button-next {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .swiper-button-prev {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .swiper-container-android .swiper-slide,
 .swiper-wrapper {
@@ -103,34 +173,50 @@
 .swiper-button-next {
   position: absolute;
   top: calc(50% - 25px);
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   z-index: 10;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
+  @include to(850px) {
+    width: 0;
+    height: 0;
+  }
 }
 .swiper-button-next:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: '';
-  background-image: url('/src/assets/svg-sprite/swipe-right.svg');
+  background-image: url('../images/swipe-right.svg');
   background-size: contain;
   content: '';
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .swiper-button-prev:after,
 .swiper-container-rtl .swiper-button-prev:after {
   content: '';
-  background-image: url('/src/assets/svg-sprite/swipe-left.svg');
+  background-image: url('../images/swipe-left.svg');
   background-size: contain;
   content: '';
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  @include to(1360px) {
+    width: 50px;
+    height: 50px;
+  }
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
@@ -143,5 +229,11 @@
   right: auto;
 }
 .swiper-container.mySwiper {
-  width: 810px;
+  width: 1132px;
+  @include to(1360px) {
+    width: 810px;
+  }
+  @include to(850px) {
+    width: 650px;
+  }
 }

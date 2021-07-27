@@ -8,7 +8,7 @@ var swiper = new Swiper('.swiperGallery', {
 });
 var swiper2 = new Swiper('.swiperGallery2', {
   loop: true,
-  spaceBetween: 10,
+  spaceBetween: 0,
   navigation: {
     // nextEl: '.swiper-button-gallery-next',
     // prevEl: '.swiper-button-gallery-prev',
