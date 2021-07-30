@@ -1,17 +1,19 @@
 .concept-functionality {
   margin: 0 auto;
-  width: 1920px;
+  width: 100%;
   padding: 0px 140px 110px 190px;
   display: flex;
   justify-content: space-between;
   height: auto;
-  @include to(1360px) {
-    width: 1326px;
+  @include to(1440px) {
     padding: 0px 110px 110px 106px;
   }
   @include to(850px) {
-    width: 798px;
-    padding: 50px 50px 50px 50px;
+    padding: 25px 35px 50px 35px;
+  }
+  @include to(575px) {
+    padding: 30px 25px 20px 25px;
+    flex-direction: column;
   }
   &-description {
     display: flex;
@@ -22,14 +24,24 @@
       width: 45%;
       padding-top: 40px;
     }
+    @include to(575px) {
+      width: 100%;
+      padding-top: 0px;
+    }
     &-title {
       font-size: 36px;
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 24px;
+      }
+      @include to(850px) {
+        font-size: 20px;
+      }
+      @include to(575px) {
+        font-size: min(vw(14, 320), 16px);
       }
     }
     &-text {
@@ -38,11 +50,15 @@
       letter-spacing: -0.05em;
       color: #818181;
       padding: 50px 0 0 150px;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 16px;
       }
       @include to(850px) {
         padding: 30px 0 0 0;
+      }
+      @include to(575px) {
+        font-size: min(vw(12, 320), 14px);
+        padding-top: 10px;
       }
     }
   }
@@ -50,20 +66,27 @@
     width: 50%;
     padding-top: 40px;
     position: relative;
+    @include to(575px) {
+      width: 100%;
+      padding-top: 10px;
+    }
   }
 }
 .reverse {
   flex-direction: row-reverse;
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 .description-reverse {
   flex-direction: column-reverse;
   &-text {
     padding: 0px 0 50px 170px;
-    @include to(1360px) {
+    @include to(1440px) {
       padding: 0px 0 50px 150px;
     }
     @include to(850px) {
-      padding: 0px 0 30px 0;
+      padding: 10px 0 30px 0;
     }
   }
 }
@@ -74,7 +97,7 @@
   top: -70px;
   right: calc(50% - 109px);
   z-index: -1;
-  @include to(1360px) {
+  @include to(1440px) {
     top: -35px;
     right: calc(50% - 75px);
     width: 150px;
@@ -86,6 +109,10 @@
     width: 100px;
     height: 100px;
   }
+  @include to(575px) {
+    width: 0;
+    height: 0;
+  }
 }
 .concept-functionality-advertising-btn.advertising-btn-mobile {
   @include to(850px) {
@@ -95,18 +122,31 @@
       height: 70px;
     }
   }
+  @include to(575px) {
+    padding: 20px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    .concept-btn {
+      width: 270px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+  }
 }
 .concept-functionality-advertising {
   width: 1160px;
   margin: 0 auto;
   padding: 0 0 150px 0;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 1106px;
     padding: 0 120px 150px 120px;
   }
   @include to(850px) {
     width: 100%;
-    padding: 0 56px 100px 56px;
+    padding: 50px 56px 100px 56px;
+  }
+  @include to(575px) {
+    padding: 30px 25px 0 25px;
   }
   &-title {
     font-size: 48px;
@@ -116,11 +156,15 @@
     text-transform: uppercase;
     color: $main-text;
     text-align: center;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 36px;
     }
     @include to(850px) {
       font-size: 24px;
+    }
+    @include to(575px) {
+      font-size: min(vw(18, 320), 20px);
+      text-align: left;
     }
     & .color {
       color: #818181;
@@ -133,6 +177,7 @@
     padding-top: 50px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
     @include to(850px) {
       padding-top: 0;
     }
@@ -153,10 +198,21 @@
         height: 70px;
         font-size: 14px;
       }
+      @include to(575px) {
+        width: 220px;
+        height: 50px;
+        font-size: 10px;
+      }
       & a {
         text-decoration: none;
         color: $white;
       }
     }
+  }
+}
+
+.concept-functionality-description.description-reverse {
+  @include to(575px) {
+    flex-direction: column;
   }
 }

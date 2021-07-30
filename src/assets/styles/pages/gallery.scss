@@ -8,10 +8,14 @@
 }
 .gallery-title {
   color: $white;
-  font-size: 64px;
+  // font-size: 64px;
+  font-size: min(vw(64, 1920), 72px);
   letter-spacing: -0.02em;
-  @include to(1360px) {
+  @include to(1440px) {
     font-size: 36px;
+  }
+  @include to(575px) {
+    font-size: min(vw(18, 320), 20px);
   }
 }
 .gallery-swiper-bottom {
@@ -23,8 +27,12 @@
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 335px;
+    bottom: 20px;
+  }
+  @include to(575px) {
+    width: 300px;
     bottom: 20px;
   }
   & .swiper-container.swiperGallery {
@@ -32,7 +40,7 @@
   }
   .swiper-wrapper {
     height: 80px;
-    @include to(1360px) {
+    @include to(1440px) {
       height: 70px;
     }
   }
@@ -47,7 +55,7 @@
     width: 100px;
     height: 50px;
     // opacity: 0.4;
-    @include to(1360px) {
+    @include to(1440px) {
       width: 80px;
       height: 40px;
     }
@@ -76,7 +84,7 @@
     position: absolute;
     bottom: -52px;
     left: calc(50% - 5px);
-    @include to(1360px) {
+    @include to(1440px) {
       bottom: -42px;
     }
     // transform: translateY(-20px);
@@ -119,7 +127,7 @@
     width: 90px;
     height: 90px;
     transition: 0.3s ease-in-out;
-    @include to(1360px) {
+    @include to(1440px) {
       width: 70px;
       height: 70px;
     }

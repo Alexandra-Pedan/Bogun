@@ -20,8 +20,12 @@ const locoScroll = new LocomotiveScroll({
   smoothMobile: false,
   inertia: 1.1,
 });
-
-global.locoScroll = locoScroll;
+window.locoScroll = locoScroll;
+window.locoScroll.update();
+disableScroll();
+setTimeout(() => {
+  window.locoScroll.update();
+}, 2000);
 /*
  * smooth scroll end
  */
@@ -292,51 +296,15 @@ forms.forEach(form => {
   });
 });
 
-/*
- * form handlers end
- */
-// function initPopup() {
-//   const closePopup = document.querySelector('[data-popup-close]');
-//   const popup = document.querySelector('.backdrop');
-//   document.addEventListener('click', event => {
-//     if (!event.target.classList.contains('js-more')) {
-//       return;
-//     }
-//     // event.preventDefault();
-//     popup.style.visibility = 'visible';
-//     popup.classList.add('is-hidden-form');
-//   });
-//   closePopup.addEventListener('click', event => {
-//     event.preventDefault();
-//     popup.classList.remove('is-hidden-form');
-//     popup.style.visibility = '';
-//   });
-
-// const closePopup = document.querySelector('[data-popup-close]');
-// const popup = document.querySelector('.backdrop');
-// document.addEventListener('click', event => {
-//   if (!event.target.classList.contains('js-more')) {
-//     return;
-//   }
-//   event.preventDefault();
-//   popup.style.visibility = 'visible';
-//   popup.classList.add('is-hidden-form');
-// });
-// closePopup.addEventListener('click', event => {
-//   event.preventDefault();
-//   popup.classList.remove('is-hidden-form');
-//   popup.style.visibility = '';
-// });
-//}
-
 function disableScroll() {
   const containersScroll = document.querySelectorAll('[data-disable-page-scroll]');
   containersScroll.forEach(block => {
     block.addEventListener('mouseenter', () => {
-      locoScroll.stop();
+      window.locoScroll.stop();
     });
+
     block.addEventListener('mouseleave', () => {
-      locoScroll.start();
+      window.locoScroll.start();
     });
   });
 }
@@ -352,8 +320,3 @@ window.addEventListener('DOMContentLoaded', () => {
   // initPopup();
   window.locoScroll.update();
 });
-// window.addEventListener('DOMContentLoaded', () => {
-//   setTimeout(() => {
-//     window.locoScroll.update();
-//   }, 1500);
-// });

@@ -49,7 +49,7 @@
 .header-form-text {
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.8;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #88889d;
@@ -76,16 +76,16 @@
   color: #555568;
   opacity: 1;
   position: absolute;
-  transform: translateY(calc(-100% - 10px));
+  transform: translateY(calc(-100% - 50px));
 }
 .form-btn {
   border: none;
   box-shadow: none;
-  width: 190px;
-  height: 36px;
+  width: 230px;
+  height: 50px;
   background: $pink;
   color: $white;
-  font-size: 10px;
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,9 +131,14 @@ form {
   background: none;
   // border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s;
-  width: 470px;
+
+  width: 600px;
+  @include to(1920px) {
+    width: 425px;
+    margin: 30px 0 0;
+  }
   @include to(1326px) {
-    width: 370px;
+    width: 400px;
     margin: 30px 0 0;
   }
   @include to(768px) {
@@ -194,17 +199,17 @@ form {
   .form-field__input {
     background: none;
     border: none;
-    width: 340px;
-    height: 60px;
+    width: 440px;
+    height: 70px;
     border-bottom: 1px solid #d5d5e2;
-    font-size: 20px;
+    // font-size: 20px;
+    font-size: min(vw(20, 1920), 22px);
     color: #212124;
-    // @include to(1326px) {
-    //   width: 370px;
-    //   height: 50px;
-    //   font-size: 14px;
-    //   padding-left: 25px;
-    // }
+    @include to(1920px) {
+      width: 340px;
+      height: 70px;
+      font-size: 20px;
+    }
     // @include to(768px) {
     //   font-size: 18px;
     //   width: 560px;

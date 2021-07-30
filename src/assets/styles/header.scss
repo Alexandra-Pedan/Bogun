@@ -6,30 +6,42 @@
   width: 100%;
   pointer-events: none;
   z-index: 100;
+  .padding {
+    padding-top: 5px;
+  }
   &-content {
     // width: 1920px;
-    max-width: 1920px;
+    // max-width: 1920px;
     padding: 0 72px;
-    height: 140px;
+    height: 234px;
     margin: 0 auto;
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: space-between;
-    @include to(1360px) {
+    @include to(1920px) {
+      height: 140px;
+    }
+    @include to(1440px) {
       // width: 1326px;
-      max-width: 1326px;
+      // max-width: 1326px;
       padding: 0 50px;
       height: var(--header-h);
     }
     @include to(850px) {
       // width: 1326px;
-      max-width: 768px;
+      // max-width: 768px;
       padding: 0 35px;
       height: 130px;
       .desktop {
         display: none;
       }
+    }
+    @include to(575px) {
+      max-width: 500px;
+      min-width: 320px;
+      padding: 0 25px;
+      height: 70px;
     }
     .logo-link {
       // margin-left: 45px;
@@ -39,38 +51,47 @@
   &-left {
     display: flex;
     align-items: center;
-    width: 443px;
-    @include to(1360px) {
+    width: 485px;
+    @include to(1440px) {
       width: 369px;
+    }
+    @include to(850px) {
+      width: 60px;
     }
     &-link {
       display: flex;
       align-items: center;
-      margin-right: 50px;
+      margin-right: 60px;
       text-decoration: none;
-      font-size: 20px;
+      // font-size: 20px;
+      font-size: min(vw(20, 1920), 24px);
       letter-spacing: -0.05em;
       color: $white;
       pointer-events: painted;
-      @include to(1360px) {
+      @include to(1920px) {
+        margin-right: 50px;
+      }
+      @include to(1440px) {
         letter-spacing: -0.05em;
         font-size: 18px;
       }
 
       & .header-icon {
-        margin-right: 50px;
-        @include to(1360px) {
+        margin-right: 30px;
+
+        @include to(1920px) {
           margin-right: 20px;
         }
       }
     }
     &-flat {
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: min(vw(14, 1920), 16px);
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
       pointer-events: painted;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 10px;
         letter-spacing: -0.05em;
       }
@@ -78,22 +99,30 @@
   }
   &-right {
     display: flex;
-    width: 443px;
-    @include to(1360px) {
+    width: 485px;
+    @include to(1440px) {
       width: 369px;
+    }
+    @include to(850px) {
+      width: 60px;
     }
     justify-content: flex-end;
     &-call {
+      font-family: $default-font;
       border: none;
       background: inherit;
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: min(vw(14, 1920), 16px);
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
       text-decoration: underline;
-      margin-right: 50px;
+      margin-right: 60px;
       pointer-events: painted;
-      @include to(1360px) {
+      @include to(1920px) {
+        margin-right: 50px;
+      }
+      @include to(1440px) {
         font-size: 10px;
         letter-spacing: -0.05em;
       }
@@ -105,14 +134,21 @@
     pointer-events: painted;
 
     & span {
-      font-size: 14px;
+      // font-size: 14px;
+      font-size: min(vw(14, 1920), 16px);
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
-      margin-right: 20px;
-      @include to(1360px) {
+      margin-right: 30px;
+      @include to(1920px) {
+        margin-right: 20px;
+      }
+      @include to(1440px) {
         font-size: 10px;
         letter-spacing: -0.05em;
+      }
+      &:hover {
+        cursor: pointer;
       }
     }
   }
@@ -131,13 +167,17 @@
   height: 60px;
   fill: $pink;
   cursor: pointer;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 46px;
     height: 46px;
   }
   @include to(850px) {
     width: 60px;
     height: 60px;
+  }
+  @include to(575px) {
+    width: 46px;
+    height: 46px;
   }
 }
 #icon-phone path {
@@ -148,20 +188,28 @@
 }
 
 .icon--Logo {
-  width: 285px;
-  height: 38px;
+  width: 300px;
+  height: 50px;
   &-white {
     fill: $white;
   }
   & .dark {
     fill: $main-text;
   }
-  @include to(1360px) {
+  @include to(1920px) {
+    width: 285px;
+    height: 38px;
+  }
+  @include to(1440px) {
     width: 230px;
     height: 30px;
   }
   @include to(850px) {
     width: 205px;
     height: 27px;
+  }
+  @include to(575px) {
+    width: 145px;
+    height: 19px;
   }
 }

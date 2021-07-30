@@ -5,7 +5,7 @@
   bottom: -109px;
   right: calc(25% - 109px);
   z-index: -1;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 150px;
     height: 150px;
     bottom: -75px;
@@ -17,15 +17,28 @@
     bottom: -50px;
     right: calc(25% - 50px);
   }
+  @include to(575px) {
+    width: 0;
+    height: 0;
+  }
 }
 .architecture-container-section.restaurants-container {
   @include to(850px) {
     padding-top: 100px;
   }
+  @include to(575px) {
+    order: 3;
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
 }
 .architecture-btn.restaurants-btn {
   @include to(850px) {
     padding-top: 50px;
+  }
+  @include to(575px) {
+    order: 5;
+    padding-top: 20px;
   }
 }
 .restaurants-container-section {
@@ -33,13 +46,21 @@
   @include to(850px) {
     padding: 100px 0 0 0;
   }
+  @include to(575px) {
+    order: 4;
+    padding-top: 30px;
+  }
   &-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 40px 130px 0 130px;
-    @include to(1360px) {
+    @include to(1440px) {
       padding: 40px 0 0 0;
+    }
+    @include to(575px) {
+      padding: 20px 0 0 0;
+      justify-content: flex-start;
     }
     & li {
       margin-right: 50px;
@@ -50,6 +71,10 @@
       @include to(850px) {
         margin-right: 30px;
       }
+      @include to(575px) {
+        font-size: min(vw(14, 320), 16px);
+        margin-right: 20px;
+      }
       & a {
         text-decoration: none;
         color: $main-text;
@@ -59,10 +84,24 @@
 }
 .architecture-container-text.restaurants-container-text {
   padding: 0 200px;
-  @include to(1360px) {
+  @include to(1440px) {
     padding: 0 180px;
   }
   @include to(850px) {
     padding: 0;
+  }
+  @include to(575px) {
+    order: 1;
+  }
+}
+.restaurants-container-img-mobile {
+  @include to(575px) {
+    order: 2;
+    padding: 30px 0 0 0;
+  }
+}
+.restaurants-container-section-img-mobile {
+  @include to(575px) {
+    padding: 30px 0 0 0;
   }
 }

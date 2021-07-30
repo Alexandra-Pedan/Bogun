@@ -4,7 +4,7 @@
   padding: 0 150px 150px 260px;
   display: flex;
   flex-direction: column;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 1326px;
     padding: 0 110px 150px 110px;
   }
@@ -12,16 +12,24 @@
     width: 798px;
     padding: 50px 50px 100px 50px;
   }
+  @include to(575px) {
+    width: 100%;
+    padding: 30px 25px 70px 25px;
+  }
   &-section {
     display: flex;
     justify-content: space-between;
     padding: 90px 100px 70px 147px;
     border-bottom: 2px solid #f7f7f7;
-    @include to(1360px) {
+    @include to(1440px) {
       padding: 70px 0 70px 147px;
     }
     @include to(850px) {
       padding: 50px 0;
+    }
+    @include to(575px) {
+      padding: 0 0 30px 0;
+      flex-direction: column;
     }
     &-item {
       width: 44%;
@@ -30,12 +38,16 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 36px;
       }
       @include to(850px) {
         font-size: 24px;
         width: 46%;
+      }
+      @include to(575px) {
+        width: 100%;
+        font-size: min(vw(18, 320), 20px);
       }
       & .dollar-exchange {
         padding-top: 0;
@@ -60,6 +72,10 @@
         @include to(850px) {
           font-size: 20px;
         }
+        @include to(575px) {
+          font-size: min(vw(14, 320), 16px);
+          padding-top: 30px;
+        }
         & div {
           font-size: 14px;
           line-height: 1.7;
@@ -67,7 +83,7 @@
           text-transform: none;
           color: #818181;
           padding-top: 20px;
-          @include to(1360px) {
+          @include to(1440px) {
             font-size: 12px;
           }
         }
@@ -83,8 +99,11 @@
           color: #818181;
           text-transform: none;
           position: relative;
-          @include to(1360px) {
+          @include to(1440px) {
             font-size: 16px;
+          }
+          @include to(575px) {
+            font-size: min(vw(12, 320), 14px);
           }
           // list-style: disc;
           &::before {
@@ -111,4 +130,15 @@
 .installments-container-section:last-child {
   border: none;
   padding-bottom: 0;
+}
+.installments-container-section-item.installments-container-line-mobile {
+  @include to(575px) {
+    border-top: 2px solid #f7f7f7;
+    margin-top: 30px;
+  }
+}
+.installments-container-section-item.desktop {
+  @include to(575px) {
+    display: none;
+  }
 }

@@ -2,10 +2,17 @@
   display: flex;
   justify-content: space-between;
   padding: 0 0 100px 0;
+  @include to(575px) {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
   &-text {
     width: 41%;
     @include to(850px) {
       width: 50%;
+    }
+    @include to(575px) {
+      width: 100%;
     }
     & p {
       font-size: 24px;
@@ -14,8 +21,12 @@
       text-transform: uppercase;
       color: $main-text;
       padding-right: 195px;
-      @include to(1360px) {
+      @include to(1440px) {
         padding-right: 0;
+      }
+      @include to(575px) {
+        font-size: min(vw(14, 320), 16px);
+        padding-bottom: 20px;
       }
     }
   }
@@ -25,16 +36,30 @@
     @include to(850px) {
       width: 46%;
     }
+    @include to(575px) {
+      width: 100%;
+    }
   }
 }
 .sport-section-container-text.children-container-text {
   @include to(850px) {
     width: 50%;
   }
+  @include to(575px) {
+    width: 100%;
+  }
+  & p {
+    @include to(575px) {
+      padding-top: 20px;
+    }
+  }
 }
 .sport-section-container-img.children-container-img {
   @include to(850px) {
     width: 46%;
+  }
+  @include to(575px) {
+    width: 100%;
   }
 }
 .children-ornament1 {
@@ -44,7 +69,7 @@
   right: -109px;
   top: calc(50% - 109px);
   z-index: -1;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 150px;
     height: 150px;
     right: -75px;
@@ -53,5 +78,10 @@
   @include to(850px) {
     width: 0;
     height: 0;
+  }
+}
+.sport-section-container.children-section-container-mobile {
+  @include to(575px) {
+    padding-top: 0;
   }
 }

@@ -14,9 +14,9 @@
   @include debug(rgba(0, 0, 0, 0.5), 1px solid #ff0);
 }
 
-.container {
-  @include wrapper();
-}
+// .container {
+//   @include wrapper();
+// }
 
 html {
   font-size: 12px;

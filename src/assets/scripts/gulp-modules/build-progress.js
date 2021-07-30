@@ -51,6 +51,7 @@ function createSlide(src) {
 }
 
 function createBuildCard(build) {
+  console.log(build);
   return `<a class="building-progress-item-wrap js-build-card" href="#" data-build-id="${build.id}">
     <div class="building-progress-item">
       <div class="building-progress-img img-active">
@@ -60,7 +61,7 @@ function createBuildCard(build) {
       <div class="building-progress-item-text">
         <div class="date">${build.date.d}</div>
         <hr class="building-progress-line">
-        <div class="month">${build.date.m}</div>
+        <div class="month">${build.month}</div>
         <div class="year">${build.date.y}</div>
       </div>
     </div>
@@ -111,7 +112,6 @@ function buildContainerHandler(event, state, containers) {
   const isTouchCard = card.classList.contains('js-build-card');
   const id = +card.dataset.buildId;
   if (!isTouchCard || !id) return;
-
   state.updateCurrentId(id);
   getBuildData(id)
     .then(build => initBuildPopup(build, containers))
@@ -441,8 +441,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function sideSwitchArrow(swiper, arrow, container) {
+  console.log(arrow);
   const mediumCordValue = document.documentElement.clientWidth / 2;
-  document.body.append(arrow);
+  // document.body.append(arrow);
   container.style.cursor = 'none';
   arrow.style.cursor = 'none';
   arrow.style.zIndex = 10;

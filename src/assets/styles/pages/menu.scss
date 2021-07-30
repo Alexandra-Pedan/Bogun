@@ -4,6 +4,7 @@
   left: 0;
   background-image: url('../images/bird-menu.svg');
   height: 100vh;
+  // height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,15 +14,37 @@
   z-index: 150;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  @include to(575px) {
+    background: #e5e5e5;
+  }
   &.active {
     visibility: visible;
     opacity: 1;
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   }
+  .lang-block-mobile {
+    opacity: 0;
+  }
+  @include to(575px) {
+    .lang-block-mobile {
+      opacity: 1;
+    }
+  }
+  &-container-header {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+}
+.menu-header-lang-close {
+  display: flex;
 }
 .menu {
   padding-top: 5px;
   height: 100%;
+  width: 40%;
   overflow-y: auto;
 
   @include to(850px) {
@@ -37,21 +60,32 @@
 .menu-header {
   display: flex;
   justify-content: space-between;
-  width: 1920px;
+  // width: 1920px;
+  width: 100%;
   height: 130px;
   margin: 0 auto;
-  padding: 42px 50px;
+  padding: 120px 87px;
   align-items: center;
-  @include to(1360px) {
-    width: 1326px;
+  @include to(1920px) {
+    padding: 42px 72px;
+  }
+  @include to(1440px) {
+    // width: 1326px;
     padding: 42px 50px;
   }
   @include to(850px) {
-    width: 768px;
+    // width: 768px;
+    // max-width: 768px;
+    // min-width: 600px;
     padding: 35px 30px;
     .desktop {
       display: none;
     }
+  }
+  @include to(575px) {
+    // max-width: 500px;
+    // min-width: 320px;
+    padding: 12px 25px;
   }
 }
 .menu-close {
@@ -63,14 +97,26 @@
     text-transform: uppercase;
     color: $main-text;
     margin-right: 20px;
-    @include to(1360px) {
+    @include to(1920px) {
+      font-size: 14px;
+    }
+    @include to(1440px) {
       font-size: 10px;
     }
   }
 }
 .icon--Logo-menu {
-  width: 230px;
-  height: 30px;
+  width: 300px;
+  height: 50px;
+  @include to(1920px) {
+    width: 230px;
+    height: 30px;
+  }
+  @include to(575px) {
+    width: 142px;
+    height: 19px;
+    margin-right: 20px;
+  }
 }
 
 #icon-close path {
@@ -80,17 +126,28 @@
 .menu-content {
   display: flex;
   justify-content: space-between;
-  padding: 20px 50px 100px 50px;
-  width: 1920px;
+  padding: 70px 350px 100px 350px;
+  width: 100%;
   margin: 0 auto;
   height: 100%;
   flex: 1 1 100%;
-  @include to(1360px) {
-    width: 1326px;
+  @include to(1920px) {
+    padding: 20px 150px 0 150px;
+  }
+  @include to(1550px) {
+    padding: 20px 100px 0 100px;
+  }
+  @include to(1440px) {
+    // width: 1326px;
   }
   @include to(850px) {
-    width: 768px;
+    // width: 768px;
     padding: 20px 10px 100px 50px;
+  }
+  @include to(575px) {
+    // width: 768px;
+    padding: 40px 10px 100px 0;
+    height: auto;
   }
 
   & .menu-list {
@@ -105,52 +162,114 @@
     color: $main-text;
     margin-bottom: 60px;
     padding-top: 10px;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 36px;
       padding-top: 5px;
     }
+    @include to(575px) {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
   }
+
   & .menu-link {
     font-size: 24px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $main-text;
     text-decoration: none;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 18px;
+    }
+    @include to(575px) {
+      font-size: 12px;
     }
   }
   & .menu-item {
     margin-bottom: 40px;
-    @include to(1360px) {
-      margin-bottom: 30px;
+    @include to(1440px) {
+      margin-bottom: 25px;
+    }
+    @include to(575px) {
+      margin-bottom: 20px;
     }
   }
-  & .menu-contact {
+  // & .menu-contact {
+  //   display: flex;
+  //   align-items: center;
+  //   padding-top: 200px;
+  //   @include to(1360px) {
+  //     padding-top: 50px;
+  //   }
+  //   @include to(850px) {
+  //     padding: 0 0 50px 0;
+  //   }
+  //   & .header-left-link {
+  //     margin-right: 0;
+  //   }
+  //   & div {
+  //     color: $main-text;
+  //     margin-right: 20px;
+  //   }
+  //   & .header-left-flat {
+  //     text-decoration: underline;
+  //     color: $pink;
+  //   }
+  //   @include to(850px) {
+  //     .desktop {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}
+.menu-title.menu-title-less {
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  color: $main-text;
+  @include to(1440px) {
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    color: #555568;
+  }
+  @include to(575px) {
+    font-size: 22px;
+  }
+}
+
+.menu-contact {
+  display: flex;
+  align-items: center;
+  padding: 0px 0 0 84px;
+
+  @include to(1920px) {
     display: flex;
     align-items: center;
-    padding-top: 200px;
-    @include to(1360px) {
-      padding-top: 50px;
-    }
-    @include to(850px) {
-      padding: 0 0 50px 0;
-    }
-    & .header-left-link {
-      margin-right: 0;
-    }
-    & div {
-      color: $main-text;
-      margin-right: 20px;
-    }
-    & .header-left-flat {
-      text-decoration: underline;
-      color: $pink;
-    }
-    @include to(850px) {
-      .desktop {
-        display: none;
-      }
+    padding: 0px 0 0 72px;
+    position: absolute;
+    bottom: 50px;
+  }
+
+  @include to(1440px) {
+    padding-top: 50px;
+  }
+  @include to(850px) {
+    padding: 0 0 35px 35px;
+  }
+  & .header-left-link {
+    margin-right: 0;
+    pointer-events: inherit;
+  }
+  & div {
+    color: $main-text;
+    margin-right: 20px;
+  }
+  & .header-left-flat {
+    text-decoration: underline;
+    color: $pink;
+  }
+  @include to(850px) {
+    .desktop {
+      display: none;
     }
   }
 }
@@ -161,45 +280,67 @@
   height: 100%;
   padding-top: 10px;
   overflow-y: auto;
-  @include to(1360px) {
+  display: flex;
+  flex-direction: column;
+  @include to(1440px) {
     width: 760px;
     padding-right: 60px;
-    height: 100%;
+    height: 80vh;
     padding-top: 5px;
     overflow-y: auto;
   }
-  @include to(850px) {
+  @include to(992px) {
     width: 440px;
+    height: 80vh;
     padding-right: 0;
+    overflow-y: scroll;
+  }
+  @include to(575px) {
+    width: 50%;
   }
   &-project {
     &-list {
       display: flex;
       flex-wrap: wrap;
-      padding-top: 60px;
-      @include to(1360px) {
+      padding-top: 40px;
+      @include to(1440px) {
         padding-top: 30px;
       }
       @include to(850px) {
         padding-top: 20px;
       }
+      @include to(575px) {
+        padding-top: 25px;
+        flex-direction: column;
+      }
     }
     &-link {
       margin-right: 40px;
-      margin-bottom: 0;
+      margin-bottom: 20px;
+      @include to(1440px) {
+        margin-bottom: 15px;
+      }
       @include to(850px) {
         margin-right: 30px;
         margin-bottom: 20px;
       }
+      @include to(575px) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
       & a {
         font-size: 18px;
+        letter-spacing: 0em;
         color: #88889d;
         text-decoration: none;
-        @include to(1360px) {
+        @include to(1440px) {
           font-size: 12px;
         }
         @include to(850px) {
           font-size: 18px;
+        }
+        @include to(575px) {
+          font-size: 12px;
         }
       }
     }
@@ -222,31 +363,47 @@
 .breadcrumbs {
   display: flex;
   margin: 0 auto;
-  width: 1920px;
-  padding: 150px 50px 20px 190px;
-  @include to(1360px) {
-    width: 1326px;
-    padding: 150px 50px 0 110px;
+  // width: 1920px;
+  width: 100%;
+  padding: 230px 50px 20px 170px;
+  @include to(1920px) {
+    // width: 1326px;
+    padding: 150px 50px 20px 150px;
+  }
+  @include to(1440px) {
+    // width: 1326px;
+    padding: 150px 50px 0 109px;
   }
   @include to(850px) {
-    width: 768px;
+    // width: 768px;
     padding: 130px 50px 0 35px;
+  }
+  @include to(575px) {
+    // width: 768px;
+    padding: 80px 25px 0 25px;
   }
   &-item {
     margin-right: 18px;
+    @include to(575px) {
+      margin-right: 10px;
+    }
   }
 
   &-link {
-    font-size: 12px;
+    // font-size: 12px;
+    font-size: min(vw(12, 1920), 14px);
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $pink;
     text-decoration: none;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 10px;
     }
     @include to(850px) {
       font-size: 14px;
+    }
+    @include to(575px) {
+      font-size: 10px;
     }
     // &::before {
     //   content: '';
@@ -272,11 +429,14 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       text-decoration: none;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 10px;
       }
       @include to(850px) {
         font-size: 14px;
+      }
+      @include to(575px) {
+        font-size: 10px;
       }
       &::before {
         content: '';
@@ -286,6 +446,9 @@
         border-radius: 50%;
         background-color: #818181;
         margin: 3px 18px 3px 0;
+        @include to(575px) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -293,19 +456,23 @@
 
 .contacts-menu-page {
   margin: 0 auto;
-  max-width: 1920px;
+  // max-width: 1920px;
+  width: 100%;
   height: calc(100vh - 190px);
-  padding: 50px 50px 0 190px;
+  padding: 50px 70px 0 170px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  @include to(1360px) {
-    max-width: 1326px;
+  @include to(1920px) {
+    padding: 20px 70px 0 150px;
+  }
+  @include to(1440px) {
+    // max-width: 1326px;
     height: calc(100vh - 175px);
-    padding: 30px 50px 0 106px;
+    padding: 15px 50px 0 106px;
   }
   @include to(850px) {
-    max-width: 768px;
+    // max-width: 768px;
     padding: 50px 50px 0 35px;
     height: calc(100vh - 130px);
     flex-direction: column;
@@ -313,5 +480,10 @@
       width: 0;
       height: 0;
     }
+  }
+  @include to(575px) {
+    // max-width: 1326px;
+    height: auto;
+    padding: 15px 25px 70px 25px;
   }
 }

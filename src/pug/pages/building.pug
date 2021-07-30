@@ -24,7 +24,7 @@ block content
       li.breadcrumbs-item
         a(href="menu-contacts.html").breadcrumbs-link-active Хід будівництва
 
-    .building-page
+    .building-page.building-page-padding
       .news-container-title
         h3.news-title Хід будівництва
       .building-webcam.desktop
@@ -59,6 +59,9 @@ block content
       .concept-functionality-advertising-btn
         button(data-build-load-more).building-btn завантажити БІЛЬШЕ
 
+ 
+block header
+  include ../includes/header.pug
   section.building-popup(data-build-popup-container)
     .building-popup-container
       .breadcrumbs-building
@@ -69,7 +72,7 @@ block content
             li.breadcrumbs-item
               a(href="building.html").breadcrumbs-link-active Хід будівництва
         .news-page
-          .news-container-title
+          .news-container-title.building-container-title
             h3.building-title Хід будівництва
       .gallery-swiper.building-swiper
         .swiper-container.building-swiper-container.js-build-big(style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff")
@@ -126,9 +129,6 @@ block content
             <svg class="building-btn-more" fill=" #555568" width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 4.94382V10L10 4.94382L0 0V4.94382Z"/>
             </svg>
-block header
-  include ../includes/header.pug
-
 block footer
   include ../includes/footer.pug
 

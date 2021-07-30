@@ -1,29 +1,40 @@
 .news-more-page {
   display: flex;
   margin: 0 auto;
-  width: 1920px;
+  // width: 1920px;
+  width: 100%;
   padding: 60px 240px 100px 260px;
-  @include to(1360px) {
-    width: 1326px;
-    padding: 40px 50px 100px 170px;
+  @include to(1440px) {
+    padding: 40px 170px 100px 170px;
   }
   @include to(850px) {
-    width: 768px;
-    padding: 50px 50px 100px 35px;
+    padding: 50px 35px 100px 35px;
+  }
+  @include to(575px) {
+    padding: 30px 25px 100px 25px;
   }
   &-date {
-    width: 15.5%;
+    width: 16.5%;
     padding-top: 70px;
     text-align: center;
     background-image: url('../images/date.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include to(1920px) {
+      width: 14.5%;
+    }
+    @include to(575px) {
+      padding-top: 30px;
+    }
     &-title {
       font-size: 36px;
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: $main-text;
+      @include to(575px) {
+        font-size: 16px;
+      }
     }
     &-month {
       font-size: 12px;
@@ -31,31 +42,44 @@
       text-transform: uppercase;
       color: #66686f;
       padding-bottom: 20px;
+      @include to(575px) {
+        font-size: 10px;
+      }
     }
     &-year {
       font-size: 18px;
       letter-spacing: -0.05em;
       color: $main-text;
+      @include to(575px) {
+        font-size: 16px;
+      }
     }
   }
   &-info {
     width: 84.5%;
     background: $white;
     padding: 70px 145px;
-    @include to(1360px) {
+    @include to(1440px) {
       padding: 70px 100px;
     }
     @include to(850px) {
       padding: 70px 35px 100px 40px;
     }
+    @include to(575px) {
+      padding: 30px 35px 100px 40px;
+    }
     &-title {
-      font-size: 36px;
+      // font-size: 36px;
+      font-size: min(vw(36, 1920), 48px);
       line-height: 1.2;
       letter-spacing: -0.02em;
       color: $main-text;
       padding-bottom: 50px;
-      width: 630px;
-      @include to(1360px) {
+      width: 730px;
+      @include to(1920px) {
+        width: 630px;
+      }
+      @include to(1440px) {
         font-size: 30px;
         padding-bottom: 30px;
       }
@@ -63,16 +87,21 @@
         font-size: 24px;
         width: 100%;
       }
+      @include to(575px) {
+        font-size: min(vw(14, 320), 16px);
+        padding-bottom: 15px;
+      }
     }
     &-text {
-      font-size: 18px;
+      // font-size: 18px;
+      font-size: min(vw(18, 1920), 24px);
       line-height: 1.7;
       letter-spacing: -0.05em;
       color: #818181;
       width: 652px;
       padding-bottom: 50px;
       margin: 0 auto;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 16px;
         width: 450px;
         padding-bottom: 30px;
@@ -83,23 +112,37 @@
         padding-bottom: 30px;
         letter-spacing: -0.05em;
       }
+      @include to(575px) {
+        font-size: min(vw(12, 320), 14px);
+      }
     }
     &-content {
       margin: 50px auto 40px auto;
       width: 652px;
-      @include to(1360px) {
+      @include to(1440px) {
         margin: 30px auto 20px auto;
         width: 450px;
       }
+      @include to(575px) {
+        width: 100%;
+      }
       &-title {
-        font-size: 20px;
+        // font-size: 20px;
+        font-size: 30px;
         line-height: 1.4;
         letter-spacing: -0.05em;
         color: $main-text;
         padding-bottom: 50px;
-        @include to(1360px) {
+        @include to(1920px) {
+          font-size: min(vw(20, 1920), 36px);
+        }
+        @include to(1440px) {
           font-size: 18px;
           padding-bottom: 30px;
+        }
+        @include to(575px) {
+          font-size: 16px;
+          padding-bottom: 20px;
         }
       }
     }
@@ -107,6 +150,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include to(575px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   }
 }
@@ -124,7 +171,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 210px;
     height: 46px;
     font-size: 10px;
@@ -133,6 +180,11 @@
     width: 300px;
     height: 70px;
     font-size: 14px;
+  }
+  @include to(850px) {
+    width: 200px;
+    height: 50px;
+    font-size: 10px;
   }
   & a {
     text-decoration: none;
@@ -159,7 +211,7 @@
       align-items: center;
       text-transform: uppercase;
       color: $main-text;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 13px;
       }
     }

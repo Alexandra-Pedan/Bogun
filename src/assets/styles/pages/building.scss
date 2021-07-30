@@ -37,9 +37,13 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 300px;
     height: 300px;
+  }
+  @include to(575px) {
+    width: 253px;
+    height: 253px;
   }
 }
 .img-active-container {
@@ -71,11 +75,17 @@
   height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 300px;
     height: 300px;
     right: -10px;
     top: 10px;
+  }
+  @include to(575px) {
+    width: 253px;
+    height: 253px;
+    right: -8px;
+    top: 8px;
   }
 }
 .building-progress-img.img-3 {
@@ -89,11 +99,17 @@
   height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 300px;
     height: 300px;
     right: -20px;
     top: 20px;
+  }
+  @include to(575px) {
+    width: 253px;
+    height: 253px;
+    right: -16px;
+    top: 16px;
   }
 }
 .building-progress-item-text {
@@ -105,9 +121,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 300px;
     height: 300px;
+  }
+  @include to(575px) {
+    width: 253px;
+    height: 253px;
   }
 
   & .date {
@@ -117,15 +137,19 @@
     letter-spacing: -0.02em;
     color: #ffffff;
     padding-top: 50px;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 96px;
+    }
+    @include to(575px) {
+      font-size: min(vw(64, 320), 66px);
+      padding: 0;
     }
   }
   & .month {
     font-size: 30px;
     text-transform: uppercase;
     color: #ffffff;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 18px;
     }
   }
@@ -135,8 +159,11 @@
     text-transform: uppercase;
     color: #ffffff;
     padding-top: 50px;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 12px;
+    }
+    @include to(575px) {
+      padding-top: 30px;
     }
   }
 }
@@ -144,8 +171,11 @@
   width: 20px;
   border: 0.5px solid #ffffff;
   margin: 25px 0;
-  @include to(1360px) {
+  @include to(1440px) {
     margin: 15px 0;
+  }
+  @include to(575px) {
+    margin: 10px 0;
   }
 }
 
@@ -157,14 +187,22 @@
   margin: 0 auto;
   max-width: 1042px;
   padding-top: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     max-width: 700px;
     padding-top: 45px;
   }
+  @include to(575px) {
+    max-width: 300px;
+    padding-top: 30px;
+    justify-content: center;
+  }
   .building-progress-item-wrap {
     width: 434px;
-    @include to(1360px) {
+    @include to(1440px) {
       width: 300px;
+    }
+    @include to(575px) {
+      width: 253px;
     }
   }
   .building-progress-item {
@@ -172,7 +210,7 @@
     z-index: 10;
     width: auto;
     padding-bottom: 100%;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.5s ease-out;
     // overflow: hidden;
     &:hover {
       .img-active-container {
@@ -182,17 +220,25 @@
       .img-2 {
         right: -20px;
         top: 20px;
-        @include to(1360px) {
+        @include to(1440px) {
           right: -15px;
           top: 15px;
+        }
+        @include to(575px) {
+          right: -11px;
+          top: 11px;
         }
       }
       .img-3 {
         right: -35px;
         top: 35px;
-        @include to(1360px) {
+        @include to(1440px) {
           right: -30px;
           top: 30px;
+        }
+        @include to(575px) {
+          right: -14px;
+          top: 14px;
         }
       }
     }
@@ -201,15 +247,24 @@
 
 .building-progress-item-wrap {
   padding-bottom: 100px;
-  @include to(1360px) {
+  @include to(1440px) {
     padding-bottom: 60px;
+  }
+  @include to(575px) {
+    padding-bottom: 45px;
   }
 }
 .building-progress-item-wrap:nth-child(2n + 1) {
   margin-right: 100px;
+  @include to(575px) {
+    margin-right: 0;
+  }
 }
 .building-btn-container {
   padding: 10px 0 100px 0;
+  @include to(575px) {
+    padding: 30px 0 70px 0;
+  }
 }
 .building-btn {
   color: $white;
@@ -223,7 +278,7 @@
   justify-content: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 240px;
     height: 46px;
     font-size: 10px;
@@ -232,6 +287,11 @@
     width: 300px;
     height: 70px;
     font-size: 14px;
+  }
+  @include to(575px) {
+    width: 220px;
+    height: 50px;
+    font-size: min(vw(10, 320), 12px);
   }
 }
 .building-webcam.desktop {
@@ -244,7 +304,7 @@
   width: 85px;
   height: 85px;
   padding-right: 20px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 65px;
     height: 65px;
     padding-right: 20px;
@@ -259,7 +319,7 @@
   font-size: 16px;
   letter-spacing: -0.05em;
   color: $main-text;
-  @include to(1360px) {
+  @include to(1440px) {
     font-size: 14px;
   }
 }
@@ -282,7 +342,7 @@
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
   height: 100vh;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
   pointer-events: none;
   background: #27272c;
   &.build-popup-active {
@@ -291,14 +351,14 @@
     pointer-events: painted;
   }
   &-container {
-    max-width: 1920px;
+    // max-width: 1920px;
     position: relative;
     margin: 0 auto;
-    @include to(1360px) {
-      max-width: 1326px;
+    @include to(1440px) {
+      // max-width: 1326px;
     }
     @include to(850px) {
-      max-width: 768px;
+      // max-width: 768px;
       padding: 0 35px;
     }
   }
@@ -306,20 +366,22 @@
 
 .gallery-swiper.building-swiper {
   height: 100vh;
-  max-width: 1260px;
+  // max-width: 1260px;
+  width: 100vw;
   margin: 0 auto;
-  @include to(1360px) {
-    max-width: 890px;
+  @include to(1440px) {
+    // max-width: 890px;
   }
   @include to(850px) {
     width: 100%;
   }
   & img {
     height: 100vh;
-    max-width: 1260px;
+    // max-width: 1260px;
+    width: 70vw;
     object-fit: contain;
-    @include to(1360px) {
-      max-width: 890px;
+    @include to(1440px) {
+      // max-width: 890px;
     }
     @include to(850px) {
       width: 100%;
@@ -333,8 +395,14 @@
   font-size: 64px;
   letter-spacing: -0.02em;
   color: $white;
-  @include to(1360px) {
+  // @include to(1920px) {
+  //   padding-top: 30px;
+  // }
+  @include to(1440px) {
     font-size: 36px;
+  }
+  @include to(575px) {
+    font-size: min(vw(18, 320), 20px);
   }
 }
 .breadcrumbs-building {
@@ -356,7 +424,7 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 170px;
     height: 155px;
     padding-left: 50px;
@@ -365,14 +433,23 @@
     width: 150px;
     height: 180px;
     padding-left: 30px;
+    left: 0;
+  }
+  @include to(575px) {
+    width: 86px;
+    height: 120px;
+    padding-left: 25px;
   }
   .date-pupop {
     font-size: 48px;
     line-height: 1.2;
     letter-spacing: -0.02em;
     color: #f7f7f7;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 36px;
+    }
+    @include to(575px) {
+      font-size: 22px;
     }
   }
   .month-pupop {
@@ -380,16 +457,22 @@
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: #f7f7f7;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 12px;
+    }
+    @include to(575px) {
+      font-size: 10px;
     }
   }
   .year-pupop {
     font-size: 20px;
     letter-spacing: -0.05em;
     color: #f7f7f7;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 18px;
+    }
+    @include to(575px) {
+      font-size: 16px;
     }
   }
 }
@@ -398,22 +481,25 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 20vh;
+  top: 15vh;
   right: 99px;
   z-index: 2;
-  height: 70vh;
+  height: 79vh;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
-  @include to(1360px) {
-    right: 99px;
+  @include to(1440px) {
+    right: 72px;
   }
   @include to(850px) {
     right: 60px;
+  }
+  @include to(575px) {
+    border: none;
   }
   &-container {
     position: relative;
     height: 100%;
     left: -29px;
-    @include to(1360px) {
+    @include to(1440px) {
       left: -23px;
     }
     @include to(850px) {
@@ -431,7 +517,11 @@
     position: absolute;
     top: -7px;
     left: -88px;
-    @include to(1360px) {
+    cursor: pointer;
+    & circle {
+      stroke: none;
+    }
+    @include to(1440px) {
       font-size: 10px;
       left: -63px;
     }
@@ -439,13 +529,16 @@
       font-size: 0;
       left: -20px;
     }
+    @include to(575px) {
+      left: 0;
+    }
     .close-img {
       margin-left: 26px;
       fill: $white;
       stroke: #555568;
       width: 60px;
       height: 60px;
-      @include to(1360px) {
+      @include to(1440px) {
         width: 46px;
         height: 46px;
         margin-left: 20px;
@@ -455,13 +548,18 @@
         height: 60px;
         margin-left: 20px;
       }
+      @include to(575px) {
+        width: 46px;
+        height: 46px;
+        margin-left: 20px;
+      }
     }
   }
 }
 .building-btn-more {
   width: 14px;
   height: 14px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 10px;
     height: 10px;
   }
@@ -476,7 +574,7 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 46px;
     height: 46px;
   }
@@ -484,11 +582,14 @@
     width: 60px;
     height: 60px;
   }
+  @include to(575px) {
+    display: none;
+  }
 }
 .btn-building-right {
   transform: rotate(180deg);
   bottom: 80px;
-  @include to(1360px) {
+  @include to(1440px) {
     bottom: 66px;
   }
   @include to(850px) {
@@ -497,4 +598,16 @@
 }
 .btn-building-left {
   bottom: 0;
+}
+.news-container-title.building-container-title {
+  width: 100%;
+}
+.building-page.building-page-padding {
+  padding-top: 0;
+  @include to(850px) {
+    padding-top: 50px;
+  }
+  @include to(575px) {
+    padding-top: 15px;
+  }
 }

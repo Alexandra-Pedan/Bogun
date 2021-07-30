@@ -5,6 +5,10 @@
   @include to(850px) {
     padding: 50px 0 100px 0;
   }
+  @include to(575px) {
+    flex-direction: column-reverse;
+    padding: 30px 0 0 0;
+  }
   &-text {
     width: 41%;
     display: flex;
@@ -12,11 +16,14 @@
     align-items: flex-start;
     justify-content: center;
     padding-right: 195px;
-    @include to(1360px) {
+    @include to(1440px) {
       padding-right: 0;
     }
     @include to(850px) {
       width: 45%;
+    }
+    @include to(575px) {
+      width: 100%;
     }
     & p {
       font-size: 24px;
@@ -24,10 +31,20 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $main-text;
+      @include to(850px) {
+        font-size: 20px;
+      }
+      @include to(575px) {
+        font-size: min(vw(14, 320), 16px);
+        padding-top: 30px;
+      }
     }
   }
   &-img {
     width: 50%;
+    @include to(575px) {
+      width: 100%;
+    }
   }
 }
 .sport-section-container:last-child {
@@ -35,13 +52,25 @@
 }
 
 .sport-container-text {
-  padding: 75px 0 50px 0;
-  @include to(1360px) {
+  padding: 75px 120px 50px 120px;
+  @include to(1440px) {
+    padding: 0 100px;
+  }
+  @include to(850px) {
     padding: 0;
   }
 }
 .architecture-container-text.sport-container-title {
   @include to(850px) {
     padding-bottom: 50px;
+  }
+  @include to(575px) {
+    padding: 30px 0;
+  }
+}
+.sport-section-container-mobile {
+  @include to(575px) {
+    flex-direction: column;
+    padding-top: 0;
   }
 }

@@ -3,50 +3,87 @@
   // height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 70px;
+  padding-top: 130px;
   width: 100%;
+  position: relative;
+  .footer-ornament-mobile {
+    opacity: 0;
+    @include to(575px) {
+      position: absolute;
+      opacity: 1;
+      display: flex;
+      align-items: flex-end;
+      height: 130px;
+      object-fit: cover;
+      top: 0;
+      background: #efefef;
+      width: 100%;
+    }
+  }
+  @include to(575px) {
+    background: #f7f7f7;
+  }
+}
+.img-ornament-mobile {
+  @include to(575px) {
+    width: 88px;
+    height: 88px;
+    stroke: rgb(255, 255, 255);
+  }
 }
 .footer-content {
-  max-width: 1920px;
+  // max-width: 1920px;
   padding: 0 72px;
   margin: 0 auto;
   height: 100vh;
-  @include to(1360px) {
-    max-width: 1326px;
+  @include to(1440px) {
+    // max-width: 1326px;
     padding: 0 50px;
   }
   @include to(850px) {
-    max-width: 768px;
+    // max-width: 768px;
     padding: 0 35px;
+    // height: 100%;
+  }
+  @include to(575px) {
     height: auto;
+    padding: 50px 35px 170px 35px;
   }
 }
 .form-title {
   font-weight: 300;
-  font-size: 48px;
+  // font-size: 48px;
+  font-size: min(vw(48, 1920), 64px);
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: -0.05em;
   color: $main-text;
-  @include to(1360px) {
+  @include to(1440px) {
     font-size: 36px;
   }
   @include to(850px) {
     font-size: 24px;
   }
+  @include to(575px) {
+    font-size: min(vw(16, 320), 18px);
+  }
 }
 .form {
   // width: 840px;
-  padding-top: 35vh;
+  padding-top: 38vh;
   display: flex;
   justify-content: space-between;
+  @include to(575px) {
+    flex-direction: column;
+    padding-top: 0;
+  }
 }
 .footer-form {
   display: flex;
   align-items: flex-end;
-  padding-top: 70px;
-  width: 100%;
-  @include to(1360px) {
+  padding-top: 50px;
+  width: 90%;
+  @include to(1440px) {
     padding-top: 60px;
   }
   @include to(850px) {
@@ -57,12 +94,18 @@
   }
 }
 .footer-container-form {
-  width: 1060px;
-  @include to(1360px) {
-    width: 840px;
+  width: 57%;
+  @include to(1920px) {
+    width: 60%;
   }
-  @include to(850px) {
-    width: 265px;
+  // @include to(1570px) {
+  //   width: 900px;
+  // }
+  // @include to(1440px) {
+  //   width: 840px;
+  // }
+  @include to(575px) {
+    width: 100%;
   }
 }
 
@@ -73,17 +116,22 @@
   align-items: center;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 12px;
+  // font-size: 12px;
+  font-size: min(vw(12, 1920), 16px);
   line-height: 1;
   color: $white;
-  width: 220px;
-  height: 50px;
+  width: 330px;
+  height: 70px;
   margin-left: 70px;
   white-space: nowrap;
   text-decoration: none;
   transition: color 0.3s ease-in;
   justify-content: center;
-  @include to(1360px) {
+  @include to(1920px) {
+    width: 220px;
+    height: 50px;
+  }
+  @include to(1440px) {
     width: 840px;
     width: 190px;
     height: 36px;
@@ -97,42 +145,74 @@
     height: 50px;
     font-size: 16px;
   }
+  @include to(575px) {
+    margin: 30px 0;
+
+    width: 220px;
+    height: 50px;
+    font-size: min(vw(10, 320), 12px);
+  }
 }
 .footer-contact {
+  margin-right: 200px;
+  @include to(1920px) {
+    margin-right: 90px;
+  }
+  @include to(850px) {
+    margin-right: 60px;
+  }
+
   &-title {
-    font-size: 24px;
+    // font-size: 24px;
+    font-size: min(vw(24, 1920), 30px);
     line-height: 1.2;
     text-transform: uppercase;
     color: $main-text;
     padding-bottom: 30px;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 16px;
       padding-bottom: 20px;
     }
     @include to(850px) {
       font-size: 24px;
     }
+    @include to(575px) {
+      font-size: min(vw(14, 320), 16px);
+      padding-bottom: 20px;
+    }
   }
   & p {
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: min(vw(18, 1920), 24px);
     line-height: 1.4;
     color: #88889d;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 12px;
     }
     @include to(850px) {
       font-size: 16px;
     }
+    @include to(575px) {
+      font-size: min(vw(10, 320), 12px);
+    }
   }
   &-tel {
-    font-size: 15px;
+    // font-size: 15px;
+    font-size: min(vw(18, 1920), 24px);
     color: $main-text;
-    padding: 15px 0;
-    @include to(1360px) {
+    padding: 25px 0;
+    @include to(1920px) {
+      padding: 15px 0;
+    }
+    @include to(1440px) {
       font-size: 14px;
     }
     @include to(850px) {
       font-size: 16px;
+    }
+    @include to(575px) {
+      font-size: min(vw(10, 320), 12px);
+      padding: 10px 0;
     }
   }
 }
@@ -141,13 +221,17 @@
   fill: none;
   width: 60px;
   height: 60px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 40px;
     height: 40px;
   }
   @include to(850px) {
     width: 60px;
     height: 60px;
+  }
+  @include to(575px) {
+    width: 46x;
+    height: 46px;
   }
 }
 .icon--up:hover {
@@ -161,17 +245,38 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @include to(850px) {
-    padding-bottom: 50px;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 100px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 100px 87px 0 180px;
+  /* border: 100px; */
+  bottom: 100px;
+  // @include to(850px) {
+  //   padding-bottom: 50px;
+  // }
+  @include to(1560px) {
+    padding: 50px 50px 0 118px;
+    bottom: 50px;
+  }
+  @include to(1440px) {
+    padding: 50px 50px 0 118px;
+    bottom: 70px;
+  }
+  @include to(575px) {
+    padding: 20px 35px;
+    bottom: 0;
   }
 }
 .footer-rights {
-  font-size: 14px;
+  // font-size: 14px;
+  font-size: min(vw(14, 1920), 16px);
   line-height: 1.4;
   letter-spacing: -0.05em;
-  color: #b3b3b3;
-  width: 150px;
-  @include to(1360px) {
+  color: #b2b2b2;
+  width: 170px;
+  @include to(1440px) {
     font-size: 12px;
     width: 130px;
   }
@@ -179,14 +284,22 @@
     font-size: 14px;
     width: 230px;
   }
+  @include to(575px) {
+    font-size: 10px;
+  }
 }
 .ooter-rights-offer {
-  font-size: 14px;
+  // font-size: 14px;
+  font-size: min(vw(14, 1920), 16px);
   line-height: 1.4;
   letter-spacing: -0.05em;
-  color: #b3b3b3;
-  width: 560px;
-  @include to(1360px) {
+  color: #b2b2b2;
+  width: 597px;
+  text-align: center;
+  @include to(1920px) {
+    width: 560px;
+  }
+  @include to(1440px) {
     font-size: 12px;
     width: 480px;
   }
@@ -197,20 +310,33 @@
     order: -1;
     text-align: center;
   }
+  @include to(575px) {
+    font-size: 10px;
+    max-width: 500px;
+    padding: 0 0 20px 0;
+    // order: -1;
+    text-align: left;
+  }
 }
 .footer-dev {
-  font-size: 14px;
+  font-size: min(vw(14, 1920), 16px);
   line-height: 1.4;
   letter-spacing: -0.05em;
-  color: #b3b3b3;
-  width: 115px;
-  @include to(1360px) {
+  color: #b2b2b2;
+  width: 135px;
+  @include to(1920px) {
+    width: 115px;
+  }
+  @include to(1440px) {
     font-size: 12px;
     width: 100px;
   }
   @include to(1850px) {
     font-size: 14px;
     width: 130px;
+  }
+  @include to(575px) {
+    font-size: 10px;
   }
   & a {
     // text-decoration: none;
@@ -220,35 +346,67 @@
 }
 .form-field:not(#t) .form-field__input.footer-field-input {
   font-weight: 300;
-  font-size: 56px;
+  // font-size: 56px;
+  font-size: 72px;
   color: $main-text;
   border: none;
   position: relative;
   padding-top: 18px;
-  @include to(1360px) {
-    font-size: 48px;
+  @include to(1920px) {
+    // font-size: 48px;
+    font-size: 56px;
+  }
+  @include to(1440px) {
+    // font-size: 48px;
+    font-size: 50px;
   }
   @include to(850px) {
-    font-size: 30px;
+    // font-size: 30px;
+    font-size: 32px;
   }
 }
 
 .form-field:not(#t) .form-field-message.form-field-message-phone.footer-placeholder {
   font-weight: 300;
-  font-size: 56px;
+  // font-size: 56px;
+  font-size: 72px;
   color: #b2b2b2;
   position: absolute;
-  top: 27px;
-  left: 135px;
+  top: 35px;
+  left: 180px;
   opacity: 1;
-  @include to(1360px) {
+  @include to(1920px) {
+    top: 33px;
+    left: 130px;
+    font-size: 56px;
+  }
+  @include to(1440px) {
+    // font-size: 48px;
+    font-size: 50px;
+  }
+  // @include to(1700px) {
+  //   left: 110px;
+  // }
+  // @include to(1500px) {
+  //   left: 107px;
+  //   top: 36px;
+  // }
+  // @include to(1312px) {
+  //   left: 105px;
+  //   top: 36px;
+  // }
+  @include to(1440px) {
     font-size: 48px;
-    left: 120px;
+    left: 107x;
   }
   @include to(850px) {
     font-size: 30px;
     left: 77px;
-    top: 30px;
+    top: 37px;
+  }
+  @include to(575px) {
+    font-size: 30px;
+    top: 12px;
   }
 }
 .footer-placeholder {
@@ -263,6 +421,11 @@
   @include to(850px) {
     width: 265px;
   }
+  @include to(575px) {
+    padding-top: 0;
+    height: 35px;
+    font-size: 30px;
+  }
 }
 
 .form-field:not(#t)
@@ -270,6 +433,9 @@
   + .form-field-message
   .form-field-message-phone.footer-placeholder {
   opacity: 0;
+}
+.footer-contact-container {
+  display: flex;
 }
 
 // .form-field:not(#t) {

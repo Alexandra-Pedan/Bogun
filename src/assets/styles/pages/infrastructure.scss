@@ -1,26 +1,38 @@
 .infrastructure-page {
   margin: 0 auto;
-  max-width: 1920px;
-  padding: 0 150px 0 190px;
+  // max-width: 1920px;
+  width: 100%;
+  padding: 0 100px 0 170px;
   position: relative;
   display: flex;
   justify-content: space-between;
-  height: 190px;
+  height: 180px;
   align-items: center;
-  @include to(1360px) {
-    max-width: 1326px;
+  @include to(1920px) {
+    padding: 0 110px 0 150px;
+    height: 185px;
+  }
+  @include to(1440px) {
+    // max-width: 1326px;
     padding: 0 50px 0 106px;
-    height: 150px;
+    height: 122px;
   }
   @include to(850px) {
-    max-width: 768px;
+    // max-width: 768px;
     padding: 50px 35px 0 35px;
     height: 200px;
     align-items: flex-start;
   }
+  @include to(575px) {
+    padding: 5px 25px 30px 25px;
+    height: auto;
+    .desktop {
+      display: none;
+    }
+  }
   & a {
     margin-right: 245px;
-    @include to(1360px) {
+    @include to(1440px) {
       margin-right: 0;
     }
   }
@@ -28,11 +40,14 @@
     font-size: 64px;
     letter-spacing: -0.02em;
     color: $main-text;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 36px;
     }
     @include to(850px) {
       padding-top: 13px;
+    }
+    @include to(575px) {
+      font-size: min(vw(18, 320), 20px);
     }
   }
   &-adress {
@@ -44,7 +59,7 @@
       width: 60px;
       height: 60px;
       margin-right: 20px;
-      @include to(1360px) {
+      @include to(1440px) {
         width: 46px;
         height: 46px;
       }
@@ -53,7 +68,7 @@
       font-size: 16px;
       letter-spacing: -0.05em;
       color: $main-text;
-      @include to(1360px) {
+      @include to(1440px) {
         font-size: 14px;
       }
     }
@@ -62,7 +77,7 @@
 .icon--environment {
   width: 380px;
   height: 190px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 260px;
     height: 130px;
   }
@@ -110,8 +125,13 @@
   margin: 0 auto;
   overflow: hidden;
   @include to(850px) {
-    height: 305px;
+    height: 310px;
     width: 100%;
+    padding: 30px;
+  }
+  @include to(575px) {
+    padding: 15px 25px;
+    height: 280px;
   }
 }
 .infrastructure-map-item {
@@ -122,8 +142,11 @@
     line-height: 1.4;
     color: $main-text;
     margin-left: 20px;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 10px;
+    }
+    @include to(575px) {
+      margin-left: 10px;
     }
   }
   &:nth-child(2n + 1) {
@@ -156,7 +179,7 @@
   letter-spacing: -0.05em;
   text-transform: uppercase;
   color: $white;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 190px;
     height: 36px;
     font-size: 10px;
@@ -173,7 +196,7 @@
     width: 6px;
     height: 6px;
     transition: all 0.5s ease;
-    @include to(1360px) {
+    @include to(1440px) {
       width: 4px;
       height: 4px;
     }

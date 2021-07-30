@@ -1,6 +1,6 @@
 .architecture-container-text {
   padding: 0 130px;
-  @include to(1360px) {
+  @include to(1440px) {
     padding: 0 46px;
   }
   @include to(850px) {
@@ -14,7 +14,7 @@
   z-index: -1;
   width: 218px;
   height: 218px;
-  @include to(1360px) {
+  @include to(1440px) {
     bottom: -75px;
     left: calc(25% - 75px);
     width: 150px;
@@ -26,10 +26,18 @@
     width: 100px;
     height: 100px;
   }
+  @include to(575px) {
+    width: 0;
+    height: 0;
+  }
 }
 .architecture-container-section.mobile-container {
   @include to(850px) {
     padding-top: 100px;
+  }
+  @include to(575px) {
+    flex-direction: column-reverse;
+    padding-top: 30px;
   }
 }
 .architecture-container-section {
@@ -48,19 +56,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include to(1360px) {
+    @include to(1440px) {
       font-size: 16px;
+    }
+    @include to(575px) {
+      width: 100%;
+      justify-content: flex-start;
+      padding-top: 30px;
     }
     & p {
       width: 55%;
       @include to(850px) {
         width: 87%;
       }
+      @include to(575px) {
+        width: 100%;
+      }
     }
   }
   &-img {
     width: 45%;
     position: relative;
+    @include to(575px) {
+      width: 100%;
+    }
     & .architecture-ornament {
       position: absolute;
       width: 218px;
@@ -68,7 +87,7 @@
       bottom: -109px;
       right: calc(50% - 109px);
       z-index: -1;
-      @include to(1360px) {
+      @include to(1440px) {
         width: 150px;
         height: 150px;
         bottom: -75px;
@@ -80,12 +99,16 @@
         bottom: -50px;
         right: calc(50% - 50px);
       }
+      @include to(575px) {
+        width: 0;
+        height: 0;
+      }
     }
   }
 }
 .architecture-container-text.hall-container-text {
   padding: 0 400px;
-  @include to(1360px) {
+  @include to(1440px) {
     padding: 0 250px;
   }
   @include to(850px) {
@@ -99,5 +122,25 @@
   padding-top: 50px;
   @include to(850px) {
     padding-top: 100px;
+  }
+  @include to(575px) {
+    padding-top: 30px;
+    display: flex;
+  }
+}
+.hall-container-mobile {
+  @include to(575px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+.hall-container-text-mobile {
+  @include to(575px) {
+    padding-top: 10px;
+  }
+}
+.liberty-container-img-mobile {
+  @include to(575px) {
+    display: none;
   }
 }

@@ -1,24 +1,32 @@
 .document-page {
   margin: 0 auto;
-  max-width: 1920px;
-  padding: 30px 50px 0 190px;
+  // max-width: 1920px;
+  width: 100%;
+  padding: 30px 70px 0 170px;
   position: relative;
   display: flex;
   justify-content: space-between;
   height: auto;
   align-items: flex-start;
-  @include to(1360px) {
-    max-width: 1326px;
-    padding: 30px 50px 0 106px;
+  @include to(1920px) {
+    padding: 20px 70px 0 150px;
+  }
+  @include to(1440px) {
+    // max-width: 1326px;
+    padding: 30px 50px 0 109px;
   }
   @include to(850px) {
-    max-width: 768px;
+    // max-width: 768px;
     padding: 50px 50px 0 35px;
     flex-direction: column;
     .news-ornament {
       width: 0px;
       height: 0px;
     }
+  }
+  @include to(575px) {
+    // max-width: 1326px;
+    padding: 15px 25px 0 25px;
   }
 }
 .content-news.content-document {
@@ -27,11 +35,20 @@
   flex: 1 1 100%;
   flex-direction: column;
 }
-
+.document-container-mobile {
+  display: flex;
+  width: 39%;
+  align-items: center;
+  justify-content: flex-end;
+  @include to(575px) {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
 .news-container.document-container {
   overflow-y: auto;
   height: 80vh;
-  @include to(1360px) {
+  @include to(1440px) {
     height: 700px;
   }
   &::-webkit-scrollbar {
@@ -51,7 +68,7 @@
     width: 95px;
     height: 135px;
     margin-right: 40px;
-    @include to(1360px) {
+    @include to(1440px) {
       width: 65px;
       height: 90px;
       margin-right: 30px;
@@ -68,25 +85,38 @@
   }
 }
 .document-download {
-  width: 200px;
-  height: 50px;
+  width: 230px;
+  height: 56px;
+  margin-left: 50px;
   background-color: $main-text;
   color: $white;
-  font-size: 14px;
+  // font-size: 14px;
+  font-size: min(vw(14, 1920), 16px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  @include to(1360px) {
+  @include to(1920px) {
+    width: 200px;
+    height: 50px;
+  }
+  @include to(1440px) {
     width: 140px;
     height: 36px;
     font-size: 10px;
+    margin-left: 30px;
   }
   @include to(850px) {
     width: 160px;
     height: 45px;
     font-size: 14px;
+    margin-left: 20px;
+  }
+  @include to(575px) {
+    width: 135px;
+    height: 36px;
+    font-size: 10px;
   }
 }
 .document-link {

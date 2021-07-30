@@ -5,31 +5,63 @@
 .developer-content {
   &-logo {
     width: 26%;
+    padding-left: 120px;
+    @include to(1920px) {
+      padding-left: 0;
+      width: 210px;
+    }
+    @include to(1440px) {
+      width: 150px;
+    }
+    @include to(575px) {
+      width: 100%;
+    }
   }
   &-info {
     display: flex;
-    width: 1920px;
+    // width: 1920px;
+    width: 100%;
     margin: 0 auto;
     padding: 70px 147px 100px 420px;
-    @include to(1360px) {
-      width: 1326px;
-      padding: 70px 60px 100px 256px;
+    @include to(1920px) {
+      padding: 70px 0 100px 0;
+      justify-content: center;
+    }
+    @include to(1440px) {
+      padding: 70px 0 100px 0;
     }
     @include to(850px) {
-      width: 798px;
+      // width: 798px;
       padding: 50px 50px 0 35px;
       flex-direction: column;
       align-items: center;
     }
+    @include to(575px) {
+      // width: 798px;
+      padding: 30px 25px 0 25px;
+      flex-direction: column;
+      align-items: left;
+    }
   }
   &-description {
-    width: 74%;
+    width: 50%;
+    @include to(1920px) {
+      width: 50%;
+      margin-left: 220px;
+    }
+    @include to(1440px) {
+      margin-left: 150px;
+    }
     @include to(850px) {
       width: 100%;
       padding: 0 35px;
+      margin-left: 0;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+    }
+    @include to(575px) {
+      padding: 0;
     }
     &-title {
       font-size: 36px;
@@ -40,6 +72,10 @@
       @include to(850px) {
         font-size: 24px;
         padding-top: 50px;
+      }
+      @include to(575px) {
+        font-size: min(vw(18, 320), 20px);
+        padding: 20px 0 0 0;
       }
       & span {
         font-style: italic;
@@ -52,11 +88,16 @@
       letter-spacing: -0.05em;
       color: #818181;
       width: 50%;
-      @include to(1360px) {
+      @include to(1440px) {
         width: 38%;
       }
       @include to(850px) {
         width: 50%;
+      }
+      @include to(575px) {
+        width: 100%;
+        padding-top: 15px;
+        font-size: min(vw(12, 320), 14px);
       }
     }
   }
@@ -69,25 +110,35 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 1050px;
   }
   @include to(850px) {
     width: 740px;
   }
+  @include to(575px) {
+    width: 300px;
+  }
 }
 .icon--SAGA {
   width: 215px;
   height: 215px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 150px;
     height: 150px;
+  }
+  @include to(575px) {
+    width: 80px;
+    height: 80px;
   }
 }
 .swiper-container {
   width: 100%;
   height: 100%;
   padding: 50px 0 150px 0;
+  @include to(575px) {
+    padding: 50px 0 70px 0;
+  }
 }
 
 .swiper-slide {
@@ -101,7 +152,7 @@
   fill: none;
   width: 70px;
   height: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -109,47 +160,67 @@
 .icon--garden {
   width: 128px;
   height: 137px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 92px;
     height: 98px;
+  }
+  @include to(575px) {
+    width: 78px;
+    height: 83px;
   }
 }
 .icon--kandinsky {
   width: 178px;
   height: 56px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 127px;
     height: 40px;
+  }
+  @include to(575px) {
+    width: 100px;
+    height: 30px;
   }
 }
 .icon--5kv {
   width: 208px;
   height: 118px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 149px;
     height: 84px;
+  }
+  @include to(575px) {
+    width: 120px;
+    height: 63px;
   }
 }
 .icon--woods {
   width: 190px;
   height: 124px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 137px;
     height: 89px;
+  }
+  @include to(575px) {
+    width: 100px;
+    height: 73px;
   }
 }
 .icon--lebed {
   width: 120px;
   height: 136px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 86px;
     height: 97px;
+  }
+  @include to(575px) {
+    width: 66px;
+    height: 73px;
   }
 }
 .swiper-button-next {
   width: 70px;
   height: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -157,7 +228,7 @@
 .swiper-button-prev {
   width: 70px;
   height: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -181,7 +252,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -199,7 +270,7 @@
   display: inline-block;
   width: 70px;
   height: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -213,7 +284,7 @@
   display: inline-block;
   width: 70px;
   height: 70px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 50px;
     height: 50px;
   }
@@ -230,7 +301,7 @@
 }
 .swiper-container.mySwiper {
   width: 1132px;
-  @include to(1360px) {
+  @include to(1440px) {
     width: 810px;
   }
   @include to(850px) {

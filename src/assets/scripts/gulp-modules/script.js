@@ -1,6 +1,13 @@
+$(window).resize(() => {
+  document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+});
+document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+// document.addEventListener('DOMContentLoaded', () => {
+
+// });
 var swiper = new Swiper('.mySwiper', {
   slidesPerView: 5,
-  spaceBetween: 0,
+  spaceBetween: 10,
   slidesPerGroup: 1,
   loop: true,
   loopFillGroupWithBlank: true,
@@ -15,12 +22,12 @@ var swiper = new Swiper('.mySwiper', {
   breakpoints: {
     // when window width is >= 320px
     320: {
-      slidesPerView: 2,
-      spaceBetween: 20,
+      slidesPerView: 4,
+      spaceBetween: 5,
     },
     // when window width is >= 480px
     480: {
-      slidesPerView: 3,
+      slidesPerView: 4,
       spaceBetween: 30,
     },
     // when window width is >= 640px
@@ -40,12 +47,14 @@ const menuOpen = document.querySelector('.js-menu-open');
 const menuClose = document.querySelector('.js-menu-close');
 menuOpen.addEventListener('click', () => {
   if (menuContainer.classList.contains('active')) return;
+  document.querySelector('body').style.overflow = 'hidden';
   menuContainer.classList.add('active');
 });
 
 menuClose.addEventListener('click', () => {
   if (!menuContainer.classList.contains('active')) return;
   menuContainer.classList.remove('active');
+  document.querySelector('body').style.overflow = 'auto';
 });
 
 const buttonUp = document.querySelector('.js-btn-up');
@@ -76,8 +85,10 @@ btnCall.addEventListener('click', () => {
 btnCallMenu.forEach(el =>
   el.addEventListener('click', () => {
     formCall.classList.toggle('sideform-active');
+    document.querySelector('body').style.overflow = 'hidden';
   }),
 );
 btnClose.addEventListener('click', () => {
   formCall.classList.remove('sideform-active');
+  document.querySelector('body').style.overflow = 'auto';
 });
