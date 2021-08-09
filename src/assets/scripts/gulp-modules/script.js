@@ -92,3 +92,19 @@ btnClose.addEventListener('click', () => {
   formCall.classList.remove('sideform-active');
   document.querySelector('body').style.overflow = 'auto';
 });
+
+// Natasha
+
+const placeHolder = document.querySelector('.place-holder-pop-up'),
+  input = document.querySelector('.input-tel-pop-up');
+placeHolder.addEventListener('click', function() {
+  placeHolder.style.display = 'none';
+  input.focus();
+});
+
+const placeholderFooter = document.querySelector('.js-placeholder-footer');
+const inputFooter = document.querySelector('.js-input-footer');
+placeholderFooter.addEventListener('click', function() {
+  placeholderFooter.style.display = 'none';
+  inputFooter.focus();
+});

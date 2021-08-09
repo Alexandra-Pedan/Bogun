@@ -1,3 +1,36 @@
+//- .sideform
+//-   .form-container
+//-     <svg class="form-btn-close js-close" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+//-     <circle cx="23" cy="23" r="23"/>
+//-     <path d="M28 28L18 18M18 28L28 18L18 28Z"/>
+//-     </svg>
+
+//-     h4.header-form-title Замовити дзвінок
+//-     p.header-form-text Якщо у вас виникли питання, залиште свій номер і ми передзвонимо вам:
+//-     //- .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+//-     //-   .input-message(data-input-message) Ім`я*
+//-     //-   input(type='text' name="name").form-field__input
+
+//-     form(data-form-homepage autocomplete="off")
+//-       .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
+//-         input(type='text' name="name" placeholder="").form-field__input
+//-         .form-field-message.form-field-message-name  Ім`я*
+//-           //- span.modal-icon1.modal-icon-placeholder Ваше ім’я
+//-         .input-message(data-input-message)
+
+//-       .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+//-         input(type='text' name="phone" placeholder="Телефон*").form-field__input
+//-         .form-field-message.form-field-message-phone Телефон*
+//-         .mask-absolute.js-mask-absolute
+//-         .input-message(data-input-message)
+
+    
+//-         //- button(type='submit' class="footer-button hover" data-btn-submit="data-btn-submit").link
+//-         //-   span(data-btn-submit-text="data-btn-submit-text") Надіслати    
+
+//-         button( type="submit" data-btn-submit="data-btn-submit").form-btn
+//-           span(data-btn-submit-text="data-btn-submit-text").form-btn-text Надіслати
+
 .sideform
   .form-container
     <svg class="form-btn-close js-close" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,30 +40,45 @@
 
     h4.header-form-title Замовити дзвінок
     p.header-form-text Якщо у вас виникли питання, залиште свій номер і ми передзвонимо вам:
-    //- .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-    //-   .input-message(data-input-message) Ім`я*
-    //-   input(type='text' name="name").form-field__input
-
     form(data-form-homepage autocomplete="off")
       .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive")
-        input(type='text' name="name" placeholder="").form-field__input
-        .form-field-message.form-field-message-name  Ім`я*
-          //- span.modal-icon1.modal-icon-placeholder Ваше ім’я
-        .input-message(data-input-message)
+        .form-field-message
+        input(type='text' name="name" placeholder="Ім`я*").form-field__input
+        .input-message(data-input-message="") 
 
       .form-field.disabled.form-field-input(data-field-input data-field-phone data-status="field--inactive")
-        input(type='text' name="phone" placeholder="Телефон*").form-field__input
-        .form-field-message.form-field-message-phone Телефон*
+        .form-field-message
+        input(type='text' name="phone" placeholder="Телефон*" inputmode="tel").form-field__input.input-tel-pop-up 
+        span.place-holder-pop-up Телефон*
         .mask-absolute.js-mask-absolute
-        .input-message(data-input-message)
-
-    
-        //- button(type='submit' class="footer-button hover" data-btn-submit="data-btn-submit").link
-        //-   span(data-btn-submit-text="data-btn-submit-text") Надіслати    
-
+        .input-message( data-input-message="")
         button( type="submit" data-btn-submit="data-btn-submit").form-btn
           span(data-btn-submit-text="data-btn-submit-text").form-btn-text Надіслати
 
+
+//- .popup.active
+//-   .popup__block
+//-     .popup__close
+//-       <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+//-         <path d="M13 13L1 1M1 13L13 1L1 13Z" stroke="#4D4D4C"></path>
+//-       </svg>
+//-     form(class="home-contact--width" data-home-popup="" autocomplete="off")
+//-       h5.form-label.home-contact--width Замовити <br> дзвінок
+//-       h5.form-label2.home-contact--width Якщо у вас виникли питання, залиште свій номер і ми передзвонимо вам:
+//-         .form-field.form-field-input(data-field-input="" data-field-name="" data-status="field--error" data-animation="none")
+//-           .form-field-message
+//-           input(type="text" name="name" placeholder="Ім`я*" maxlength="31").form-field__input
+//-           .input-message(data-input-message="") це поле є обов`язковим
+//-         .form-field.disabled.form-field-input( data-field-input="" data-field-phone="" data-status="field--error" data-animation="none")
+//-           .form-field-message
+//-           input(type="tel" name="phone" placeholder="Телефон*" inputmode="tel").form-field__input.input-tel-pop-up 
+//-           span.place-holder-pop-up( style="display: none;") Телефон*
+//-           .mask-absolute.js-mask-absolute
+//-           .input-message( data-input-message="") телефон повинен містити не менше 12 символів
+//-           .form-btn-wrap.df.jcsb.aic
+//-             button( class="main-button home-contact-btn--size" type="submit" data-btn-submit="data-btn-submit" disabled="true") Надіслати
+//-               div(data-btn-submit-text="" style="display:none")
+//-       .popup__overlay
 
 
 

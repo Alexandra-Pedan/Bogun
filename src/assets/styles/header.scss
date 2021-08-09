@@ -48,6 +48,9 @@
       pointer-events: painted;
     }
   }
+  .menu-contact .header-left-link {
+    pointer-events: painted;
+  }
   &-left {
     display: flex;
     align-items: center;
@@ -67,7 +70,7 @@
       font-size: min(vw(20, 1920), 24px);
       letter-spacing: -0.05em;
       color: $white;
-      pointer-events: painted;
+      // pointer-events: painted;
       @include to(1920px) {
         margin-right: 50px;
       }
