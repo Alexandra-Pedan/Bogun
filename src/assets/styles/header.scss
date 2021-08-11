@@ -10,8 +10,6 @@
     padding-top: 5px;
   }
   &-content {
-    // width: 1920px;
-    // max-width: 1920px;
     padding: 0 72px;
     height: 234px;
     margin: 0 auto;
@@ -23,14 +21,10 @@
       height: 140px;
     }
     @include to(1440px) {
-      // width: 1326px;
-      // max-width: 1326px;
       padding: 0 50px;
       height: var(--header-h);
     }
     @include to(850px) {
-      // width: 1326px;
-      // max-width: 768px;
       padding: 0 35px;
       height: 130px;
       .desktop {
@@ -38,14 +32,14 @@
       }
     }
     @include to(575px) {
-      max-width: 500px;
-      min-width: 320px;
       padding: 0 25px;
       height: 70px;
     }
     .logo-link {
-      // margin-left: 45px;
       pointer-events: painted;
+      @include to(575px) {
+        padding-top: 10px;
+      }
     }
   }
   .menu-contact .header-left-link {
@@ -181,6 +175,7 @@
   @include to(575px) {
     width: 46px;
     height: 46px;
+    margin-left: 10px;
   }
 }
 #icon-phone path {

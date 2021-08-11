@@ -6,8 +6,11 @@
   position: fixed;
   z-index: 200;
   top: 0;
-  right: -50vw;
-  transition: right 1s 0.3s;
+  // right: -50vw;
+  // transition: right 1s 0.3s;
+  right: -100%;
+  visibility: hidden;
+  transition: all 1s ease-in-out;
   @include to(850px) {
     width: 100vw;
     right: -100vw;
@@ -15,8 +18,11 @@
 }
 
 .sideform-active {
+  // right: 0;
+  // transition: right 1s;
   right: 0;
-  transition: right 1s;
+  transform: translateX(0);
+  visibility: visible;
 }
 .form-container {
   // background: linear-gradient(135.43deg, #efefef 0%, #e9e2de 99.99%, #e9e2de 100%);
@@ -31,6 +37,10 @@
   width: 53%;
   height: 100vh;
   margin: 0 auto 0 150px;
+  @include to(575px) {
+    margin: 0 35px;
+    width: 85%;
+  }
 }
 .form-btn-close {
   position: absolute;
@@ -45,6 +55,11 @@
     width: 46px;
     height: 46px;
     right: -80px;
+  }
+  @include to(575px) {
+    width: 36px;
+    height: 36px;
+    right: 0;
   }
   & path {
     stroke: $main-text;
@@ -62,6 +77,10 @@
     font-size: 36px;
     line-height: 1.2;
   }
+  @include to(575px) {
+    font-size: 24px;
+    line-height: 1.4;
+  }
 }
 
 .header-form-text {
@@ -77,6 +96,12 @@
     font-size: 14px;
     line-height: 1.8;
     padding-top: 30px;
+  }
+  @include to(575px) {
+    font-size: 12px;
+    line-height: 1.4;
+    padding-top: 20px;
+    width: 75%;
   }
 }
 // .input-message {
@@ -120,6 +145,12 @@
     width: 230px;
     height: 50px;
     font-size: 12px;
+  }
+  @include to(575px) {
+    margin-top: 30px;
+    width: 250px;
+    height: 50px;
+    font-size: 14px;
   }
 }
 /**********************************/
@@ -173,11 +204,7 @@ form {
   @media screen and (max-width: 575px) {
     width: 100%;
     max-width: 350px;
-    margin-top: 25px;
-  }
-  @include to(380px) {
-    margin: 20px 0 0 0;
-    width: 240px;
+    margin-top: 35px;
   }
   //  @include to(576px) {
   //   margin: 20px 0 0 0;
@@ -249,18 +276,10 @@ form {
     //   height: 70px;
     //   padding-left: 30px;
     // }
-    // @include to(575px) {
-    //   font-size: calc(12px + 1vw);
-    //   width: 100%;
-    //   height: calc(46px + 1vh);
-    //   padding-left: calc(20px + 1vw);
-    // }
-    // @include to(380px) {
-    //   font-size: 12px;
-    //   width: 240px;
-    //   height: 46px;
-    //   padding-left: 20px;
-    // }
+    @include to(575px) {
+      width: 100%;
+    }
+
     &::placeholder {
       // color: #ffffff;
       // font-size: 18px;
@@ -1298,5 +1317,8 @@ textarea {
     font-size: 14px;
     padding-bottom: 30px;
     height: 58px;
+  }
+  @include to(575px) {
+    height: 51px;
   }
 }

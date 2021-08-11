@@ -24,6 +24,9 @@
     @include to(1920px) {
       height: 400px;
     }
+    @include to(850px) {
+      height: 350px;
+    }
     svg {
       opacity: 0;
     }
@@ -75,7 +78,7 @@
   }
   @include to(575px) {
     height: auto;
-    padding: 50px 35px 170px 35px;
+    padding: 50px 25px 170px 25px;
   }
 }
 .form-title {
@@ -94,6 +97,7 @@
   }
   @include to(575px) {
     font-size: min(vw(16, 320), 18px);
+    // font-size: 16px;
   }
 }
 .form {
@@ -101,6 +105,9 @@
   padding-top: 38vh;
   display: flex;
   justify-content: space-between;
+  @include to(850px) {
+    padding-top: 33vh;
+  }
   @include to(575px) {
     flex-direction: column;
     padding-top: 0;
@@ -108,8 +115,8 @@
 }
 .footer-form {
   display: flex;
-  align-items: center;
-  // align-items: flex-end;
+  // align-items: center;
+  align-items: flex-start;
   padding-top: 70px;
   width: 90%;
   @include to(1440px) {
@@ -130,9 +137,9 @@
   // @include to(1570px) {
   //   width: 900px;
   // }
-  // @include to(1440px) {
-  //   width: 840px;
-  // }
+  @include to(850px) {
+    width: 45%;
+  }
   @include to(575px) {
     width: 100%;
   }
@@ -151,7 +158,8 @@
   color: $white;
   width: 330px;
   height: 70px;
-  margin-left: 70px;
+  // margin-left: 70px;
+  margin: 8px 0 0 70px;
   white-space: nowrap;
   text-decoration: none;
   transition: color 0.3s ease-in;
@@ -159,13 +167,15 @@
   @include to(1920px) {
     width: 220px;
     height: 50px;
+    margin-top: 10px;
   }
   @include to(1440px) {
     width: 840px;
     width: 190px;
     height: 36px;
     font-size: 10px;
-    margin-left: 50px;
+    // margin-left: 50px;
+    margin: 14px 0 0 50px;
   }
   @include to(850px) {
     margin-left: 0;
@@ -294,7 +304,7 @@
     bottom: 70px;
   }
   @include to(575px) {
-    padding: 20px 35px;
+    padding: 20px 25px;
     bottom: 0;
   }
 }
@@ -363,6 +373,9 @@
   @include to(1850px) {
     font-size: 14px;
     width: 130px;
+  }
+  @include to(1440px) {
+    font-size: 12px;
   }
   @include to(575px) {
     font-size: 10px;
@@ -471,6 +484,9 @@
 }
 .footer-contact-container {
   display: flex;
+  @include to(575px) {
+    justify-content: space-between;
+  }
 }
 
 // !!!!!!!!!!!!!
@@ -493,12 +509,13 @@
   }
   @include to(1440px) {
     font-size: 48px;
-    padding-top: 20px;
+    padding-top: 22px;
   }
   @include to(850px) {
-    font-size: 40px;
+    font-size: 30px;
     padding-top: 52px;
     height: 80px;
+    width: 260px;
   }
   @include to(575px) {
     font-size: 30px;

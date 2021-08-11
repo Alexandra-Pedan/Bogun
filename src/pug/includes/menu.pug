@@ -1,7 +1,10 @@
 .content-menu.js-menu-container
   .content-menu-container-header
     .menu-header
-      +svg('Logo-menu')
+      a(href='index.html')
+        +svg('Logo-menu')
+      .menu-header-call.js-call-menu  Замовити дзвінок
+
       .menu-header-lang-close
         .lang-block-mobile 
           a(href='index.html').active UA
@@ -10,6 +13,9 @@
         .menu-close.js-menu-close
           span.desktop закрити
           +svg('close').header-icon
+      
+     
+
     .menu-content
         .menu 
           .menu-list

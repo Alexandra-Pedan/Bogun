@@ -17,6 +17,15 @@ const swiperBig = new Swiper('.js-build-big', {
   },
 });
 
+// swiperMini.on('slideChange', function() {
+//   console.log(this);
+//   const indexSlide = slider.activeIndex;
+// })
+//
+// swiperBig.on('slideChange', function() {
+//   console.log(this);
+// })
+
 function getBuildData(id) {
   // const data = {
   //   id: '723',
@@ -37,12 +46,12 @@ function getBuildData(id) {
   // return new Promise((resolve, reject) => {
   //   resolve(data);
   // });
+  const data = new FormData();
+  data.append('action', 'buildProgress');
+  data.append('id', id);
   return fetch('/wp-admin/admin-ajax.php', {
     method: 'POST',
-    data: {
-      action: 'buildProgress',
-      id,
-    },
+    body: data,
   });
 }
 
@@ -96,8 +105,9 @@ function updateContentPopup(build, containers) {
   buildYear.textContent = build.date.y;
 
   const slidesHtml = build.slider.map(createSlide).join('');
-  swiperBig.$wrapperEl.innerHTML = slidesHtml;
-  swiperMini.$wrapperEl.innerHTML = slidesHtml;
+
+  swiperBig.wrapperEl.innerHTML = slidesHtml;
+  swiperMini.wrapperEl.innerHTML = slidesHtml;
   swiperBig.updateSlides();
   swiperMini.updateSlides();
 }
@@ -113,12 +123,10 @@ function buildContainerHandler(event, state, containers) {
   const id = +card.dataset.buildId;
   if (!isTouchCard || !id) return;
   state.updateCurrentId(id);
-  getBuildData(id)
-    .then(build => initBuildPopup(build, containers))
-    .catch(error => {
-      console.log(error);
-      alert(error);
-    });
+
+  const build = state.builds.filter(build => build.id === id);
+  if (build.length === 0) return;
+  initBuildPopup(build[0], containers);
 }
 
 function changeBuildContent(state, containers) {
@@ -148,241 +156,240 @@ function prevBuildHandler(state, containers) {
 }
 
 async function getBuilds() {
-  return [
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '19',
-        m: '05',
-        y: '2021',
-      },
-      id: '723',
-      month: 'Травень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
-      ],
-      text:
-        'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
-    },
-    {
-      count: 3,
-      date: {
-        d: '17',
-        m: '03',
-        y: '2021',
-      },
-      id: '533',
-      month: 'Березень',
-      next: 0,
-      prev: 0,
-      slider: [
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-        'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
-      ],
-      text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
-    },
-  ];
-  // return fetch('/wp-admin/admin-ajax.php', {
-  //   method: 'POST',
-  //   data: {
-  //     action: 'buildProgressList',
+  // return [
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
   //   },
-  // });
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '19',
+  //       m: '05',
+  //       y: '2021',
+  //     },
+  //     id: '723',
+  //     month: 'Травень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/d542c09e-32bc-4bcf-bb6b-e56183f6bd65.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7693c189-52bf-48b8-a9b3-0463d9949933.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/05/7c9de7df-bfd8-43de-b6b5-256e24a30ca9.jpg',
+  //     ],
+  //     text:
+  //       'Проводиться демонтаж старого оздоблення, систем внутрішніх комунікацій та перегородок\n',
+  //   },
+  //   {
+  //     count: 3,
+  //     date: {
+  //       d: '17',
+  //       m: '03',
+  //       y: '2021',
+  //     },
+  //     id: '533',
+  //     month: 'Березень',
+  //     next: 0,
+  //     prev: 0,
+  //     slider: [
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0225-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //       'https://kyivproekt-wp.smarto.com.ua/wp-content/uploads/2021/03/DJI_0174-HDR.jpg',
+  //     ],
+  //     text: 'Проходить підготовка до основних будівельних робіт на майданчику.\n',
+  //   },
+  // ];
+  const data = new FormData();
+  data.append('action', 'buildProgressList');
+  return fetch('/wp-admin/admin-ajax.php', {
+    method: 'POST',
+    body: data,
+  });
 }
 
 async function initBuild() {
-  const builds = await getBuilds();
-
+  const builds = await getBuilds().then(res => res.json(res));
   const buildsId = builds.map(build => +build.id);
   const state = {
     builds,
@@ -441,12 +448,11 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 function sideSwitchArrow(swiper, arrow, container) {
-  console.log(arrow);
   const mediumCordValue = document.documentElement.clientWidth / 2;
   // document.body.append(arrow);
   container.style.cursor = 'none';
   arrow.style.cursor = 'none';
-  arrow.style.zIndex = 10;
+  arrow.style.zIndex = 200;
   arrow.__proto__.hide = function() {
     this.style.opacity = '0';
     this.style.pointerEvents = 'none';

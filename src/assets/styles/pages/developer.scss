@@ -114,11 +114,11 @@
     width: 1050px;
   }
   @include to(850px) {
-    width: 740px;
+    width: 100%;
   }
-  @include to(575px) {
-    width: 300px;
-  }
+  // @include to(575px) {
+  //   width: 300px;
+  // }
 }
 .icon--SAGA {
   width: 215px;
@@ -305,6 +305,10 @@
     width: 810px;
   }
   @include to(850px) {
-    width: 650px;
+    width: 100%;
+    margin-left: 35px;
+  }
+  @include to(575px) {
+    margin-left: 25px;
   }
 }

@@ -25,6 +25,7 @@
       width: 14.5%;
     }
     @include to(575px) {
+      display: none;
       padding-top: 30px;
     }
     &-title {
@@ -67,6 +68,7 @@
     }
     @include to(575px) {
       padding: 30px 35px 100px 40px;
+      width: 100%;
     }
     &-title {
       // font-size: 36px;
@@ -215,6 +217,9 @@
         font-size: 13px;
       }
     }
+  }
+  @include to(575px) {
+    padding-bottom: 30px;
   }
 }
 .back-link {

@@ -60,32 +60,27 @@
 .menu-header {
   display: flex;
   justify-content: space-between;
-  // width: 1920px;
   width: 100%;
-  height: 130px;
+  height: 234px;
   margin: 0 auto;
-  padding: 120px 87px;
+  padding: 117px 72px;
   align-items: center;
   @include to(1920px) {
-    padding: 42px 72px;
+    height: 130px;
+    padding: 70px 72px;
   }
   @include to(1440px) {
-    // width: 1326px;
     padding: 42px 50px;
   }
   @include to(850px) {
-    // width: 768px;
-    // max-width: 768px;
-    // min-width: 600px;
-    padding: 35px 30px;
+    padding: 35px 35px;
     .desktop {
       display: none;
     }
   }
   @include to(575px) {
-    // max-width: 500px;
-    // min-width: 320px;
     padding: 12px 25px;
+    height: 70px;
   }
 }
 .menu-close {
@@ -141,12 +136,10 @@
     // width: 1326px;
   }
   @include to(850px) {
-    // width: 768px;
     padding: 20px 10px 100px 50px;
   }
   @include to(575px) {
-    // width: 768px;
-    padding: 40px 10px 100px 0;
+    padding: 40px 10px 50px 0;
     height: auto;
   }
 
@@ -154,6 +147,9 @@
     padding-left: 60px;
     @include to(850px) {
       padding-left: 45px;
+    }
+    @include to(575px) {
+      padding-left: 25px;
     }
   }
   & .menu-title {
@@ -194,33 +190,6 @@
       margin-bottom: 20px;
     }
   }
-  // & .menu-contact {
-  //   display: flex;
-  //   align-items: center;
-  //   padding-top: 200px;
-  //   @include to(1360px) {
-  //     padding-top: 50px;
-  //   }
-  //   @include to(850px) {
-  //     padding: 0 0 50px 0;
-  //   }
-  //   & .header-left-link {
-  //     margin-right: 0;
-  //   }
-  //   & div {
-  //     color: $main-text;
-  //     margin-right: 20px;
-  //   }
-  //   & .header-left-flat {
-  //     text-decoration: underline;
-  //     color: $pink;
-  //   }
-  //   @include to(850px) {
-  //     .desktop {
-  //       display: none;
-  //     }
-  //   }
-  // }
 }
 .menu-title.menu-title-less {
   font-size: 36px;
@@ -232,14 +201,14 @@
     color: #555568;
   }
   @include to(575px) {
-    font-size: 22px;
+    font-size: 18px;
   }
 }
 
 .menu-contact {
   display: flex;
   align-items: center;
-  padding: 0px 0 0 84px;
+  padding: 0px 0 117px 84px;
 
   @include to(1920px) {
     display: flex;
@@ -254,6 +223,9 @@
   }
   @include to(850px) {
     padding: 0 0 35px 35px;
+  }
+  @include to(575px) {
+    padding: 0 0 50px 25px;
   }
   & .header-left-link {
     margin-right: 0;
@@ -274,29 +246,30 @@
   }
 }
 .menu-description {
-  // margin-right: 60px;
   width: 1018px;
   padding-right: 60px;
-  height: 100%;
+  height: 70vh;
   padding-top: 10px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   @include to(1440px) {
     width: 760px;
-    padding-right: 60px;
-    height: 80vh;
-    padding-top: 5px;
+    // padding-right: 60px;
+    height: 70vh;
+    // padding-top: 5px;
     overflow-y: auto;
+    // padding-bottom: 15px;
+    padding: 5px 60px 0 0;
+    margin-bottom: 2vh;
   }
   @include to(992px) {
     width: 440px;
-    height: 80vh;
-    padding-right: 0;
     overflow-y: scroll;
   }
   @include to(575px) {
     width: 50%;
+    padding-right: 0;
   }
   &-project {
     &-list {
@@ -347,7 +320,7 @@
   }
   &::-webkit-scrollbar {
     width: 2px;
-    height: 100px;
+    height: 50px;
   }
   &::-webkit-scrollbar-track {
     // -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
@@ -363,23 +336,18 @@
 .breadcrumbs {
   display: flex;
   margin: 0 auto;
-  // width: 1920px;
   width: 100%;
   padding: 230px 50px 20px 170px;
   @include to(1920px) {
-    // width: 1326px;
     padding: 150px 50px 20px 150px;
   }
   @include to(1440px) {
-    // width: 1326px;
     padding: 150px 50px 0 109px;
   }
   @include to(850px) {
-    // width: 768px;
     padding: 130px 50px 0 35px;
   }
   @include to(575px) {
-    // width: 768px;
     padding: 80px 25px 0 25px;
   }
   &-item {
@@ -390,7 +358,6 @@
   }
 
   &-link {
-    // font-size: 12px;
     font-size: min(vw(12, 1920), 14px);
     letter-spacing: -0.05em;
     text-transform: uppercase;
@@ -456,7 +423,6 @@
 
 .contacts-menu-page {
   margin: 0 auto;
-  // max-width: 1920px;
   width: 100%;
   height: calc(100vh - 190px);
   padding: 50px 70px 0 170px;
@@ -467,12 +433,10 @@
     padding: 20px 70px 0 150px;
   }
   @include to(1440px) {
-    // max-width: 1326px;
     height: calc(100vh - 175px);
     padding: 15px 50px 0 106px;
   }
   @include to(850px) {
-    // max-width: 768px;
     padding: 50px 50px 0 35px;
     height: calc(100vh - 130px);
     flex-direction: column;
@@ -482,8 +446,30 @@
     }
   }
   @include to(575px) {
-    // max-width: 1326px;
     height: auto;
     padding: 15px 25px 70px 25px;
+  }
+}
+
+.menu-header-call {
+  visibility: hidden;
+  @include to(850px) {
+    visibility: visible;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.05em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: #555568;
+    width: 54%;
+    text-align: right;
+    cursor: pointer;
+  }
+  @include to(575px) {
+    font-size: 10px;
+    width: auto;
+    position: absolute;
+    top: 60px;
+    left: 25px;
   }
 }

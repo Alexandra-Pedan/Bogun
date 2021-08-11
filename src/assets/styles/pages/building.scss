@@ -256,6 +256,9 @@
 }
 .building-progress-item-wrap:nth-child(2n + 1) {
   margin-right: 100px;
+  @include to(850px) {
+    margin-right: 70px;
+  }
   @include to(575px) {
     margin-right: 0;
   }
@@ -481,18 +484,27 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 15vh;
+  top: 230px;
   right: 99px;
   z-index: 2;
-  height: 79vh;
+  height: 74vh;
   border-left: 1px solid rgba(255, 255, 255, 0.2);
+  @include to(1920px) {
+    top: 150px;
+    height: 77vh;
+  }
   @include to(1440px) {
     right: 72px;
+    height: 77vh;
   }
   @include to(850px) {
-    right: 60px;
+    right: 66px;
+    top: 130px;
+    height: 79vh;
   }
   @include to(575px) {
+    top: 80px;
+    right: 63px;
     border: none;
   }
   &-container {
