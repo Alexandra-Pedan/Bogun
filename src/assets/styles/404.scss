@@ -18,6 +18,9 @@
   text-transform: uppercase;
   color: $main-text;
   padding-bottom: 30px;
+  @include to(575px) {
+    font-size: 120px;
+  }
 }
 .text-404 {
   font-weight: 500;
@@ -26,6 +29,9 @@
   letter-spacing: -0.05em;
   color: $main-text;
   padding-bottom: 20px;
+  @include to(575px) {
+    font-size: 24px;
+  }
 }
 .link-404 {
   width: 210px;
@@ -37,6 +43,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @include to(575px) {
+    margin: 0 0 15px 0;
+  }
   & a {
     text-decoration: none;
     color: #ffffff;
@@ -44,6 +53,9 @@
 }
 .link-container {
   display: flex;
+  @include to(575px) {
+    flex-direction: column;
+  }
 }
 // .page404 {
 //   text-align: center;

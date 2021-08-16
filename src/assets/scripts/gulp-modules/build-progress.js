@@ -1,31 +1,6 @@
 const buildPopupActive = 'build-popup-active';
-
-const swiperMini = new Swiper('.js-build-mini', {
-  loop: true,
-  spaceBetween: 5,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesVisibility: true,
-  watchSlidesProgress: true,
-});
-
-const swiperBig = new Swiper('.js-build-big', {
-  loop: true,
-  spaceBetween: 10,
-  thumbs: {
-    swiper: swiperMini,
-  },
-});
-
-// swiperMini.on('slideChange', function() {
-//   console.log(this);
-//   const indexSlide = slider.activeIndex;
-// })
-//
-// swiperBig.on('slideChange', function() {
-//   console.log(this);
-// })
-
+let slider = null;
+let sliderSmall = null;
 function getBuildData(id) {
   // const data = {
   //   id: '723',
@@ -55,12 +30,7 @@ function getBuildData(id) {
   });
 }
 
-function createSlide(src) {
-  return `<div class="swiper-slide"><img src="${src}" alt=""></div>`;
-}
-
 function createBuildCard(build) {
-  console.log(build);
   return `<a class="building-progress-item-wrap js-build-card" href="#" data-build-id="${build.id}">
     <div class="building-progress-item">
       <div class="building-progress-img img-active">
@@ -98,20 +68,6 @@ function loadMoreHandler(state, containers) {
   containers.buildContainer.insertAdjacentHTML('beforeend', buildsHtml);
 }
 
-function updateContentPopup(build, containers) {
-  const { buildDate, buildMonth, buildYear } = containers;
-  buildDate.textContent = build.date.d;
-  buildMonth.textContent = build.date.m;
-  buildYear.textContent = build.date.y;
-
-  const slidesHtml = build.slider.map(createSlide).join('');
-
-  swiperBig.wrapperEl.innerHTML = slidesHtml;
-  swiperMini.wrapperEl.innerHTML = slidesHtml;
-  swiperBig.updateSlides();
-  swiperMini.updateSlides();
-}
-
 function initBuildPopup(build, containers) {
   containers.buildPopup.classList.add(buildPopupActive);
   updateContentPopup(build, containers);
@@ -129,30 +85,30 @@ function buildContainerHandler(event, state, containers) {
   initBuildPopup(build[0], containers);
 }
 
-function changeBuildContent(state, containers) {
-  getBuildData(state.currentBuildId)
-    .then(build => {
-      console.log(build);
-      updateContentPopup(build, containers);
-    })
-    .catch(error => {
-      console.log(error);
-      alert(error);
-    });
-}
+// function changeBuildContent(state, containers) {
+//   getBuildData(state.currentBuildId)
+//     .then(build => {
+//       console.log(build);
+//       updateContentPopup(build, containers);
+//     })
+//     .catch(error => {
+//       console.log(error);
+//       alert(error);
+//     });
+// }
 
 function closeHandler(containers) {
   containers.buildPopup.classList.remove(buildPopupActive);
 }
 
 function nextBuildHandler(state, containers) {
-  state.nextBuildId();
-  changeBuildContent(state, containers);
+  const index = state.nextBuildId();
+  updateContentPopup(state.builds[index], containers);
 }
 
 function prevBuildHandler(state, containers) {
-  state.prevBuildId();
-  changeBuildContent(state, containers);
+  const index = state.prevBuildId();
+  updateContentPopup(state.builds[index], containers);
 }
 
 async function getBuilds() {
@@ -437,7 +393,6 @@ async function initBuild() {
   loadMoreHandler(state, containers);
 
   sideSwitchArrow(
-    swiperBig,
     document.querySelector('.btn-gallery'),
     document.querySelector('.gallery-swiper'),
   );
@@ -447,7 +402,50 @@ window.addEventListener('DOMContentLoaded', () => {
   initBuild();
 });
 
-function sideSwitchArrow(swiper, arrow, container) {
+// ---------------------
+
+function createSliderPopup(slides) {
+  const slidesHtml = slides.map(createSlide).join('');
+  const pointsHtml = slides.map(createSlide).join('');
+  const bigSliderContainer = document.querySelector('.js-build-big .swiper-wrapper');
+  const smallSliderContainer = document.querySelector('.js-build-mini .swiper-wrapper');
+  if (slider) {
+    slider.destroy();
+    sliderSmall.destroy();
+  }
+
+  bigSliderContainer.innerHTML = slidesHtml;
+  smallSliderContainer.innerHTML = slidesHtml;
+  sliderSmall = new Swiper('.js-build-mini', {
+    // loop: true,
+    spaceBetween: 5,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    // thumbs: {
+    //   swiper: swiperBig,
+    // },
+  });
+  const swiperBig = new Swiper('.js-build-big', {
+    loop: true,
+    spaceBetween: 10,
+    preloadImages: false,
+    lazy: true,
+    watchSlidesVisibility: true,
+    thumbs: {
+      swiper: sliderSmall,
+    },
+  });
+
+  return swiperBig;
+}
+
+function createSlide(src) {
+  return `<div class="swiper-slide"><img src="${src}" alt=""></div>`;
+}
+
+function sideSwitchArrow(arrow, container) {
   const mediumCordValue = document.documentElement.clientWidth / 2;
   // document.body.append(arrow);
   container.style.cursor = 'none';
@@ -500,25 +498,46 @@ function sideSwitchArrow(swiper, arrow, container) {
       // switchGallerySlide('rightSide')
     }
   }
-  container.addEventListener('click', function clickToChange() {
+
+  function clickToChange() {
     switchGallerySlide(arrow.dataset.side);
-  });
+  }
+
+  container.addEventListener('click', clickToChange);
   if (document.documentElement.clientWidth < 576) {
     container.removeEventListener('click', clickToChange);
   }
   const navigate = {
     leftSide: () => {
-      swiper.slidePrev();
+      slider.slidePrev();
     },
     rightSide: () => {
-      swiper.slideNext();
+      slider.slideNext();
     },
   };
 
   function switchGallerySlide(side) {
+    // console.log('cswitchGallerySlide', side);
     navigate[side]();
     return navigate.side;
   }
 
   // eslint-disable-next-line no-unused-vars
+}
+
+function updateContentPopup(build, containers) {
+  const { buildDate, buildMonth, buildYear } = containers;
+  buildDate.textContent = build.date.d;
+  buildMonth.textContent = build.date.m;
+  buildYear.textContent = build.date.y;
+
+  slider = createSliderPopup(build.slider);
+  slider.updateSlides();
+  // const slidesHtml = build.slider.map(createSlide).join('');
+  // swiperBig.wrapperEl.innerHTML = slidesHtml;
+  // swiperMini.wrapperEl.innerHTML = slidesHtml;
+  // swiperBig.update();
+  // swiperMini.update();
+  // swiperBig.updateSlides();
+  // swiperMini.updateSlides();
 }

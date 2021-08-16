@@ -42,7 +42,7 @@
       }
     }
   }
-  .menu-contact .header-left-link {
+  .header-left-link {
     pointer-events: painted;
   }
   &-left {
@@ -88,6 +88,11 @@
       text-transform: uppercase;
       color: $white;
       pointer-events: painted;
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 1px solid;
+      padding-top: 7px;
+      line-height: 1.2;
       @include to(1440px) {
         font-size: 10px;
         letter-spacing: -0.05em;
@@ -96,6 +101,9 @@
   }
   &-right {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     width: 485px;
     @include to(1440px) {
       width: 369px;
@@ -103,7 +111,7 @@
     @include to(850px) {
       width: 60px;
     }
-    justify-content: flex-end;
+
     &-call {
       font-family: $default-font;
       border: none;
@@ -113,9 +121,14 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $white;
-      text-decoration: underline;
+      // text-decoration: underline;
       margin-right: 60px;
       pointer-events: painted;
+      text-decoration: none;
+      display: inline-block;
+      border-bottom: 1px solid;
+      line-height: 1.2;
+      padding: 0;
       @include to(1920px) {
         margin-right: 50px;
       }
@@ -164,6 +177,7 @@
   height: 60px;
   fill: $pink;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
   @include to(1440px) {
     width: 46px;
     height: 46px;
@@ -175,7 +189,7 @@
   @include to(575px) {
     width: 46px;
     height: 46px;
-    margin-left: 10px;
+    // margin-left: 10px;
   }
 }
 #icon-phone path {

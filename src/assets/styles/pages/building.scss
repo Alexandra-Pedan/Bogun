@@ -37,6 +37,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+
   @include to(1440px) {
     width: 300px;
     height: 300px;
@@ -49,6 +50,7 @@
 .img-active-container {
   width: 100%;
   height: 100%;
+  transition: transform 0.5s linear;
   & img {
     height: 100%;
   }
@@ -67,10 +69,8 @@
 .building-progress-img.img-2 {
   position: absolute;
   z-index: 2;
-  right: -15px;
-  top: 15px;
-  // background: linear-gradient(0deg, rgba(246, 246, 246, 0.3), rgba(246, 246, 246, 0.3)),
-  //   url('/src/assets/images/building1.jpg');
+  transform: translate(15px, 15px);
+  transition: transform 0.5s linear;
   width: 434px;
   height: 434px;
   background-repeat: no-repeat;
@@ -78,23 +78,21 @@
   @include to(1440px) {
     width: 300px;
     height: 300px;
-    right: -10px;
-    top: 10px;
+    transform: translate(10px, 10px);
   }
   @include to(575px) {
     width: 253px;
     height: 253px;
-    right: -8px;
-    top: 8px;
+    transform: translate(8px, 8px);
   }
 }
 .building-progress-img.img-3 {
   position: absolute;
   z-index: 1;
-  right: -30px;
-  top: 30px;
-  // background: linear-gradient(0deg, rgba(246, 246, 246, 0.6), rgba(246, 246, 246, 0.6)),
-  //   url('/src/assets/images/building2.jpg');
+
+  transform: translate(30px, 30px);
+  transition: transform 0.5s linear;
+
   width: 434px;
   height: 434px;
   background-repeat: no-repeat;
@@ -102,14 +100,12 @@
   @include to(1440px) {
     width: 300px;
     height: 300px;
-    right: -20px;
-    top: 20px;
+    transform: translate(20px, 20px);
   }
   @include to(575px) {
     width: 253px;
     height: 253px;
-    right: -16px;
-    top: 16px;
+    transform: translate(16px, 16px);
   }
 }
 .building-progress-item-text {
@@ -183,18 +179,25 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 1042px;
+  // max-width: 1042px;
+  width: 100%;
   padding-top: 70px;
   @include to(1440px) {
-    max-width: 700px;
+    width: 100%;
     padding-top: 45px;
+  }
+  @include to(850px) {
+    justify-content: space-between;
+    width: 100%;
+    padding: 45px 35px 0 35px;
   }
   @include to(575px) {
     max-width: 300px;
     padding-top: 30px;
-    justify-content: center;
+    justify-content: start;
+    padding-left: 15px;
   }
   .building-progress-item-wrap {
     width: 434px;
@@ -210,35 +213,41 @@
     z-index: 10;
     width: auto;
     padding-bottom: 100%;
-    transition: transform 0.5s ease-out;
+    transition: 1s ease-in-out;
     // overflow: hidden;
     &:hover {
       .img-active-container {
         overflow: hidden;
-        transform: scale(1.08);
+        transform: scale(1.04);
       }
       .img-2 {
-        right: -20px;
-        top: 20px;
+        // right: -20px;
+        // top: 20px;
+        transform: translate(20px, 20px);
         @include to(1440px) {
-          right: -15px;
-          top: 15px;
+          // right: -15px;
+          // top: 15px;
+          transform: translate(15px, 15px);
         }
         @include to(575px) {
-          right: -11px;
-          top: 11px;
+          // right: -11px;
+          // top: 11px;
+          transform: translate(11px, 11px);
         }
       }
       .img-3 {
-        right: -35px;
-        top: 35px;
+        // right: -35px;
+        // top: 35px;
+        transform: translate(35px, 35px);
         @include to(1440px) {
-          right: -30px;
-          top: 30px;
+          // right: -30px;
+          // top: 30px;
+          transform: translate(30px, 30px);
         }
         @include to(575px) {
-          right: -14px;
-          top: 14px;
+          // right: -14px;
+          // top: 14px;
+          transform: translate(14px, 14px);
         }
       }
     }
@@ -257,7 +266,8 @@
 .building-progress-item-wrap:nth-child(2n + 1) {
   margin-right: 100px;
   @include to(850px) {
-    margin-right: 70px;
+    // margin-right: 70px;
+    margin-right: 0;
   }
   @include to(575px) {
     margin-right: 0;
@@ -621,5 +631,11 @@
   }
   @include to(575px) {
     padding-top: 15px;
+  }
+}
+.news-container-title.building-main-title {
+  width: 50%;
+  @include to(850px) {
+    width: 100%;
   }
 }

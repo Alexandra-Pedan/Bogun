@@ -47,7 +47,7 @@
       width: 934px;
     }
     @include to(850px) {
-      width: 710px;
+      width: 100%;
     }
     @include to(575px) {
       width: 100%;
@@ -63,13 +63,13 @@ video {
     width: 790px;
   }
   @include to(850px) {
-    height: 395px;
-    width: 700px;
+    height: auto;
+    width: 88vw;
   }
-  @include to(575px) {
-    height: 150px;
-    width: 270px;
-  }
+  // @include to(575px) {
+  //   height: 168px;
+  //   width: 300px;
+  // }
 }
 .icon--ornament-web1 {
   width: 150px;

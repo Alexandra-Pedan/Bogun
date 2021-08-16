@@ -11,7 +11,7 @@
     padding: 50px 35px 100px 35px;
   }
   @include to(575px) {
-    padding: 30px 25px 100px 25px;
+    padding: 30px 25px 70px 25px;
   }
   &-date {
     width: 16.5%;
@@ -59,16 +59,17 @@
   &-info {
     width: 84.5%;
     background: $white;
-    padding: 70px 145px;
+    padding: 70px 145px 90px 145px;
     @include to(1440px) {
-      padding: 70px 100px;
+      padding: 70px 100px 50px 100px;
     }
     @include to(850px) {
       padding: 70px 35px 100px 40px;
     }
     @include to(575px) {
-      padding: 30px 35px 100px 40px;
+      padding: 0;
       width: 100%;
+      background: none;
     }
     &-title {
       // font-size: 36px;
@@ -106,24 +107,29 @@
       @include to(1440px) {
         font-size: 16px;
         width: 450px;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
       }
       @include to(850px) {
         font-size: 16px;
         width: 100%;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
         letter-spacing: -0.05em;
       }
       @include to(575px) {
         font-size: min(vw(12, 320), 14px);
+        padding-bottom: 30px;
       }
     }
     &-content {
-      margin: 50px auto 40px auto;
+      margin: 50px auto 0 auto;
       width: 652px;
       @include to(1440px) {
-        margin: 30px auto 20px auto;
+        margin: 30px auto 0 auto;
         width: 450px;
+      }
+      @include to(850px) {
+        margin: 30px 0 0 0;
+        width: 100%;
       }
       @include to(575px) {
         width: 100%;
@@ -144,7 +150,7 @@
         }
         @include to(575px) {
           font-size: 16px;
-          padding-bottom: 20px;
+          padding-bottom: 15px;
         }
       }
     }

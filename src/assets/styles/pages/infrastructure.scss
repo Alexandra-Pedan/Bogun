@@ -30,17 +30,19 @@
       display: none;
     }
   }
-  & a {
-    margin-right: 245px;
-    @include to(1440px) {
-      margin-right: 0;
-    }
-  }
+  // & a {
+  //   margin-right: 245px;
+  //   @include to(1440px) {
+  //     margin-right: 0;
+  //   }
+  // }
   .infrastructure-title {
     font-size: 64px;
     letter-spacing: -0.02em;
     color: $main-text;
+    width: 524px;
     @include to(1440px) {
+      width: 300px;
       font-size: 36px;
     }
     @include to(850px) {
@@ -53,8 +55,14 @@
   &-adress {
     display: flex;
     align-items: center;
-    width: 310px;
+    width: 592px;
     justify-content: flex-end;
+    @include to(1920px) {
+      width: 560px;
+    }
+    @include to(1440px) {
+      width: 353px;
+    }
     svg {
       width: 60px;
       height: 60px;

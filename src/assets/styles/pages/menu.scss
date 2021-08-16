@@ -22,6 +22,9 @@
     visibility: visible;
     opacity: 1;
     transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    & .menu-header-call {
+      pointer-events: painted;
+    }
   }
   .lang-block-mobile {
     opacity: 0;
@@ -29,6 +32,7 @@
   @include to(575px) {
     .lang-block-mobile {
       opacity: 1;
+      margin-right: 10px;
     }
   }
   &-container-header {
@@ -97,6 +101,11 @@
     }
     @include to(1440px) {
       font-size: 10px;
+    }
+  }
+  &:hover {
+    .header-icon {
+      transform: rotate(90deg);
     }
   }
 }
@@ -248,7 +257,7 @@
 .menu-description {
   width: 1018px;
   padding-right: 60px;
-  height: 70vh;
+  height: 88vh;
   padding-top: 10px;
   overflow-y: auto;
   display: flex;
@@ -354,6 +363,11 @@
     margin-right: 18px;
     @include to(575px) {
       margin-right: 10px;
+      &:nth-child(3) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
@@ -464,6 +478,7 @@
     width: 54%;
     text-align: right;
     cursor: pointer;
+    pointer-events: none;
   }
   @include to(575px) {
     font-size: 10px;

@@ -303,6 +303,10 @@
     padding: 50px 50px 0 118px;
     bottom: 70px;
   }
+  @include to(850px) {
+    padding: 50px 35px 0 35px;
+    bottom: 50px;
+  }
   @include to(575px) {
     padding: 20px 25px;
     bottom: 0;
@@ -322,9 +326,12 @@
   @include to(850px) {
     font-size: 14px;
     width: 230px;
+    margin-left: 80px;
   }
   @include to(575px) {
     font-size: 10px;
+    width: 110px;
+    margin-left: 0;
   }
 }
 .ooter-rights-offer {
@@ -344,8 +351,8 @@
   }
   @include to(850px) {
     font-size: 14px;
-    width: 768px;
-    padding: 0 80px 30px 80px;
+    width: 100%;
+    padding: 3px calc(50% - 290px) 30px calc(50% - 290px);
     order: -1;
     text-align: center;
   }
@@ -370,15 +377,13 @@
     font-size: 12px;
     width: 100px;
   }
-  @include to(1850px) {
+  @include to(850px) {
     font-size: 14px;
     width: 130px;
   }
-  @include to(1440px) {
-    font-size: 12px;
-  }
   @include to(575px) {
     font-size: 10px;
+    width: 85px;
   }
   & a {
     // text-decoration: none;

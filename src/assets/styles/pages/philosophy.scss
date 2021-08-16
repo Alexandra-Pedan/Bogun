@@ -1,16 +1,13 @@
 .philosophy-container {
   margin: 0 auto;
-  max-width: 1920px;
-  padding: 75px 150px 150px 190px;
+  width: 100%;
+  padding: 75px 150px 150px 170px;
   display: flex;
   flex-direction: column;
   @include to(1440px) {
-    max-width: 1326px;
     padding: 75px 110px 150px 110px;
   }
   @include to(850px) {
-    // max-width: 798px;
-    width: 100%;
     padding: 50px 35px 100px 35px;
   }
   @include to(575px) {

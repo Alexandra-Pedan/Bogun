@@ -24,6 +24,9 @@
     }
     &-text {
       width: 44%;
+      @include to(850px) {
+        width: 51%;
+      }
       @include to(575px) {
         width: 100%;
         border-top: 2px solid #f7f7f7;
@@ -35,8 +38,17 @@
         line-height: 1.7;
         letter-spacing: -0.05em;
         color: #818181;
+        padding-right: calc(100% - 440px);
         @include to(1440px) {
           font-size: 16px;
+          padding-right: calc(100% - 400px);
+        }
+        @include to(850px) {
+          padding-right: calc(100% - 350px);
+        }
+        @include to(575px) {
+          padding-right: 0;
+          font-size: min(vw(12, 320), 14px);
         }
       }
       & .text-note {
@@ -50,6 +62,7 @@
         }
         @include to(575px) {
           padding-top: 10px;
+          font-size: min(vw(10, 320), 12px);
         }
       }
     }
@@ -63,6 +76,7 @@
       }
       @include to(850px) {
         padding-right: 0;
+        width: 45%;
       }
       @include to(575px) {
         width: 100%;
@@ -73,9 +87,11 @@
         letter-spacing: -0.05em;
         text-transform: uppercase;
         color: $main-text;
+        padding-right: calc(100% - 380px);
         @include to(575px) {
           font-size: min(vw(14, 320), 16px);
           padding-top: 10px;
+          padding-right: 0;
         }
       }
       & .dollar-exchange {
@@ -113,6 +129,9 @@
     }
     &-section {
       width: 42%;
+      @include to(850px) {
+        width: 45%;
+      }
       @include to(575px) {
         width: 100%;
       }
@@ -135,6 +154,8 @@
         letter-spacing: -0.05em;
         text-transform: uppercase;
         color: $main-text;
+        padding-right: calc(100% - 400px);
+
         @include to(850px) {
           font-size: 20px;
         }

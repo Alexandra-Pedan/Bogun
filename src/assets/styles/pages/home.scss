@@ -474,7 +474,7 @@
       letter-spacing: -0.05em;
       text-transform: uppercase;
       color: $contact-text;
-      width: 470px;
+      width: 300px;
       @include to(1920px) {
         width: 280px;
       }
@@ -495,7 +495,7 @@
       // font-size: 24px;
       font-size: min(vw(24, 1920), 30px);
       color: $main-text;
-      width: 730px;
+      width: 550px;
       @include to(1920px) {
         width: 430px;
       }
@@ -617,7 +617,7 @@
       // font-size: 24px;
       font-size: min(vw(24, 1920), 30px);
       color: $main-text;
-      width: 730px;
+      width: 550px;
       padding-top: 18px;
       @include to(1920px) {
         width: 430px;
@@ -682,4 +682,7 @@
 }
 .schedule-text {
   padding-top: 18px;
+  @include to(575px) {
+    padding-top: 0;
+  }
 }

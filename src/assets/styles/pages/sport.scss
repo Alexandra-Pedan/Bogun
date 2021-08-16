@@ -52,9 +52,9 @@
 }
 
 .sport-container-text {
-  padding: 75px 120px 50px 120px;
+  padding: 75px calc(50% - 650px) 50px calc(50% - 650px);
   @include to(1440px) {
-    padding: 0 100px;
+    padding: 0 calc(50% - 500px);
   }
   @include to(850px) {
     padding: 0;

@@ -1,7 +1,7 @@
 .architecture-container-text {
-  padding: 0 130px;
+  padding: 0 calc(50% - 695px);
   @include to(1440px) {
-    padding: 0 46px;
+    padding: 0 calc(50% - 500px);
   }
   @include to(850px) {
     padding: 0;
@@ -63,6 +63,7 @@
       width: 100%;
       justify-content: flex-start;
       padding-top: 30px;
+      font-size: min(vw(12, 320), 14px);
     }
     & p {
       width: 55%;
@@ -107,9 +108,9 @@
   }
 }
 .architecture-container-text.hall-container-text {
-  padding: 0 400px;
+  padding: 0 calc(50% - 400px);
   @include to(1440px) {
-    padding: 0 250px;
+    padding: 0 calc(50% - 290px);
   }
   @include to(850px) {
     padding: 0;

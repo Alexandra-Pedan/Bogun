@@ -1,4 +1,4 @@
-<div class="loader-wrap">
+<div class="loader-wrap preloader" style="display: none;">
   <!-- <img class="preload-bg" src="./assets/images/preloader/bg.jpg" alt="" /> -->
   <!-- <div class="preload-bg-overlay"></div> -->
   <svg
@@ -227,6 +227,11 @@
       opacity: 0;
     }
   }
+  @media screen and (max-width: 1290px) {
+    .loader-wrap {
+      display: none;
+    }
+  }
 </style>
 <script>
   const preloader = document.querySelector('.loader-wrap');
@@ -251,6 +256,8 @@
   }
 
   function animNumber(el) {
+    if (sessionStorage.getItem('preloaded') !== null) return;
+    document.querySelector('.preloader').style.display = 'flex';
     var incrementor = 0;
 
     function increase(incrementor) {
@@ -270,6 +277,7 @@
           document.querySelector('.preload-num-wrap').classList.add('opacityToDownQuick');
           preloadSvg.classList.add('scaleBig');
           preloader.classList.add('opacityToDown');
+          sessionStorage.setItem('preloaded', 'true');
           return;
         }
         window.requestAnimationFrame(increase.bind(null, incrementor));
