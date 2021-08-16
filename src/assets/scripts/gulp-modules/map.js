@@ -280,6 +280,8 @@ window.addEventListener('load', () => {
   const legendTitle = legend.querySelector('.map-wrap__legend-title');
   const markersHeight = getComputedStyle(legend.querySelector('.map-wrap__legend-markers-wrap'))
     .height;
+  legend.classList.remove('opened');
+  gsap.timeline().fromTo(legend, { y: 0 }, { y: markersHeight });
   legendTitle.addEventListener('click', () => {
     legend.classList.toggle('opened');
     // добавить плавность появление блока с маркерами
