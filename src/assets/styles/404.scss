@@ -49,6 +49,11 @@
   & a {
     text-decoration: none;
     color: #ffffff;
+    width: 210px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .link-container {
@@ -57,41 +62,3 @@
     flex-direction: column;
   }
 }
-// .page404 {
-//   text-align: center;
-//   &-wrap {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: calc(100vh - var(--header-h));
-//   }
-//   .link-wrap {
-//     display: flex;
-//     justify-content: space-between;
-//     margin-top: 30px;
-//   }
-//   &__title {
-//     font-size: 64px;
-//     font-weight: 500;
-//     line-height: 1.3em;
-//     color: $dark;
-//     @include to(575px) {
-//       font-size: 48px;
-//     }
-//     &-small {
-//       font-size: 44px;
-
-//       @include to(575px) {
-//         font-size: 32px;
-//       }
-//     }
-//   }
-//   &__subtitle {
-//     font-size: 48px;
-//     line-height: 1.25em;
-
-//     @include to(575px) {
-//       font-size: 24px;
-//     }
-//   }
-// }

@@ -69,6 +69,7 @@
       line-height: 1.7;
       letter-spacing: -0.05em;
       text-transform: uppercase;
+      color: $main-text;
       @include to(850px) {
         margin: 0 30px 30px 0;
       }
