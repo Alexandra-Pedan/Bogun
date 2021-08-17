@@ -1326,3 +1326,50 @@ textarea {
     height: 51px;
   }
 }
+// form of gratitude
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 200;
+}
+.is-hidden-form {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal-group {
+  position: relative;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background: #eceae8;
+  // border: 1px solid #dbdbdb;
+  padding: 70px 90px 70px 90px;
+  transform: scale(1);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include to(575px) {
+    padding: 50px 25px 50px 25px;
+  }
+}
+.btn-submit-close {
+  right: 40px;
+  top: 40px;
+  @include to(575px) {
+    right: 30px;
+    top: 30px;
+  }
+}
+.form-btn {
+  text-decoration: none;
+}
+.header-submit-title {
+  width: 100%;
+}

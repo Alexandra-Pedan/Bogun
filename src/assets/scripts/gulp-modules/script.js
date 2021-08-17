@@ -93,7 +93,7 @@ btnClose.addEventListener('click', () => {
   document.querySelector('body').style.overflow = 'auto';
 });
 
-// Natasha
+// form tel
 
 const placeHolder = document.querySelector('.place-holder-pop-up'),
   input = document.querySelector('.input-tel-pop-up');
@@ -108,3 +108,18 @@ placeholderFooter.addEventListener('click', function() {
   placeholderFooter.style.display = 'none';
   inputFooter.focus();
 });
+
+// form of gratitude start
+const backdrop = document.querySelector('.backdrop');
+const closeBtn = document.querySelector('.js-submit-close');
+// const submitBtn = document.querySelectorAll('data-btn-submit');
+
+closeBtn.addEventListener('click', () => {
+  backdrop.classList.remove('is-hidden-form');
+});
+
+// submitBtn.addEventListener('click', () => {
+//   backdrop.classList.add('is-hidden-form');
+// });
+
+// end

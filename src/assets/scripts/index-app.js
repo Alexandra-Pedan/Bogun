@@ -54,7 +54,9 @@ formsTel.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          window.location.href = 'message';
+          const backdrop = document.querySelector('.backdrop');
+          backdrop.classList.remove('is-hidden-form');
+          backdrop.classList.add('is-hidden-form');
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {
@@ -110,7 +112,9 @@ footerForm.forEach(form => {
         $form,
         showSuccessMessage: false,
         successAction: () => {
-          window.location.href = 'message';
+          const backdrop = document.querySelector('.backdrop');
+          backdrop.classList.remove('is-hidden-form');
+          backdrop.classList.add('is-hidden-form');
         },
         $btnSubmit: $form.querySelector('[data-btn-submit]'),
         fields: {

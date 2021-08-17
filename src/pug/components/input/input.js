@@ -124,6 +124,23 @@ export default class SexyInput {
         blocks: [4, 2, 3, 2, 2],
         delimiters: [' ', ' ', ' ', ''],
       });
+      if (input.closest('form') !== null) {
+        input.closest('form').addEventListener('reset', () => {
+          setTimeout(() => {
+            cleave.destroy();
+            cleave = new Cleave(input, {
+              /* eslint-enable */
+              numericOnly: true,
+              prefix: '+380',
+              blocks: [4, 2, 3, 2, 2],
+              delimiters: [' ', ' ', ' ', ''],
+            });
+            cleave.setRawValue('');
+            console.log('I reinit cleave');
+          }, 0);
+        });
+      }
+      console.log();
       // input.addEventListener('countrychange', () => {
       //   const currentCountry = input.intTelIput.getSelectedCountryData();
       //   const { dialCode } = currentCountry;
