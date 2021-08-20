@@ -1,4 +1,4 @@
-const buildPopupActive = 'build-popup-active';
+const buildPopupActive = "build-popup-active";
 let slider = null;
 let sliderSmall = null;
 function getBuildData(id) {
@@ -22,10 +22,10 @@ function getBuildData(id) {
   //   resolve(data);
   // });
   const data = new FormData();
-  data.append('action', 'buildProgress');
-  data.append('id', id);
-  return fetch('/wp-admin/admin-ajax.php', {
-    method: 'POST',
+  data.append("action", "buildProgress");
+  data.append("id", id);
+  return fetch("/wp-admin/admin-ajax.php", {
+    method: "POST",
     body: data,
   });
 }
@@ -52,7 +52,7 @@ function createBuilds(currentCount, builds, count = 10) {
   for (let i = currentCount; i < currentCount + count; i += 1) {
     renderingBuilds.push(createBuildCard(builds[i]));
   }
-  return renderingBuilds.join('');
+  return renderingBuilds.join("");
 }
 
 function loadMoreHandler(state, containers) {
@@ -62,10 +62,10 @@ function loadMoreHandler(state, containers) {
       : state.builds.length - state.countShowBuild;
   if (count < 10 || state.countShowBuild + 10 === state.builds.length) {
     // eslint-disable-next-line no-param-reassign
-    containers.loadMore.style.display = 'none';
+    containers.loadMore.style.display = "none";
   }
   const buildsHtml = createBuilds(state.countShowBuild, state.builds, count);
-  containers.buildContainer.insertAdjacentHTML('beforeend', buildsHtml);
+  containers.buildContainer.insertAdjacentHTML("beforeend", buildsHtml);
 }
 
 function initBuildPopup(build, containers) {
@@ -74,13 +74,13 @@ function initBuildPopup(build, containers) {
 }
 
 function buildContainerHandler(event, state, containers) {
-  const card = event.target.closest('a');
-  const isTouchCard = card.classList.contains('js-build-card');
+  const card = event.target.closest("a");
+  const isTouchCard = card.classList.contains("js-build-card");
   const id = +card.dataset.buildId;
   if (!isTouchCard || !id) return;
   state.updateCurrentId(id);
 
-  const build = state.builds.filter(build => build.id === id);
+  const build = state.builds.filter((build) => build.id === id);
   if (build.length === 0) return;
   initBuildPopup(build[0], containers);
 }
@@ -337,16 +337,16 @@ async function getBuilds() {
   //   },
   // ];
   const data = new FormData();
-  data.append('action', 'buildProgressList');
-  return fetch('/wp-admin/admin-ajax.php', {
-    method: 'POST',
+  data.append("action", "buildProgressList");
+  return fetch("/wp-admin/admin-ajax.php", {
+    method: "POST",
     body: data,
   });
 }
 
 async function initBuild() {
-  const builds = await getBuilds().then(res => res.json(res));
-  const buildsId = builds.map(build => +build.id);
+  const builds = await getBuilds().then((res) => res.json(res));
+  const buildsId = builds.map((build) => +build.id);
   const state = {
     builds,
     countShowBuild: 0,
@@ -362,53 +362,65 @@ async function initBuild() {
       if (index <= 0) return this.buildsList.length - 1;
       return index - 1;
     },
-    updateCurrentId: id => {
+    updateCurrentId: (id) => {
       this.currentBuildId = id;
     },
   };
 
-  const buildPopup = document.querySelector('[data-build-popup-container]');
+  const buildPopup = document.querySelector("[data-build-popup-container]");
   const containers = {
-    buildContainer: document.querySelector('[data-build-container]'),
+    buildContainer: document.querySelector("[data-build-container]"),
     buildPopup,
-    closePopup: document.querySelector('[data-close-build-popup]'),
-    nextBuildCard: document.querySelector('[data-next-build]'),
-    prevBuildCard: document.querySelector('[data-prev-build]'),
-    buildDate: buildPopup.querySelector('[data-build-date]'),
-    buildMonth: buildPopup.querySelector('[data-build-month]'),
-    buildYear: buildPopup.querySelector('[data-build-year]'),
-    loadMore: document.querySelector('[data-build-load-more]'),
+    closePopup: document.querySelector("[data-close-build-popup]"),
+    nextBuildCard: document.querySelector("[data-next-build]"),
+    prevBuildCard: document.querySelector("[data-prev-build]"),
+    buildDate: buildPopup.querySelector("[data-build-date]"),
+    buildMonth: buildPopup.querySelector("[data-build-month]"),
+    buildYear: buildPopup.querySelector("[data-build-year]"),
+    loadMore: document.querySelector("[data-build-load-more]"),
   };
 
   containers.buildContainer.addEventListener(
-    'click',
-    event => buildContainerHandler(event, state, containers),
-    {},
+    "click",
+    (event) => buildContainerHandler(event, state, containers),
+    {}
   );
-  containers.closePopup.addEventListener('click', () => closeHandler(containers));
-  containers.nextBuildCard.addEventListener('click', () => nextBuildHandler(state, containers));
-  containers.prevBuildCard.addEventListener('click', () => prevBuildHandler(state, containers));
+  containers.closePopup.addEventListener("click", () =>
+    closeHandler(containers)
+  );
+  containers.nextBuildCard.addEventListener("click", () =>
+    nextBuildHandler(state, containers)
+  );
+  containers.prevBuildCard.addEventListener("click", () =>
+    prevBuildHandler(state, containers)
+  );
 
-  containers.loadMore.addEventListener('click', () => loadMoreHandler(state, containers));
+  containers.loadMore.addEventListener("click", () =>
+    loadMoreHandler(state, containers)
+  );
   loadMoreHandler(state, containers);
 
   sideSwitchArrow(
-    document.querySelector('.btn-gallery'),
-    document.querySelector('.gallery-swiper'),
+    document.querySelector(".btn-gallery"),
+    document.querySelector(".gallery-swiper")
   );
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener("DOMContentLoaded", () => {
   initBuild();
 });
 
 // ---------------------
 
 function createSliderPopup(slides) {
-  const slidesHtml = slides.map(createSlide).join('');
-  const pointsHtml = slides.map(createSlide).join('');
-  const bigSliderContainer = document.querySelector('.js-build-big .swiper-wrapper');
-  const smallSliderContainer = document.querySelector('.js-build-mini .swiper-wrapper');
+  const slidesHtml = slides.map(createSlide).join("");
+  const pointsHtml = slides.map(createSlide).join("");
+  const bigSliderContainer = document.querySelector(
+    ".js-build-big .swiper-wrapper"
+  );
+  const smallSliderContainer = document.querySelector(
+    ".js-build-mini .swiper-wrapper"
+  );
   if (slider) {
     slider.destroy();
     sliderSmall.destroy();
@@ -416,7 +428,7 @@ function createSliderPopup(slides) {
 
   bigSliderContainer.innerHTML = slidesHtml;
   smallSliderContainer.innerHTML = slidesHtml;
-  sliderSmall = new Swiper('.js-build-mini', {
+  sliderSmall = new Swiper(".js-build-mini", {
     // loop: true,
     spaceBetween: 5,
     slidesPerView: 4,
@@ -427,7 +439,7 @@ function createSliderPopup(slides) {
     //   swiper: swiperBig,
     // },
   });
-  const swiperBig = new Swiper('.js-build-big', {
+  const swiperBig = new Swiper(".js-build-big", {
     loop: true,
     spaceBetween: 10,
     preloadImages: false,
@@ -448,28 +460,28 @@ function createSlide(src) {
 function sideSwitchArrow(arrow, container) {
   const mediumCordValue = document.documentElement.clientWidth / 2;
   // document.body.append(arrow);
-  container.style.cursor = 'none';
-  arrow.style.cursor = 'none';
+  container.style.cursor = "none";
+  arrow.style.cursor = "none";
   arrow.style.zIndex = 200;
-  arrow.__proto__.hide = function() {
-    this.style.opacity = '0';
-    this.style.pointerEvents = 'none';
+  arrow.__proto__.hide = function () {
+    this.style.opacity = "0";
+    this.style.pointerEvents = "none";
   };
-  arrow.__proto__.show = function() {
-    this.style.opacity = '1';
+  arrow.__proto__.show = function () {
+    this.style.opacity = "1";
     // this.style.pointerEvents = 'auto';
   };
-  arrow.dataset.side = 'leftSide';
+  arrow.dataset.side = "leftSide";
 
-  container.addEventListener('mousemove', desktopNavButtonHandler);
-  container.addEventListener('mouseenter', () => {
+  container.addEventListener("mousemove", desktopNavButtonHandler);
+  container.addEventListener("mouseenter", () => {
     arrow.show();
   });
-  container.addEventListener('mouseleave', () => {
+  container.addEventListener("mouseleave", () => {
     arrow.hide();
   });
   if (document.documentElement.clientWidth < 769) {
-    window.removeEventListener('mousemove', desktopNavButtonHandler);
+    window.removeEventListener("mousemove", desktopNavButtonHandler);
     arrow.remove();
   }
 
@@ -489,12 +501,12 @@ function sideSwitchArrow(arrow, container) {
 
   function getCursorSide(x) {
     if (x < mediumCordValue) {
-      arrow.classList.add('left-side');
-      arrow.dataset.side = 'leftSide';
+      arrow.classList.add("left-side");
+      arrow.dataset.side = "leftSide";
       // switchGallerySlide('leftSide');
     } else {
-      arrow.classList.remove('left-side');
-      arrow.dataset.side = 'rightSide';
+      arrow.classList.remove("left-side");
+      arrow.dataset.side = "rightSide";
       // switchGallerySlide('rightSide')
     }
   }
@@ -503,9 +515,9 @@ function sideSwitchArrow(arrow, container) {
     switchGallerySlide(arrow.dataset.side);
   }
 
-  container.addEventListener('click', clickToChange);
+  container.addEventListener("click", clickToChange);
   if (document.documentElement.clientWidth < 576) {
-    container.removeEventListener('click', clickToChange);
+    container.removeEventListener("click", clickToChange);
   }
   const navigate = {
     leftSide: () => {
@@ -528,7 +540,7 @@ function sideSwitchArrow(arrow, container) {
 function updateContentPopup(build, containers) {
   const { buildDate, buildMonth, buildYear } = containers;
   buildDate.textContent = build.date.d;
-  buildMonth.textContent = build.date.m;
+  buildMonth.textContent = build.month;
   buildYear.textContent = build.date.y;
 
   slider = createSliderPopup(build.slider);

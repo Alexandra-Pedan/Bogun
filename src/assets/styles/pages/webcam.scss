@@ -43,6 +43,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
+
     @include to(1440px) {
       width: 934px;
     }
@@ -55,15 +56,19 @@
     }
   }
 }
-video {
+.webcam-video {
   width: 957px;
-  height: 530px;
+  // height: 530px;
+  height: 778px;
+  position: relative;
+  z-index: 2;
   @include to(1440px) {
-    height: 430px;
+    // height: 430px;
     width: 790px;
+    height: 644px;
   }
   @include to(850px) {
-    height: auto;
+    height: 72vw;
     width: 88vw;
   }
   // @include to(575px) {
@@ -77,6 +82,7 @@ video {
   position: absolute;
   left: 0;
   top: calc(50% - 75px);
+  z-index: 1;
   @include to(850px) {
     height: 0;
     width: 0;
@@ -89,6 +95,7 @@ video {
   position: absolute;
   right: 0;
   top: calc(50% - 75px);
+  z-index: 1;
   @include to(850px) {
     height: 0;
     width: 0;

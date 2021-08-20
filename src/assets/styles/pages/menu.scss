@@ -17,6 +17,7 @@
   overflow: hidden;
   @include to(575px) {
     background: #e5e5e5;
+    height: calc(var(--vh, 1vh) * 100);
   }
   &.active {
     visibility: visible;
@@ -90,12 +91,19 @@
 .menu-close {
   display: flex;
   align-items: center;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    .header-icon {
+      fill: $blue;
+    }
+  }
   & span {
     font-size: 18px;
     letter-spacing: -0.05em;
     text-transform: uppercase;
     color: $main-text;
     margin-right: 20px;
+    cursor: pointer;
     @include to(1920px) {
       font-size: 14px;
     }
@@ -183,6 +191,10 @@
     text-transform: uppercase;
     color: $main-text;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: $blue;
+    }
     @include to(1440px) {
       font-size: 18px;
     }
@@ -204,10 +216,14 @@
   font-size: 36px;
   letter-spacing: -0.02em;
   color: $main-text;
+  margin-bottom: 40px;
   @include to(1440px) {
     font-size: 36px;
     letter-spacing: -0.02em;
     color: #555568;
+  }
+  @include to(850px) {
+    margin-bottom: 30px;
   }
   @include to(575px) {
     font-size: 18px;
@@ -217,8 +233,9 @@
 .menu-contact {
   display: flex;
   align-items: center;
-  padding: 0px 0 117px 84px;
-
+  padding: 0px 0 90px 84px;
+  position: absolute;
+  bottom: 0;
   @include to(1920px) {
     display: flex;
     align-items: center;
@@ -228,25 +245,40 @@
   }
 
   @include to(1440px) {
-    padding-top: 50px;
+    // padding-top: 50px;
   }
   @include to(850px) {
     padding: 0 0 35px 35px;
+    bottom: 0;
   }
   @include to(575px) {
-    padding: 0 0 50px 25px;
+    padding: 0 0 25px 25px;
   }
   & .header-left-link {
     margin-right: 0;
     pointer-events: inherit;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      div {
+        color: $blue;
+      }
+      .header-icon {
+        fill: $blue;
+      }
+    }
   }
   & div {
     color: $main-text;
     margin-right: 20px;
+    transition: all 0.4s ease-in-out;
   }
   & .header-left-flat {
-    text-decoration: underline;
+    // text-decoration: underline;
     color: $pink;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: $blue;
+    }
   }
   @include to(850px) {
     .desktop {
@@ -275,6 +307,10 @@
   @include to(992px) {
     width: 440px;
     overflow-y: scroll;
+  }
+  @include to(850px) {
+    width: 440px;
+    padding: 5px 25px 0 0;
   }
   @include to(575px) {
     width: 50%;
@@ -315,6 +351,10 @@
         letter-spacing: 0em;
         color: #88889d;
         text-decoration: none;
+        transition: all 0.4s ease-in-out;
+        // &:hover {
+        //   color: $blue;
+        // }
         @include to(1440px) {
           font-size: 12px;
         }
@@ -339,6 +379,28 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 1px;
     background: $pink;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  scrollbar-color: $pink;
+  /* Track */
+  ::-webkit-scrollbar-track {
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 1px;
+    scrollbar-color: $pink;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $pink;
+    scrollbar-color: $pink;
+    // -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: $pink;
+    scrollbar-color: $pink;
   }
 }
 
@@ -377,6 +439,10 @@
     text-transform: uppercase;
     color: $pink;
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: $blue;
+    }
     @include to(1440px) {
       font-size: 10px;
     }
@@ -488,3 +554,64 @@
     left: 25px;
   }
 }
+
+.menu-description-project-link a {
+  position: relative;
+  display: inline-block;
+  color: rgba(92, 136, 218, 0.9);
+  // color: red;
+  // color: $main-text;
+  text-shadow: none;
+  font-weight: 500;
+  transition: none;
+  &::before {
+    // color: rgba(92, 136, 218, 0.5);
+    color: #88889d;
+    // color: rgba(92, 136, 218, 1);
+    content: attr(data-text);
+    position: absolute;
+    // opacity: 1;
+    // font-family: $default-font;
+    // text-shadow: none;
+    // font-weight: 300;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  // &:hover,
+  // &:focus {
+  //   color: rgba(92, 136, 218, 1);
+  //   font-weight: 700;
+  // }
+}
+
+// .menu-description-project-link a {
+//   color: rgba(0, 0, 0, 0.2);
+//   font-weight: 700;
+//   text-shadow: none;
+// }
+
+// .menu-description-project-link a::before {
+//   color: #fff;
+//   content: attr(data-hover);
+//   position: absolute;
+//   -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+//   -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+//   transition: transform 0.3s, opacity 0.3s;
+// }
+
+// .menu-description-project-link a:hover::before,
+// .menu-description-project-link a:focus::before {
+//   -webkit-transform: scale(0.9);
+//   -moz-transform: scale(0.9);
+//   transform: scale(0.9);
+//   opacity: 0;
+// }

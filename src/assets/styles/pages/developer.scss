@@ -270,6 +270,8 @@
   display: inline-block;
   width: 70px;
   height: 70px;
+  transition: all 0.4s ease-in-out;
+
   @include to(1440px) {
     width: 50px;
     height: 50px;
@@ -284,6 +286,8 @@
   display: inline-block;
   width: 70px;
   height: 70px;
+  transition: all 0.4s ease-in-out;
+
   @include to(1440px) {
     width: 50px;
     height: 50px;
@@ -293,12 +297,48 @@
 .swiper-container-rtl .swiper-button-prev {
   right: 0px;
   left: auto;
+  transition: all 0.4s ease-in-out;
 }
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
   left: 0px;
   right: auto;
+  transition: all 0.4s ease-in-out;
 }
+
+.swiper-button-next:hover {
+  &:after {
+    content: '';
+    background-image: url('../images/swipe-right-hover.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+.swiper-button-prev:hover {
+  &:after {
+    content: '';
+    background-image: url('../images/swipe-left-hover.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    @include to(1440px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
 .swiper-container.mySwiper {
   width: 1132px;
   @include to(1440px) {

@@ -109,7 +109,8 @@
   }
   .map-wrap__legend {
     position: absolute;
-    width: 80%;
+    // width: 80%;
+    width: 90%;
     left: 50%;
     bottom: 0;
     transform: translate(-50%, 0);
@@ -126,12 +127,16 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 1146px;
+  // width: 1146px;
+  width: 1420px;
   height: 126px;
   padding: 27px 64px;
   background: #ffffff;
   margin: 0 auto;
   overflow: hidden;
+  @include to(1440px) {
+    width: 1270px;
+  }
   @include to(850px) {
     height: 310px;
     width: 100%;

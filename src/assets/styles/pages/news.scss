@@ -20,10 +20,11 @@
   width: 64%;
   padding-top: 40px;
   overflow-y: auto;
-  height: 80vh;
-  @include to(1440px) {
-    height: 75vh;
-  }
+  // height: 80vh;
+  height: auto;
+  // @include to(1440px) {
+  //   height: 75vh;
+  // }
   @include to(850px) {
     padding-top: 0;
     width: 100%;
@@ -222,6 +223,10 @@
   align-items: center;
   justify-content: center;
   margin: 150px auto;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    background: $blue;
+  }
   @include to(1440px) {
     width: 210px;
     height: 46px;
@@ -247,20 +252,24 @@
 }
 
 .news-ornament {
-  position: absolute;
+  // position: absolute;
   // top: calc(100vh - 368px);
-  bottom: 0;
+  // bottom: 0;
   left: 0px;
   width: 350px;
   height: 350px;
+  position: fixed;
+  top: calc(100vh - 350px);
   @include to(1920px) {
     width: 210px;
     height: 210px;
+    top: calc(100vh - 210px);
   }
   @include to(1440px) {
-    bottom: 0;
+    // bottom: 0;
     width: 188px;
     height: 188px;
+    top: calc(100vh - 188px);
   }
   @include to(850px) {
     width: 0;

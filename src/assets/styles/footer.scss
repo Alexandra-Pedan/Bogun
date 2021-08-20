@@ -4,50 +4,37 @@
   background: #f7f7f7;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 130px;
+  // padding-top: 130px;
   width: 100%;
   position: relative;
+  height: 100vh;
+  @include to(575px) {
+    height: auto;
+  }
   .footer-ornament-mobile {
-    // opacity: 0;
     opacity: 1;
     position: absolute;
-    // opacity: 1;
-    // display: flex;
-    // align-items: flex-end;
-    height: 460px;
-    // object-fit: cover;
+    height: 280px;
     top: 0;
     background: #efefef;
     width: 100vw;
     background: url('../images/footer-svg.svg') bottom repeat-x,
       linear-gradient(rgba(239, 239, 239, 1), rgba(239, 239, 239, 1));
     @include to(1920px) {
-      height: 400px;
+      height: 250px;
+    }
+    @include to(1440px) {
+      height: 220px;
+      background: url('../images/1360.svg') bottom repeat-x,
+        linear-gradient(rgba(239, 239, 239, 1), rgba(239, 239, 239, 1));
     }
     @include to(850px) {
-      height: 350px;
+      height: 220px;
     }
-    svg {
-      opacity: 0;
-    }
+
     @include to(575px) {
-      svg {
-        opacity: 1;
-        // bottom: 0;
-      }
-      position: absolute;
-      opacity: 1;
-      display: flex;
-      align-items: flex-end;
       height: 130px;
-      object-fit: cover;
-      top: 0;
-      background: #efefef;
-      width: 100%;
     }
-  }
-  @include to(575px) {
-    background: #f7f7f7;
   }
 }
 .img-ornament-mobile {
@@ -78,7 +65,7 @@
   }
   @include to(575px) {
     height: auto;
-    padding: 50px 25px 170px 25px;
+    padding: 180px 25px 170px 25px;
   }
 }
 .form-title {
@@ -102,11 +89,19 @@
 }
 .form {
   // width: 840px;
-  padding-top: 38vh;
+  // padding-top: 39vh;
+  padding-top: 310px;
   display: flex;
   justify-content: space-between;
+  @include to(1920px) {
+    padding-top: 330px;
+  }
+  @include to(1440px) {
+    padding-top: 290px;
+  }
   @include to(850px) {
-    padding-top: 33vh;
+    // padding-top: 33vh;
+    padding-top: 270px;
   }
   @include to(575px) {
     flex-direction: column;
@@ -134,9 +129,9 @@
   @include to(1920px) {
     width: 60%;
   }
-  // @include to(1570px) {
-  //   width: 900px;
-  // }
+  @include to(1440px) {
+    width: 62%;
+  }
   @include to(850px) {
     width: 45%;
   }
@@ -162,8 +157,11 @@
   margin: 8px 0 0 70px;
   white-space: nowrap;
   text-decoration: none;
-  transition: color 0.3s ease-in;
+  transition: all 0.4s ease-in-out;
   justify-content: center;
+  &:hover {
+    background: #5c88da;
+  }
   @include to(1920px) {
     width: 220px;
     height: 50px;
@@ -260,6 +258,10 @@
   fill: none;
   width: 60px;
   height: 60px;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    stroke: $blue;
+  }
   @include to(1440px) {
     width: 40px;
     height: 40px;
@@ -289,23 +291,23 @@
   position: absolute;
   width: 100%;
   left: 0;
-  padding: 100px 87px 0 180px;
+  padding: 50px 87px 0 180px;
   /* border: 100px; */
-  bottom: 100px;
+  bottom: 80px;
   // @include to(850px) {
   //   padding-bottom: 50px;
   // }
-  @include to(1560px) {
-    padding: 50px 50px 0 118px;
-    bottom: 50px;
-  }
+  // @include to(1560px) {
+  //   padding: 50px 50px 0 118px;
+  //   bottom: 50px;
+  // }
   @include to(1440px) {
-    padding: 50px 50px 0 118px;
-    bottom: 70px;
+    padding: 50px 50px 50px 118px;
+    bottom: 0;
   }
   @include to(850px) {
-    padding: 50px 35px 0 35px;
-    bottom: 50px;
+    padding: 50px 35px 50px 35px;
+    bottom: 0;
   }
   @include to(575px) {
     padding: 20px 25px;
@@ -370,6 +372,7 @@
   letter-spacing: -0.05em;
   color: #b2b2b2;
   width: 135px;
+
   @include to(1920px) {
     width: 115px;
   }
@@ -389,6 +392,10 @@
     // text-decoration: none;
     color: #b3b3b3;
     margin-left: 5px;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      color: $blue;
+    }
   }
 }
 .form-field:not(#t) .form-field__input.footer-field-input {

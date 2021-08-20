@@ -57,9 +57,17 @@
           text-transform: uppercase;
           color: $pink;
           text-decoration: none;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            color: $blue;
+            & svg {
+              fill: $blue;
+            }
+          }
           & svg {
             margin-left: 20px;
             fill: $pink;
+            transition: all 0.4s ease-in-out;
           }
         }
       }

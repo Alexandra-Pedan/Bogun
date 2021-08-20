@@ -327,6 +327,12 @@
   display: flex;
   align-items: center;
   text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  // &:hover {
+  //   .webcam-img {
+  //     fill: $blue;
+  //   }
+  // }
 }
 .building-webcam span {
   font-size: 16px;
@@ -505,7 +511,7 @@
   }
   @include to(1440px) {
     right: 72px;
-    height: 77vh;
+    height: 75vh;
   }
   @include to(850px) {
     right: 66px;
@@ -540,6 +546,13 @@
     top: -7px;
     left: -88px;
     cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      .close-img {
+        fill: $blue;
+        stroke: #ffffff;
+      }
+    }
     & circle {
       stroke: none;
     }
@@ -560,6 +573,11 @@
       stroke: #555568;
       width: 60px;
       height: 60px;
+      transition: all 0.4s ease-in-out;
+      // &:hover {
+      //   fill: $blue;
+      //   stroke: #ffffff;
+      // }
       @include to(1440px) {
         width: 46px;
         height: 46px;
@@ -596,6 +614,10 @@
   align-items: center;
   justify-content: center;
   position: absolute;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    background: $blue;
+  }
   @include to(1440px) {
     width: 46px;
     height: 46px;
